@@ -1,0 +1,438 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.13)  6 MAR 2021 20:33
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**relatorio.tex
+(./relatorio.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (/app/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(/app/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/app/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/app/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/app/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/app/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/app/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 105.
+
+(/app/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/app/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/03/22 3.42 The Babel package
+
+(/app/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/03/22 3.42 Babel switching mechanism
+)
+(/app/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+(/app/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/03/22 3.42 Babel common definitions
+\babel@savecnt=\count176
+\U@D=\dimen137
+
+(/app/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count177
+)
+Package babel Info: \l@brazil = using hyphenrules for portuguese
+(babel)             (\language69) on input line 113.
+Package babel Info: Making " an active character on input line 145.
+))
+(/app/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+)
+(/app/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(/app/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2018/08/11 v1.3c Input encoding file
+))
+(/app/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/app/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/app/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count178
+\Gm@cntv=\count179
+\c@Gm@tempcnt=\count180
+\Gm@bindingoffset=\dimen138
+\Gm@wd@mp=\dimen139
+\Gm@odd@mp=\dimen140
+\Gm@even@mp=\dimen141
+\Gm@layoutwidth=\dimen142
+\Gm@layoutheight=\dimen143
+\Gm@layouthoffset=\dimen144
+\Gm@layoutvoffset=\dimen145
+\Gm@dimlist=\toks18
+)
+(/app/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count181
+\l__pdf_internal_box=\box45
+) (./relatorio.aux
+
+LaTeX Warning: Label `solutio' multiply defined.
+
+
+LaTeX Warning: Label `RHRMAB' multiply defined.
+
+
+LaTeX Warning: Label `nnew3' multiply defined.
+
+
+LaTeX Warning: Label `ne1' multiply defined.
+
+
+LaTeX Warning: Label `livroC' multiply defined.
+
+
+LaTeX Warning: Label `reaction11' multiply defined.
+
+
+LaTeX Warning: Label `SLW' multiply defined.
+
+
+LaTeX Warning: Label `tumor' multiply defined.
+
+)
+\openout1 = `relatorio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03123pt
+* \textheight=709.61174pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1
+Non-PDF special ignored!
+<special> papersize=614.295pt,794.96999pt
+
+{/app/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 93.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 93.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 93
+.
+
+(/app/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [3] (./relatorio.toc [4
+
+])
+\tf@toc=\write3
+\openout3 = `relatorio.toc'.
+
+
+[5]
+Cap\'{\i }tulo 1.
+[6
+
+] [7]
+Cap\'{\i }tulo 2.
+
+Overfull \hbox (5.24736pt too wide) in paragraph at lines 206--210
+[]\OT1/cmr/m/n/10 Para ob-ter-mos a equa^^Xc~ao di-fe-ren-cial da di-fus~ao, pr
+i-mei-ra-mente de-ve-mos con-si-de-rar que o fluxo de subst^ancia
+ []
+
+File: deducao.eps Graphic file (type eps)
+<deducao.eps> [8
+
+
+Non-PDF special ignored!
+<special> PSfile="deducao.eps" llx=0 lly=0 urx=476 ury=242 rwi=3333 rhi=168...
+]
+File: figura1.eps Graphic file (type eps)
+ <figura1.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10
+Non-PDF special ignored!
+<special> PSfile="figura1.eps" llx=0 lly=0 urx=142 ury=49 rwi=1729 rhi=595 
+]
+File: figura2.eps Graphic file (type eps)
+ <figura2.eps>
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+82.
+ (/app/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 382.
+File: figura3.eps Graphic file (type eps)
+ <figura3.eps>
+[11
+Non-PDF special ignored!
+<special> PSfile="figura2.eps" llx=0 lly=0 urx=139 ury=46 rwi=2551 rhi=850 
+Non-PDF special ignored!
+<special> PSfile="figura3.eps" llx=0 lly=0 urx=151 ury=80 rwi=2693 rhi=1275...
+]
+File: figura4.eps Graphic file (type eps)
+ <figura4.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13
+Non-PDF special ignored!
+<special> PSfile="figura4.eps" llx=0.0 lly=0.0 urx=130.5000 ury=294.0000 rw...
+] [14]
+File: figura6.eps Graphic file (type eps)
+ <figura6.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] [16
+Non-PDF special ignored!
+<special> PSfile="figura6.eps" llx=0.0 lly=0.0 urx=223.5000 ury=104.2500 rw...
+]
+Cap\'{\i }tulo 3.
+File: figura8.eps Graphic file (type eps)
+<figura8.eps>
+File: figura7.eps Graphic file (type eps)
+ <figura7.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17
+
+
+Non-PDF special ignored!
+<special> PSfile="figura8.eps" llx=0.0 lly=0.0 urx=347.5200 ury=283.2000 rw...
+]
+File: figura5.eps Graphic file (type eps)
+ <figura5.eps> [18
+Non-PDF special ignored!
+<special> PSfile="figura7.eps" llx=0.0 lly=0.0 urx=213.6000 ury=193.9200 rw...
+Non-PDF special ignored!
+<special> PSfile="figura5.eps" llx=0.0 lly=0.0 urx=196.5000 ury=120.7500 rw...
+] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
+[33]
+Cap\'{\i }tulo 4.
+
+Overfull \hbox (3.35854pt too wide) in paragraph at lines 1356--1364
+\OT1/cmr/m/n/10 vari^^Savel tem-po-ral ou na vari^^Savel es-pa-cial, usu-al-men
+te em-pre-ga-das na des-cri^^Xc~ao de pro-ces-sos di-fu-si-vos an^omalos.
+ []
+
+[34
+
+] [35]
+File: figure1cap2.ps Graphic file (type eps)
+ <figure1cap2.ps>
+File: figure2cap2.ps Graphic file (type eps)
+ <figure2cap2.ps> [36] [37
+Non-PDF special ignored!
+<special> PSfile="figure1cap2.ps" llx=18 lly=17 urx=577 ury=825 rwi=2834 rh...
+] [38
+Non-PDF special ignored!
+<special> PSfile="figure2cap2.ps" llx=18 lly=17 urx=577 ury=825 rwi=2834 rh...
+] [39] [40]
+File: figure3cap2.ps Graphic file (type eps)
+ <figure3cap2.ps> [41
+Non-PDF special ignored!
+<special> PSfile="figure3cap2.ps" llx=18 lly=17 urx=577 ury=825 rwi=2834 rh...
+] [42]
+Overfull \hbox (14.88414pt too wide) in paragraph at lines 1833--1837
+\OT1/cmr/m/n/10 Esta equa^^Xc~ao integro-diferencial pode ser sim-pli-fi-cada u
+ti-li-zando a trans-for-mada de La-place ($\OMS/cmsy/m/n/10 Lf\OML/cmm/m/it/10 
+:::\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 dte[]:::$
+ []
+
+[43]
+File: artigo1.eps Graphic file (type eps)
+ <artigo1.eps>
+File: artigo2.eps Graphic file (type eps)
+ <artigo2.eps> [44
+Non-PDF special ignored!
+<special> PSfile="artigo1.eps" llx=37 lly=79 urx=528 ury=715 rwi=2247 rhi=3...
+] [45
+Non-PDF special ignored!
+<special> PSfile="artigo2.eps" llx=27 lly=79 urx=528 ury=720 rwi=2247 rhi=3...
+] [46]
+Cap\'{\i }tulo 5.
+[47
+
+]
+Cap\'{\i }tulo 6.
+[48
+
+] [49]
+Cap\'{\i }tulo 7.
+File: figuras_originais/cilindro1.eps Graphic file (type eps)
+<figuras_originais/cilindro1.eps> [50
+
+
+Non-PDF special ignored!
+<special> PSfile="figuras_originais/cilindro1.eps" llx=0.0 lly=0.0 urx=259....
+] [51]
+File: novo_cilindro_razao.eps Graphic file (type eps)
+ <novo_cilindro_razao.eps> [52
+Non-PDF special ignored!
+<special> PSfile="novo_cilindro_razao.eps" llx=0 lly=0 urx=306 ury=245 rwi=...
+] [53] [54] [55]
+Cap\'{\i }tulo 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 2335.
+[56
+
+]
+File: novo_esferar.eps Graphic file (type eps)
+ <novo_esferar.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[57] [58
+Non-PDF special ignored!
+<special> PSfile="novo_esferar.eps" llx=0 lly=0 urx=295 ury=228 rwi=4070 rh...
+]
+File: novo_esferat.eps Graphic file (type eps)
+ <novo_esferat.eps> [59
+Non-PDF special ignored!
+<special> PSfile="novo_esferat.eps" llx=0 lly=0 urx=296 ury=228 rwi=4070 rh...
+] [60]
+Cap\'{\i }tulo 9.
+[61
+
+]
+Overfull \hbox (0.93564pt too wide) in paragraph at lines 2539--2541
+\OT1/cmr/m/n/10 Substitu^^S^^Pmos, ent~ao, $\OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10 ^^U[]r\OT1/cmr/m/n/10 )$ pela fun^^Xc~ao de Neu-mann, sua co
+r-res-pon-dente. Uma vez que $\OML/cmm/m/it/10 Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 ^^U[]r\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 !
+ []
+
+[62]
+Cap\'{\i }tulo 10.
+[63
+
+] [64]
+Overfull \hbox (7.47223pt too wide) in paragraph at lines 2788--2798
+[]\OT1/cmr/m/n/10 Investigamos uma equa^^Xc~ao de di-fus~ao fra-cion^^Saria $\O
+MS/cmsy/m/n/10 N$\OT1/cmr/m/n/10 -dimensional con-si-de-rando uma si-me-tria ra
+-dial. Tamb^^Sem
+ []
+
+[65] [66]
+Cap\'{\i }tulo 11.
+[67
+
+] [68
+
+] [69] [70] [71] (./relatorio.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2274 strings out of 480608
+ 31478 string characters out of 5905088
+ 299865 words of memory out of 5000000
+ 18146 multiletter control sequences out of 15000+600000
+ 537626 words of font info for 43 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,12n,27p,2718b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/app/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</app/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb></app/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></app/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></app/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></app/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></app/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi12.pfb></app/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb>
+</app/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></app/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></app/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></app/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></app/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></app/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></app/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy5.pfb></app/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></app/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></app/texmf-dist/fonts/type1/pu
+blic/rsfs/rsfs10.pfb></app/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+
+Output written on relatorio.pdf (71 pages, 436412 bytes).
+PDF statistics:
+ 307 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
