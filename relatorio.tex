@@ -425,36 +425,36 @@ A condição de borda citada acima pode ser resumida como
 \end{equation}
 Esse caso envolve novamente reflexão na borda, como vimos anteriormente. Contudo, agora é necessário considerar não só a reflexão em $x = 0$, mas também em $x = l$. A solução é obtida considerando-se uma soma infinita de soluções tais como a obtida na seção anterior, envolvendo funções erro. O resultado é uma série infinita da forma
 \begin{equation}
-C=\frac{1}{2}C_{0}\sum_{n=-\infty}^{\infty} \left\{\mathrm{erf}\frac{h+2nl-x}{2\sqrt{Dt}}+\mathrn{erf}\frac{h-2nl+x}{2\sqrt{Dt}} \right\}.
+C=\frac{1}{2}C_{0}\sum_{n=-\infty}^{\infty} \left\{\mathrm{erf}\frac{h+2nl-x}{2\sqrt{Dt}}+\mathrm{erf}\frac{h-2nl+x}{2\sqrt{Dt}} \right\}.
 \end{equation}
-Esta solução é mais útil nos primeiros momentos da difusão, pois nestes casos a série converge rapidamente e poucos termos nos oferecem uma boa aproximação da concentração.
+Essa solução é mais útil nos primeiros momentos da difusão, pois nesses casos a série converge rapidamente e poucos termos nos oferecem uma boa aproximação da concentração.
 \section{Métodos de solução}
-O estudo dos processos difusivos faz uso freqüente de alguns métodos que permitem simplificar os problemas, reduzindo a complexidade das equações diferenciais que os descrevem. Comentaremos aqui brevemente alguns destes, o método de separação das variáveis e as transformadas de Laplace.
+O estudo dos processos difusivos faz uso frequente de alguns métodos que permitem simplificar os problemas, reduzindo a complexidade das equações diferenciais que os descrevem. Comentaremos aqui brevemente, o método de separação das variáveis e as transformadas de Laplace.
 \subsection{Método de separação das variáveis}
 
 ${ }$
 
-Há vários casos em que as condições impostas sobre nosso problema envolvem duas variáveis distintas. No caso da difusão, poderíamos agrupar os termos envolvendo x e e envolvendo t, como segue:
+Há vários casos em que as condições impostas sobre nosso problema envolvem duas variáveis distintas. No caso da difusão, poderíamos agrupar os termos envolvendo $x$ e e envolvendo $t$, como segue:
 \begin{equation}
 C(x,t)=X(x)T(t),
 \end{equation}
-onde X(x) é um função somente de x e T(t) somente de t. Substituindo o resultado anterior na equação da difusão
+em que $X(x)$ é um função somente de $x$ e $T(t)$ somente de $t$. Substituindo o resultado anterior na equação da difusão
 \begin{equation}
  \frac{\partial{C}}{\partial{t}}=D\frac{\partial{^{2}C}}{\partial{x^{2}}},
 \end{equation}
-nos dá:
+temos
 \begin{equation}
-\frac{1}{T}\frac{dT}{dt}=\frac{\mathcal{D}}{X}\frac{d^{2}X}{dx^{2}},
+\frac{1}{T}\frac{dT}{dt}=\frac{D}{X}\frac{d^{2}X}{dx^{2}},
 \end{equation}
-em que X=X(x), T=T(t) e \begin{math}\mathcal{D}\end{math} é o coeficiente de difusão. Com isso, um lado da equação depente somente de x e o outro de t. Se a igualdade vale para todos os valores de x e t, então ambos os lados devem diferir por uma constante. Esta constante, representada por \begin{math}\lambda\end{math}, é denominada constante de separação. Ficamos, assim, com:
+em que $X=X(x)$, $T=T(t)$ e $D$ é o coeficiente de difusão. Com isso, um lado da equação depende somente de $x$ e o outro de $t$. Se a igualdade vale para todos os valores de $x$ e $t$, então ambos os lados devem ser iguais a uma constante. Essa constante, representada por $\lambda$, é denominada constante de separação. Ficamos, assim, com:
 \begin{equation}
-\frac{1}{T}\frac{dT}{dt}=-\lambda^{2}D
+\frac{1}{T}\frac{dT}{dt}=-\lambda^{2}D,
 \end{equation}
 e
 \begin{equation}
-\frac{1}{X}\frac{d^{2}X}{dx^{2}}=-\lambda^{2},
+\frac{1}{X}\frac{d^{2}X}{dx^{2}}=-\lambda^{2}.
 \end{equation}
-Neste caso, tomamos a constante como \begin{math}-\lambda^{2}D\end{math} de maneira a simplificar os cálculos. As soluções individuais das equações acima são, respectivamente:
+Neste caso, tomamos a constante como $-\lambda^{2}$ de maneira a simplificar os cálculos. As soluções individuais das equações acima são, respectivamente:
 \begin{equation}
 T=e^{-\lambda^{2}Dt}
 \end{equation}
@@ -462,49 +462,49 @@ e
 \begin{equation}
 X=Asen\lambda x+Bcos\lambda x,
 \end{equation}
-onde A e B são constantes de integração. Quando combinadas, as soluções parciais acima conduzem à solução comum:
+com $A$ e $B$ sendo constantes de integração. Quando combinadas, as soluções parciais acima conduzem a
 \begin{equation}
-C=(Asen\lambda x+Bcos\lambda x)e^{-\lambda^{2}Dt}.
+C=(Asen\lambda x+Bcos\lambda x)e^{-\lambda^{2}Dt},
 \end{equation}
 que satisfaz a equação da difusão para uma dimensão. Contudo, uma solução mais geral escreve-se como uma soma de soluções do tipo anterior, como segue:
 \begin{equation}
 C=\sum_{m=1}^{\infty}{(A_{m}sen\lambda_{m}x+B_{m}cos\lambda_{m}x)e^{-\lambda_{m}^{2}Dt}},
 \end{equation}
-em que \begin{math}A_{m}\end{math}, \begin{math}B_{m}\end{math} e \begin{math}\lambda_{m}\end{math} dependem das condições de iniciais e de contorno específicas para cada problema.
+em que \begin{math}A_{m}\end{math}, \begin{math}B_{m}\end{math} e \begin{math}\lambda_{m}\end{math} dependem das condições de iniciais e de contorno para cada problema.
 \subsection{Transformadas de Laplace}
 
 ${ }$
 
-Originário do Cálculo Operacional, este método permite simplificar a equação da difusão, transformando-a numa equação diferencial ordinária em função das variáveis espaciais x, y e z.
+Originário do Cálculo Operacional, o método das transformadas de Laplace permite simplificar a equação da difusão, transformando-a numa equação diferencial ordinária em função das variáveis espaciais.
 
 \subsection{A integral de Laplace}
 
 ${ }$
 
-Considere uma função f(t) definida na região entre \begin{math}0 \leq t \leq + \infty\end{math}, sendo f(t) e t reais. Então a função F(s), definida pela integral de Laplace
+Considere uma função $f(t)$ definida na região entre $0 \leq t \leq + \infty$, sendo $f(t)$ e $t$ reais. Então a função $F(s)$, definida pela integral de Laplace
 
 \begin{equation}
 F(s)=\int\limits _{0}^{\infty}{e^{-st}f(t)dt}
 \end{equation}
-é denominada transformada de Laplace de f(t), representada por
+é denominada transformada de Laplace de $f(t)$ e representada por
 \begin{equation}
 F(s)=\mathscr{L}\{f(t)\}.
 \end{equation}
 As transformadas de Laplace de funções comuns podem ser facilmente obtidas integrando-as conforme a definição. Por exemplo,
 \begin{equation}
-f(t)=1, \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-pt}dt}=\frac{1}{p}
+f(t)=1 \rightarrow \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-pt}dt}=\frac{1}{p},
 \end{equation}
 \begin{equation}
-f(t)=t, \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{te^{-st}dt}=\frac{1}{s^{2}}
+f(t)=t \rightarrow \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{te^{-st}dt}=\frac{1}{s^{2}},
 \end{equation}
 \begin{equation}
-f(t)=t^{n}, \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{t^{n}e^{-st}dt}=\frac{n!}{s^{n+1}}
+f(t)=t^{n} \rightarrow \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{t^{n}e^{-st}dt}=\frac{n!}{s^{n+1}},
 \end{equation}
 \begin{equation}
-f(t)=sen \omega t,  \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-st}sen \omega tdt}=\frac{\omega}{s^{2}+\omega^{2}}
+f(t)=sen \omega t \rightarrow  \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-st}sen \omega tdt}=\frac{\omega}{s^{2}+\omega^{2}},
 \end{equation}
 \begin{equation}
-f(t)=cos \omega t,  \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-st}cos \omega tdt}=\frac{s}{s^{2}+\omega^{2}}
+f(t)=cos \omega t \rightarrow  \mathscr{L}\{f(t)\}=\int\limits _{0}^{\infty}{e^{-st}cos \omega tdt}=\frac{s}{s^{2}+\omega^{2}}.
 \end{equation}
 \subsection{Aplicações da transformada de Laplace}
 
@@ -514,23 +514,23 @@ Comentaremos aqui alguns exemplos da utilização da transformada de Laplace na re
 \subsection{Meio semi-infinito}
 
 ${ }$
-Consideramos novamente aqui o caso do cilindro semi-infinito. A concentração em x = 0 é constante, igual a \begin{math}C_{0}\end{math}. Inicialmente, consideramos C = 0 para todo x > 0. Desejamos obter uma solução para a equação
+Consideramos novamente aqui o caso do cilindro semi-infinito. A concentração em $x = 0$ é constante, igual a $C_{0}$. Inicialmente, consideramos $C = 0$ para todo $x > 0$. Desejamos obter uma solução para a equação
 \begin{equation}
  \frac{\partial{C}}{\partial{t}}=D\frac{\partial{^{2}C}}{\partial{x^{2}}}.
 \end{equation}
-Primeiramente, multiplicamos ambos os lados da equação anterior por \begin{math}e^{-st}\end{math}:
+Primeiramente, multiplicamos ambos os lados da equação anterior por $e^{-st}$
 \begin{equation}
 e^{-st}\frac{\partial{C}}{\partial{t}}=e^{-st}D\frac{\partial{^{2}C}}{\partial{x^{2}}}
 \end{equation}
-e integramos ambos os lados da equação com respeito a t entre \begin{math}0 \leq t \leq + \infty\end{math}:
+e integramos ambos os lados da equação com respeito a $t$ entre $0 \leq t \leq + \infty$,
 \begin{equation}
  \int\limits _{0}^{\infty}{e^{-st}\frac{\partial{C}}{\partial{t}}dt}=\int\limits _{0}^{\infty}{e^{-st}D\frac{\partial{^{2}C}}{\partial{x^{2}}}dt},
 \end{equation}
-que pode ser reescrita como:
+que pode ser reescrita como
 \begin{equation}
  \int\limits _{0}^{\infty}{e^{-st}\frac{\partial{C}}{\partial{t}}dt}=\frac{\partial{^{2}C}}{\partial{x^{2}}}\int\limits _{0}^{\infty}{Ce^{-st}dt}=\frac{\partial^{2}\bar C}{\partial x^{2}},
 \end{equation}
-que é a derivada segunda em relação a x da transformada de Laplace da concentração. Integrando por partes a integral anterior, obtemos:
+que é a derivada segunda em relação a $x$ da transformada de Laplace da concentração. Integrando por partes a integral anterior, obtemos
 \begin{equation}
 \int\limits _{0}^{\infty}{Ce^{-st}dt}=\left( Ce^{-pt}dt \right| ^{\infty}_{0}+p\int\limits _{0}^{\infty}{Ce^{-st}dt}=p\bar C,
 \end{equation}
@@ -551,35 +551,10 @@ onde \begin{math}q^{2}=\frac{p}{D}\end{math}. Para chegarmos à solução da equaçã
 C=C_{0}erfc\frac{x}{2\sqrt{Dt}},
 \end{equation}
 tal como se verificou anteriormente por método diferente.
-\subsection{Camada plana}
-
-${ }$
-
-Neste caso um tanto mais complicado, consideraremos uma camada plana com espessura 2l. A superfície é mantida a uma concentração constante \begin{math}C_{0}\end{math}, enquanto o resto da camada tem C = 0 para t = 0:
-\begin{equation}
-C=C_{0}, \;\;\; x=0, \;\;\; t \geq 0,
-\end{equation}
-\begin{equation}
-\frac{\partial C}{\partial x}=0, \;\;\; x=0,\;\;\; t \geq 0,
-\end{equation}
-\begin{equation}
-C=0,\;\;\; -l \leq x \leq l, \;\;\; t=0.
-\end{equation}
-O caso citado é ilustrado na figura abaixo:
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=7.8cm,height=3.6cm]{pictures/figura6.eps}
-\caption{Uma camada de material apresenta concentração inicial nula em seu interior, enquanto a concentração nas faces externas é constante. Não há difusão em x=0.}
-\end{center}
-\end{figure}
-Por facilidade de cálculo, posicionemos o eixo das abcissas no centro da camada, de forma que esta se extenda entre \begin{math}-l \leq x \leq l\end{math}. Como já foi dito, a concentração não varia em x=0, isto é, não há difusão através do plano que passa pela origem. Assim, podemos considerar somente a faixa \begin{math}0 \leq x \leq l\end{math}.
-Então a equação
-
-
 
 \chapter{Processos Estocásticos}
 
-${ }$
+\section{Introdução}
 
 Pequenas partículas imersas em solução realizam um movimento aleatório conhecido popularmente como movimento browniano, pois fora descrito originalmente pelo botânico inglês Robert Brown, em 1828. Este movimento errático que se deve a constantes choques sofridos pela partícula com outras menores, permite uma descrição mais elegante do fenômeno da difusão, que será tratada com mais detalhes abaixo.
 \begin{figure}[h]
