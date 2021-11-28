@@ -214,7 +214,7 @@ mostra a figura \ref{caixa}:
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=11.76cm,height=5.95cm]{pictures/deducao.eps}
-\caption{Elemento de volume de dimensões 2dx, 2dy, 2dz centrado em P(x,y,z).}
+\caption{Elemento de volume de dimensões $2dx$, $2dy$, $2dz$ centrado em $P(x,y,z)$.}
 \end{center}
 \label{caixa}
 \end{figure}
@@ -249,13 +249,13 @@ de volume aumenta é dada por
 \end{equation}
 Adicionando a variação da quantidade total de substância no elemento
 às contribuições individuais das faces, o resultado será nulo, já
-que deve haver conservação da quantidade total.
+que deve haver conservação da quantidade total, isto é,
 \begin{equation}
 \frac{\partial{C}}{\partial{t}}+\frac{\partial{F_{x}}}{\partial{x}}+\frac{\partial{F_{y}}}{\partial{y}}+\frac{\partial{F_{z}}}{\partial{z}}=0.
 \end{equation}
 Para o caso em que os coeficientes de difusão são constantes,
 podemos substitui-los pela relação estabelecida pela 1ª Lei de Fick,
-originando
+produzindo
 \begin{equation}
 \frac{\partial{C}}{\partial{t}}-D\frac{\partial{^{2}C}}{\partial{x^{2}}}-D\frac{\partial{^{2}C}}{\partial{y^{2}}}-D\frac{\partial{^{2}C}}{\partial{z^{2}}}=0,
 \end{equation}
@@ -263,13 +263,13 @@ o que pode ser reescrito como
 \begin{equation}
 \frac{\partial{C}}{\partial{t}}=D(\frac{\partial{^{2}C}}{\partial{x^{2}}}+\frac{\partial{^{2}C}}{\partial{y^{2}}}+\frac{\partial{^{2}C}}{\partial{z^{2}}}),
 \end{equation}
-que se reduz a tão somente
+que se reduz a
 \begin{equation}
  \frac{\partial{C}}{\partial{t}}=D\frac{\partial{^{2}C}}{\partial{x^{2}}},
+ \label{eq0002}
 \end{equation}
 nos casos em que a difusão é unidimensional, ou seja, quando só
-ocorre paralelamente ao eixo x. Esta equação é mais conhecida como
-2ª Lei de Fick.
+ocorre paralelamente ao eixo x.
 
 \subsection{Soluções em uma dimensão}
 
@@ -284,61 +284,66 @@ algumas situações, que serão discutidas abaixo.
 
 ${ }$
 
-Consideremos o caso de um cilindro de comprimento infinito. Uma
-situação que se aproxima deste caso é a de um cano muito longo de
-pequeno diâmetro cheio de água. No instante t = 0, introduzimos no
-cano uma certa quantidade de substância - um sal, por exemplo - num
-dado ponto \begin{math}x_{0}\end{math}, longe das extremidades. A
-substância irá se difundir com o passar do tempo e desejamos
-descobrir sua concentração em um instante qualquer após t = 0. Como
-o diâmetro do cano é pequeno, o caso citado pode ser tratado em
-função apenas de duas variáveis, x e t, como um caso de difusão em
-uma dimensão, conforme o esboço abaixo:
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=6.1cm,height=2.1cm]{pictures/figura1.eps}
-\caption{Cilindro de extensão infinita}
+\caption{Cilindro de extensão infinita\label{fig:teeest}}
 \end{center}
 \end{figure}
-No problema proposto, consideramos as seguintes condições de contorno e valores iniciais, descritas por meio da função delta de Dirac:
+
+Consideremos o caso de um cilindro de comprimento infinito. Uma
+situação que se aproxima deste caso é a de um cano muito longo de
+pequeno diâmetro cheio de água. No instante $t = 0$, introduzimos no
+cano uma certa quantidade de substância - um sal, por exemplo - num
+dado ponto \begin{math}x_{0}\end{math}, longe das extremidades. A
+substância irá se difundir com o passar do tempo e desejamos
+descobrir sua concentração em um instante qualquer após $t = 0$. Como
+o diâmetro do cano é pequeno, o caso citado pode ser tratado em
+função apenas de duas variáveis, $x$ e $t$, como um caso de difusão em
+uma dimensão, conforme a figura \ref{fig:teeest}.
+
+No problema proposto, consideramos as seguintes condições de contorno e valores iniciais, descritas por meio da função delta de Dirac.
 \begin{equation}
 C(x,0)=(M/A)\delta(x-x_{0}),
 \end{equation}
-em que A é a área da seção transversal do cano e M a massa de substância a se difundir:
+em que $A$ é a área da seção transversal do cano e $M$ a massa de substância a se difundir, ou seja.
 \begin{equation}
- M=\int\limits _{-\infty}^{+\infty}C(x,t)Adx
+ M=\int\limits_{-\infty}^{+\infty}C(x,t)Adx.
 \end{equation}
-A curva C(x,t) é muito suave, isto é, possui segunda derivada em relação a x. Além disso, é absolutamente integrável. Por isso, deve possuir transformada de Fourier. Seja
+A curva $C(x,t)$ é muito suave, isto é, possui segunda derivada em relação a $x$. Além disso, é absolutamente integrável. Por isso, deve possuir transformada de Fourier. Seja
 \begin{equation}
 R(k,t)=\mathscr{F}\{C(x,t)\}=\frac{1}{\sqrt{2\pi}}\int\limits _{-\infty}^{+\infty}C(x,t)e^{ikx}dx
 \end{equation}
-Diferenciamos ambos os lados da igualdade:
+Diferenciando ambos os lados da igualdade, temos
 \begin{equation}
- \frac{dR(k,t)}{dt}=\frac{1}{\sqrt{2\pi}}\int\limits _{-\infty}^{+\infty}\frac{\partial{C(x,t)}}{\partial{t}}e^{ikx}dx
+ \frac{dR(k,t)}{dt}=\frac{1}{\sqrt{2\pi}}\int\limits _{-\infty}^{+\infty}\frac{\partial{C(x,t)}}{\partial{t}}e^{ikx}dx.
 \end{equation}
-A propriedade \begin{math}\mathscr{F}\{\frac{\partial{^{2}C}}{\partial{x^{2}}}\}=-k^{2}R(k,t).\end{math} nos permite reescrever a equação acima da forma
+A propriedade \begin{math}\mathscr{F}\{\frac{\partial{^{2}C}}{\partial{x^{2}}}\}=-k^{2}R(k,t)
+\end{math} permite-nos reescrever a equação acima da forma
 \begin{equation}
  \frac{dR(k,t)}{dt}=-Dk^{2}R(k,t),
+ \label{eq0001}
 \end{equation}
-que é satifeita por R(k,t), isto é
+que é satifeita por $R(k,t)$, isto é,
 \begin{equation}
  R(k,t)=R(k,0)e^{-Dk^{2}t}
 \end{equation}
-é solução da equação (19). Resta-nos agora aplicar à equação acima as condições iniciais e de contorno desejadas. Fazendo isso, obtemos:
+é solução da equação \ref{eq0001}. Resta-nos, agora, aplicar a equação acima às condições iniciais e de contorno desejadas. Fazendo isso, obtemos:
 \begin{equation}
 \rho(x,t)=\frac{M}{A}\frac{1}{\sqrt{4{\pi}Dt}}e^{-(x-x_{0})^{2}/Dt},
 \end{equation}
-que por simples substituição verifica-se ser a solução da equação (11) da difusão para uma dimensão.
+que por simples substituição verifica-se ser a solução da equação \ref{eq0002} da difusão para uma dimensão.
 
 Considerando a solução simplificada
 \begin{equation}
  C=\frac{A}{t^{\frac{1}{2}}}e^{-x^{2}/4Dt},
 \end{equation}
-onde A é uma constante arbitrária, podemos encontrar a quantidade total de substância M a se difundir integrando-se a equação anterior com relação a x, como segue:
+onde $A$ é uma constante arbitrária, podemos encontrar a quantidade total de substância $M$ a se difundir integrando-se a equação anterior com relação a $x$, ou seja,
 \begin{equation}
  M=\int\limits _{-\infty}^{\infty}{Cdx}=\int\limits _{-\infty}^{\infty}{\frac{A}{t^{\frac{1}{2}}}e^{-x^{2}/4Dt}}dx.
+\label{eq0003}
 \end{equation}
-A integral pode ser resolvida por substituição, fazendo-se
+A integral pode ser resolvida por substituição. Fazendo-se
 \begin{equation}
  \frac{x^{2}}{4Dt}=\xi^{2},
 \end{equation}
@@ -346,21 +351,21 @@ e conseqüentemente
 \begin{equation}
  dx=2\sqrt{Dt}d\xi,
 \end{equation}
-o que nos permite reduzir a equação (23) a
+o que nos permite reduzir a equação \ref{eq0003} a
 \begin{equation}
- M=\frac{A}{2t\sqrt{D}}\int\limits _{-\infty}^{\infty}{e^{-\xi^{2}}d\xi}=2A\sqrt{\pi D}
+ M=\frac{A}{2t\sqrt{D}}\int\limits _{-\infty}^{\infty}{e^{-\xi^{2}}d\xi}=2A\sqrt{\pi D}.
 \end{equation}
 
 \subsection{Reflexão na borda}
 
 ${ }$
 
-Consideremos agora o caso de um cilindro que, diferentemente daquele descrito anteriormente, é infinito apenas para valores positivos de x. Em x = 0, há uma borda impermeável. A situação é esboçada na figura abaixo.,
+Consideremos agora o caso de um cilindro que, diferentemente daquele descrito anteriormente, é infinito apenas para valores positivos de $x$. Em $x = 0$, há uma borda impermeável. A situação é esboçada na figura \ref{eq0004}.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=9cm,height=3cm]{pictures/figura2.eps}
-\caption{Cilindro semi-infinito, não há difusão em x=0.}
+\caption{Cilindro semi-infinito, não há difusão em $x=0$.\label{eq0004}}
 \end{center}
 \end{figure}
 
@@ -368,16 +373,16 @@ Neste caso, podemos considerar que o fluxo que existiria no sentido negativo do 
 \begin{equation}
 C=2\left[ \frac{M}{2\sqrt{Dt\pi}}exp(-x^{2}/4Dt) \right] =\frac{M}{\sqrt{Dt\pi}}exp(-x^{2}/4Dt)
 \end{equation}
-Esta equação satisfaz as condições iniciais \begin{math}\frac{\partial{C}}{\partial{x}}=0, x=0\end{math}.
+Esta equação satisfaz as condições iniciais $\frac{\partial{C}}{\partial{x}}=0$ para $x=0$.
 \subsection{Distribuições iniciais extendidas}
 
 ${ }$
 
-Consideremos agora o caso em que a substância está inicialmente confinada numa determinada região do espaço e não num único plano. Este é o caso, por exemplo, de uma coluna longa de água que repousa sobre uma longa coluna de solução. Para resolver este problema, consideremos a solução final é composta por um número infinito de linhas de fonte sobrepostas, cada linha correspondendo a uma solução para cada elemento de comprimento \begin{math}\delta\xi\end{math}, com força \begin{math}\delta\xi{}C_{0}\end{math}:
+Consideremos agora o caso em que a substância está inicialmente confinada numa determinada região do espaço e não num único plano. Esse é o caso, por exemplo, de uma coluna longa de água que repousa sobre uma longa coluna de solução. Para resolver esse problema, consideremos a solução final é composta por um número infinito de linhas de fonte sobrepostas, cada linha correspondendo a uma solução para cada elemento de comprimento \begin{math}\delta\xi\end{math}, com força \begin{math}\delta\xi{}C_{0}\end{math}:
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=9.5cm,height=4.5cm]{pictures/figura3.eps}
-\caption{A imagem ilustra o caso em que a substância se encontra inicialmente confinada à esquerda da origem.}
+\caption{A imagem ilustra o caso em que a substância se encontra inicialmente confinada à esquerda da origem.\label{fig0001}}
 \end{center}
 \end{figure}
 Substituindo os dados na equação obtida para o cilindro infinito, podemos escrever:
@@ -389,39 +394,38 @@ Somando as soluções para os sucessivos elementos \begin{math}\delta\xi\end{math}
 \begin{equation}
 C(x,t)=\frac{C_{0}}{2\sqrt{Dt\pi}}\int\limits _{x}^{\infty}{exp(-\xi^{2}/4Dt)d\xi},
 \end{equation}
-que pode ser simplificada se fizermos \begin{math}\frac{\xi}{2\sqrt{Dt}}=\alpha\end{math}. Note que a equação acima nos fornece a quantidade total de substância difundida entre x (que corresponde a uma distância \begin{math}\xi\end{math} do elemento de comprimento \begin{math}\delta\xi\end{math}) e \begin{math}+ \infty\end{math}, que é, na verdade, a quantidade total de substância que se difundiu até o ponto P (ver área hachurada do esboço acima). Ficamos então com:
+que pode ser simplificada se fizermos \begin{math}\frac{\xi}{2\sqrt{Dt}}=\alpha\end{math}. Note que a equação acima nos fornece a quantidade total de substância difundida entre x (que corresponde a uma distância \begin{math}\xi\end{math} do elemento de comprimento \begin{math}\delta\xi\end{math}) e \begin{math}+ \infty\end{math}, que é, na verdade, a quantidade total de substância que se difundiu até o ponto $P$ (ver área hachurada da figura \ref{fig0001}). Assim, ficamos com
 \begin{equation}
 C(x,t)=C_{0}\int\limits _{x/2\sqrt{Dt}}^{\infty}{exp(-\alpha^{2})}d\alpha,
 \end{equation}
-que pode ser reescrita em termos das funções erro e erro complementar. A solução acima se torna então:
+que pode ser reescrita em termos das funções erro e erro complementar. A solução acima se torna então
 \begin{equation}
 C(x,t)=\frac{1}{2}C_{0}erfc \frac{x}{2\sqrt{Dt}}.
 \end{equation}
-Este caso pode ser utilizado para se estudar a difusão de uma substância inicialmente confinada num intervalo - h \textless{} x \textless{} + h. Neste caso, devemos modificar os intervalos de integração da solução completa, substituindo-os por x + h e x - h.
-\begin{equation}
-C(x,t)=\frac{1}{2}C_{0} \left\{ erfc \frac{h-x}{2\sqrt{Dt}}+erfc \frac{h+x}{2\sqrt{Dt}} \right\}.
+Esse caso pode ser utilizado para se estudar a difusão de uma substância inicialmente confinada num intervalo $- h \textless{} x \textless{} + h$. Neste caso, devemos modificar os intervalos de integração da solução completa, substituindo-os por $x + h$ e $x - h$, conduzindo a
+\begin{equation}C(x,t)=\frac{1}{2}C_{0} \left\{ \mathrm{erfc} \frac{h-x}{2\sqrt{Dt}}+erfc \frac{h+x}{2\sqrt{Dt}} \right\}.
 \end{equation}
 \subsection{Sistemas Finitos}
 
 ${ }$
 
-A equação anterior aplica-se ao caso em que um cilindro contém uma camada de solução coberta por uma coluna infinita de água. Na prática, as mudanças de concentração nunca atingem o topo da coluna. No caso de um sitema finito, isto não é verdade. Consideramos, então, que não há fluxo de substância se difundindo através da parte superior do cilindro. A figura abaixo ilustra esta situação.
+A equação anterior aplica-se ao caso em que um cilindro contém uma camada de solução coberta por uma coluna infinita de água. Na prática, as mudanças de concentração nunca atingem o topo da coluna. No caso de um sitema finito, isto não é verdade. Consideramos, então, que não há fluxo de substância se difundindo através da parte superior do cilindro. A figura \ref{fig0002} ilustra esta situação.
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=3.68cm,height=8.24cm]{pictures/figura4.eps}
-\caption{Cilindro semi-infinito em que o fluxo na parte superior é zero.}
+\caption{Cilindro semi-infinito em que o fluxo na parte superior é zero.\label{fig0002}}
 \end{center}
 \end{figure}
-A condição de borda citada acima pode ser resumida como:
+A condição de borda citada acima pode ser resumida como
 \begin{equation}
-\frac{\partial{C}}{\partial{x}}=0, \; x=l.
+\frac{\partial{C}}{\partial{x}}=0, \; x=l
 \end{equation} e
 \begin{equation}
 \frac{\partial{C}}{\partial{x}}=0, \; x=0.
 \end{equation}
-Este caso envolve novamente reflexão na borda, como vimos anteriormente. Contudo, agora é necessário considerar não só a reflexão em x = 0, mas também em x = l. A solução é obtida considerando-se uma soma infinita de soluções tais como a obtida na seção anterior, envolvendo funções erro. O resultado é uma série infinita:
+Esse caso envolve novamente reflexão na borda, como vimos anteriormente. Contudo, agora é necessário considerar não só a reflexão em $x = 0$, mas também em $x = l$. A solução é obtida considerando-se uma soma infinita de soluções tais como a obtida na seção anterior, envolvendo funções erro. O resultado é uma série infinita da forma
 \begin{equation}
-C=\frac{1}{2}C_{0}\sum_{n=-\infty}^{\infty} \left\{ erf\frac{h+2nl-x}{2\sqrt{Dt}}+erf\frac{h-2nl+x}{2\sqrt{Dt}} \right\}
+C=\frac{1}{2}C_{0}\sum_{n=-\infty}^{\infty} \left\{\mathrm{erf}\frac{h+2nl-x}{2\sqrt{Dt}}+\mathrn{erf}\frac{h-2nl+x}{2\sqrt{Dt}} \right\}.
 \end{equation}
 Esta solução é mais útil nos primeiros momentos da difusão, pois nestes casos a série converge rapidamente e poucos termos nos oferecem uma boa aproximação da concentração.
 \section{Métodos de solução}
