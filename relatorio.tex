@@ -556,18 +556,18 @@ tal como se verificou anteriormente por método diferente.
 
 \section{Introdução}
 
-Pequenas partículas imersas em solução realizam um movimento aleatório conhecido popularmente como movimento browniano, pois fora descrito originalmente pelo botânico inglês Robert Brown, em 1828. Este movimento errático que se deve a constantes choques sofridos pela partícula com outras menores, permite uma descrição mais elegante do fenômeno da difusão, que será tratada com mais detalhes abaixo.
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=6.1cm,height=4.95cm]{pictures/figura8.eps}
-\caption{Representação esquemática do movimento browniano: moléculas da substância se chocam com a partícula, produzindo o movimento errático desta.}
+\caption{Representação esquemática do movimento browniano: moléculas da substância se chocam com a partícula, produzindo o seu movimento errático.\label{fig0003}}
 \end{center}
 \end{figure}
-As contínuas colisões com partículas menores como as esboçadas na imagem acima fazem com que a partícula maior execute um movimento de trajetória semelhante à mostrada na figura abaixo. A curva extremamente irregular resultante deste processo quase não apresenta tangentes, isto é, não é diferenciável. Experimentos também demonstraram que o movimento nunca cessa, ficando mais intenso quando se reduz a viscosidade do meio ou o tamanho das partículas, ou também quando se aumenta a temperatura.
+
+Pequenas partículas imersas em solução realizam um movimento aleatório conhecido popularmente como movimento browniano, pois fora descrito originalmente pelo botânico inglês Robert Brown, em 1828. Esse movimento errático que se deve a inúmeras colisões sofridas pela partícula com outras menores, permite uma descrição mais elegante do fenômeno da difusão, que será tratada com mais detalhes abaixo. As contínuas colisões com partículas menores como as esboçadas na \ref{fig0003} fazem com que a partícula maior execute um movimento de trajetória semelhante à mostrada na figura \ref{fig0004}. A curva extremamente irregular resultante deste processo quase não apresenta tangentes, isto é, não é diferenciável. Experimentos também demonstraram que o movimento nunca cessa, ficando mais intenso quando se reduz a viscosidade do meio ou o tamanho das partículas, ou também quando se aumenta a temperatura.
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=6.024cm,height=6.912cm]{pictures/figura7.eps}
-\caption{Trajetória browniana típica de uma partícula}
+\caption{Trajetória browniana típica de uma partícula em duas dimensões.\label{fig0004}}
 \end{center}
 \end{figure}
 \newpage
@@ -576,24 +576,27 @@ As contínuas colisões com partículas menores como as esboçadas na imagem acima f
 
 ${ }$
 
-Para compreendermos o que vem a ser passeio aleatório, será útil conhecer um exemplo clássico de sua aplicação. Neste, um bêbado caminha a partir de um poste ao longo de uma rua. Cada passo tem o mesmo comprimento l. Consideramos aqui que de tão bêbado, cada passo dado pelo homem independa do passo anterior. Assim, tudo o que podemos dizer é que a cada passo, há uma probabilidade p que o homem ande para a direita e q que ande para a esquerda, onde \begin{math}q=1-p\end{math}. Note que p não necessariamente deve ser igual a p, pois a rua pode estar inclinada, de tal forma que um passo rua abaixo seria mais provável que outro rua acima. Se escolhermos o poste como origem e a rua como o eixo das abcissas, a localização do bêbado se escreveria como \begin{math}x=nl\end{math}, onde n é um inteiro (positivo, negativo ou zero).
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=6.9cm,height=4.2cm]{pictures/figura5.eps}
-\caption{O exemplo do bêbado}
+\caption{O exemplo do bêbado\label{figBebado}}
 \end{center}
 \end{figure}
-Desejamos descobrir qual a probabilidade do bêbado, após N passos, estar a uma distância \begin{math}x=ml\end{math} da origem (poste). Ao analisarmos estatisticamente este problema, consideramos um número muito grande de casos similares, onde um bêbado parte da origem e aleatoriamente dá cada passo, ou para a direita, ou para a esquerda. A distância do homem ao poste pode ser representada por um vetor, e é justamente esta idéia que torna bastante útil a situação idealizada neste exemplo em vários ramos da física, como no magnetismo ou no estudo da difusão de substâncias.
+
+Para compreendermos o que vem a ser passeio aleatório, será útil conhecer um exemplo clássico de sua aplicação. Nesse, um bêbado caminha a partir de um poste ao longo de uma rua, conforme ilustra a \ref{figBebado}. Cada passo tem o mesmo comprimento $l$. Consideramos aqui que de tão bêbado, cada passo dado pelo homem independa do passo anterior. Assim, tudo o que podemos dizer é que a cada passo, há uma probabilidade $p$ que o homem ande para a direita e $q$ que ande para a esquerda, onde $q=1-p$. Note que $p$ não necessariamente deve ser igual a $q$, pois a rua pode estar inclinada, de tal forma que um passo rua abaixo seria mais provável que outro rua acima. Se escolhermos o poste como origem e a rua como o eixo das abcissas, a localização do bêbado se escreveria como $x=nl$, onde $n$ é um inteiro (positivo, negativo ou zero).
+
+Desejamos descobrir qual a probabilidade do bêbado, após $N$ passos, estar a uma distância $x=ml$ da origem (poste). Ao analisarmos estatisticamente esse problema, consideramos um número muito grande de casos similares, onde um bêbado parte da origem e aleatoriamente dá cada passo, ou para a direita, ou para a esquerda. A distância do homem ao poste pode ser representada por um vetor, e é justamente esta ideia que torna bastante útil a situação idealizada nesse exemplo em vários ramos da física, como no magnetismo ou no estudo da difusão de substâncias.
 
 \section{A Equação de Langevin}
 
 ${ }$
 
-Vejamos agora o caso de uma partícula de massa m imersa num líquido. Tal partícula estará sujeita a forças de caráter aleatório devido a impactos com moléculas do líquido, além de uma força viscosa proporcional à sua velocidade. Segundo Paul Langevin (1872-1946), o movimento descrito por esta partícula na ausência de um campo de força conservativo pode ser descrito por uma equação diferencial estocástica. Considerando o caso simples de um movimento unidimensional ao longo do eixo x, a equação será
+Vejamos agora o caso de uma partícula de massa $m$ imersa num líquido. Tal partícula estará sujeita a forças de caráter aleatório devido a impactos com moléculas do líquido, além de uma força viscosa proporcional à sua velocidade. Segundo Paul Langevin (1872-1946), o movimento dessa partícula na ausência de um campo de força conservativo pode ser descrito por uma equação diferencial estocástica. Considerando o caso simples de um movimento unidimensional ao longo do eixo $x$, a equação será
 \begin{equation}
 m\frac{dv}{dt}=-\alpha{v}+F(t),
+\label{eq0005}
 \end{equation}
-com \begin{math}v=\frac{dx}{dt}\end{math}, que é a velocidade da partícula e x sua posição. A primeira parcela do lado direito da equação representa a força viscosa, sendo \begin{math}\alpha\end{math} uma constante e \begin{math}F(t)\end{math} a força aleatória, que possui as seguintes propriedades:
+com $v=\frac{dx}{dt}$, que é a velocidade da partícula e $x$ sua posição. A primeira parcela do lado direito da equação representa a força viscosa, sendo $\alpha$ uma constante e $F(t)$ a força aleatória, que possui a seguinte propriedade:
 \begin{equation}
 \langle F(t)\rangle =0,
 \end{equation}
@@ -601,11 +604,11 @@ que ilustra o fato de a força média exercida pelas moléculas sobre a partícula s
 \begin{equation}
 \langle F(t)F(t')\rangle =B\delta{(t-t')},
 \end{equation}
-já que consideramos os impactos como sendo independentes. A equação citada acima, em conjunto com as propriedades que a seguem, é conhecida como Equação de Langevin. Divindindo-se ambos os membros da equação pela massa m, a equação de Langevin é escrita na forma
+já que consideramos os impactos como sendo independentes. A equação citada acima, em conjunto com as propriedades que a seguem, é conhecida como Equação de Langevin. Divindindo-se ambos os membros da equação pela massa $m$, a equação de Langevin é escrita na forma
 \begin{equation}
 \frac{dv}{dt}=-\gamma v+\zeta (t),
 \end{equation}
-em que \begin{math}\gamma=\alpha/m\end{math} e \begin{math}\zeta (t)=F(t)/m\end{math}. Esta é uma variável estocástica conhecida como ruído branco, apresentando as propriedades:
+em que $\gamma=\alpha/m$ e $\zeta (t)=F(t)/m$. Esta variável estocástica $\zeta (t)$ é conhecida como ruído branco, apresentando as propriedades
 \begin{equation}
 \langle \zeta (t)\rangle =0,
 \end{equation}
@@ -613,13 +616,17 @@ e
 \begin{equation}
 \langle \zeta (t) \zeta (t')\rangle =\Gamma \delta (t-t'),
 \end{equation}
-onde \begin{math}\Gamma=B/m^{2}\end{math}.
+onde \begin{math}\Gamma=B/m^{2}\end{math} e
+
+\begin{equation}
+\langle (v-\langle v\rangle )^{2} \rangle=\Gamma e^{-2\gamma t}\int\limits _{0}^{t}{\int\limits _{0}^{t'}{\delta (t'-t'')e^{\gamma t''}dt''}e^{\gamma t'}dt'}.
+\end{equation}
 
 \subsection{Velocidade quadrática média}
 
 ${ }$
 
-A determinação da solução genérica da equação diferencial (2.4) é obtida como segue. Primeiramente, escrevemos \begin{math}v(t)=u(t)e^{-\gamma t}\end{math}, em que u(t) é uma função de t que queremos determinar. Substituindo v(t) na equação em questão, obtemos
+A determinação da solução genérica da equação diferencial \ref{eq0005} é obtida como segue. Primeiramente, escrevemos $v(t)=u(t)e^{-\gamma t}$, em que $u(t)$ é uma função de $t$ que queremos determinar. Substituindo $v(t)$ na equação em questão, obtemos
 \begin{equation}
 \frac{d}{dt}[u(t)e^{-\gamma t}]=-\gamma[u(t)e^{-\gamma t}]+\zeta (t),
 \end{equation}
@@ -631,7 +638,7 @@ que tem como solução
 \begin{equation}
 du=e^{\gamma t}\zeta (t)dt.
 \end{equation}
-Integrando ambos os lados da equação anterior, obtemos u(t):
+Integrando ambos os lados da equação anterior, obtemos $u(t)$
 \begin{eqnarray}\nonumber
 \int\limits _{0}^{t}du=\int\limits _{0}^{t}{e^{\gamma t'}\zeta (t')dt'}\\
 \nonumber u(t)-u_{0}=\int\limits _{0}^{t}{e^{\gamma t'}\zeta (t')dt'}\\
@@ -641,12 +648,12 @@ Como \begin{math}v(t)=u(t)e^{\gamma t}\end{math}, da dedução anterior obtemos
 \begin{equation}
 v(t)=v_{0}e^{-\gamma t}+e^{-\gamma t}\int\limits _{0}^{t}{e^{\gamma t'}dt'},
 \end{equation}
-onde \begin{math}v_{0}\end{math} é a velocidade inicial da partícula, sendo v(t) válida para qualquer \begin{math}\zeta (t)\end{math}.
-A média e a variância da velocidade podem ser calculados utilizando-se as propriedades do ruído. Como \begin{math}\langle \zeta (t)\rangle =0\end{math} como já se comentou acima, velocidade média pode ser escrita como
+em que $v_{0}$ é a velocidade inicial da partícula, sendo $v(t)$ válida para qualquer $\zeta (t)$.
+A média e a variância da velocidade podem ser calculados utilizando-se as propriedades do ruído. Como $\langle \zeta (t)\rangle =0$, a velocidade média pode ser escrita como
 \begin{equation}
 \langle v\rangle =v_{0}e^{-\gamma t},
 \end{equation}
-já que a segunda parcela do lado direito da equação da velocidade é nada menos que própria média de \begin{math}\zeta (t)\end{math}, que é nula. Assim sendo, podemos escrever
+já que a segunda parcela do lado direito da equação da velocidade é nada menos que própria média de $\zeta (t)$, que é nula. Assim sendo, podemos escrever
 \begin{equation}
 v-\langle v\rangle =e^{-\gamma t}\int\limits _{0}^{t}{e^{\gamma t'}\zeta (t')dt'},
 \end{equation}
@@ -654,48 +661,48 @@ donde se obtém
 \begin{equation}
 (v-\langle v\rangle )^{2}=e^{-2\gamma t}\int\limits _{0}^{t}{\int\limits _{0}^{t'}{\zeta (t')\zeta (t'')e^{\gamma(t'+t'')}dt''}dt'}.
 \end{equation}
-Calculando a média da equação anterior e fazendo uso da propriedade \begin{math}\langle \zeta (t) \zeta (t') \rangle \end{math} para o ruído, temos:
+Calculando a média da equação anterior e fazendo uso da propriedade $\langle \zeta (t) \zeta (t') \rangle $ para o ruído, temos
 \begin{equation}
 \langle (v-\langle v\rangle )^{2} \rangle=e^{-2\gamma t}\int\limits _{0}^{t}{\int\limits _{0}^{t'}{\langle \zeta (t')\zeta (t'') \rangle e^{\gamma(t'+t'')}dt''}dt'},
 \end{equation}
-que pode ser reescrito como:
+que pode ser reescrita como
 \begin{equation}
 \langle (v-\langle v\rangle )^{2} \rangle=\Gamma e^{-2\gamma t}\int\limits _{0}^{t}{\int\limits _{0}^{t'}{\delta (t'-t'')e^{\gamma t''}dt''}e^{\gamma t'}dt'}.
 \end{equation}
-Resolvendo a integral em \begin{math}dt''\end{math}, ficamos com
+Resolvendo a integral em $dt''$, ficamos com
 \begin{equation}
 \langle (v-\langle v\rangle )^{2} \rangle=\Gamma e^{-2\gamma t}\int\limits _{0}^{t}{e^{2\gamma t'}dt'},
 \end{equation}
-donde podemos obter a variância \begin{math}\sigma^{2}\end{math} resolvendo a integral restante e simplificando:
+donde podemos obter a variância $\sigma^{2}$ resolvendo a integral restante e simplificando, ou seja,
 \begin{equation}
-\langle v^{2} \rangle - \langle v \rangle^{2}=\frac{\Gamma}{2\gamma}(1-e^{-2\gamma t})
+\langle v^{2} \rangle - \langle v \rangle^{2}=\frac{\Gamma}{2\gamma}(1-e^{-2\gamma t}).
 \end{equation}
 Para tempos longos, a equação anterior se reduz a
 \begin{equation}
 \langle v^{2} \rangle=\frac{\Gamma}{2\gamma},
 \end{equation}
-já que \begin{math}\langle v \rangle=0\end{math} (regime estacionário). Para determinarmos a constante \begin{math}\Gamma\end{math}, levamos em conta o teorema da equipartição, que nos garante ser a energia cinética média de uma partícula em movimento correspondente a \begin{math}\frac{1}{2}k_{B}T\end{math} para cada grau de liberdade, isto é:
+já que $\langle v \rangle=0$ (regime estacionário). Para determinarmos a constante $\Gamma$, levamos em conta o teorema da equipartição, que nos garante ser a energia cinética média de uma partícula em movimento correspondente a $\frac{1}{2}k_{B}T$ para cada grau de liberdade, isto é,
 \begin{equation}
 \frac{1}{2}m\langle v^{2} \rangle=\frac{1}{2}k_{B}T,
 \end{equation}
-onde \begin{math}k_{B}\end{math} é a constante de Boltzmann e T a temperatura absoluta. Substituindo \begin{math}\langle v^{2} \rangle\end{math} nesta equação, obtemos
+em que $k_{B}$ é a constante de Boltzmann e $T$ a temperatura absoluta. Substituindo $\langle v^{2} \rangle$ nessa equação, obtemos
 \begin{equation}
 \Gamma=\frac{2\gamma k_{B}T}{m}.
 \end{equation}
-Lembrando que \begin{math}B=\Gamma m^{2}\end{math} e \begin{math} \alpha=\gamma m\end{math}, podemos escrever a relação entre B e a temperatura absoluta:
+Lembrando que $B=\Gamma m^{2}$ e $ \alpha=\gamma m$, podemos escrever a relação entre $B$ e a temperatura absoluta, isto é,
 \begin{equation}
 B=2\alpha k_{B}T.
-\end{equation}
+\end{equation}                                                       
 
 \subsection{Deslocamento Quadrático Médio}
 
 ${ }$
 
-Uma vez obtida a variância da velocidade, convém determinar também o deslocamento médio quadrático, haja vista se tratar duma grandeza experimental mensurável. Começamos por calcular \begin{math}x(t)\end{math}:
+Uma vez obtida a variância da velocidade, convém determinar também o deslocamento médio quadrático, haja vista se tratar duma grandeza experimental mensurável. Começamos por calcular $x(t)$,
 \begin{equation}
 x=x_{0}+\int\limits _{0}^{t}{v(t')dt'},
 \end{equation}
-onde \begin{math}x_{0}\end{math} é a posição da partícula no instante \begin{math}t=0\end{math}. Substituindo na integral da equação anterior o valor de \begin{math}v(t)\end{math} já obtido, ficamos com
+em que $x_{0}$ é a posição da partícula no instante $t=0$. Substituindo na integral da equação anterior o valor de \begin{math}v(t)\end{math} já obtido, ficamos com
 \begin{equation}
 x=x_{0}+v_{0}\int\limits _{0}^{t}{e^{-\gamma t'}dt'}+\int\limits _{0}^{t}{e^{-\gamma t'}\int\limits _{0}^{t'}{e^{\gamma t''}\zeta(t'')dt''dt'}}
 \end{equation}
