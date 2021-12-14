@@ -608,11 +608,17 @@ já que consideramos os impactos como sendo independentes. A equação citada acima
 \begin{equation}
 \frac{dv}{dt}=-\gamma v+\zeta (t),
 \end{equation}
-em que $\gamma=\alpha/m$ e $\zeta (t)=F(t)/m$. Esta variável estocástica $\zeta (t)$ é conhecida como ruído branco, apresentando as propriedades
+em que $\gamma=\alpha/m$ e $\zeta (t)=F(t)/m$. As variáveis $\zeta(t)$ e $\zeta(t')$ são independentes se considerarmos $t \ne t'$. Quando a variável aleatória em questão possui tais propriedades, recebe o nome de ruído branco, já que a transformada de Fourier de $\langle \zeta(0)\zeta(t) \rangle$ escreve-se como
+
+\begin{eqnarray}
+\int\limits{e^{i\omega t}\langle \zeta(0)\zeta(t) \rangle dt}=\Gamma,
+\end{eqnarray}
+que independe da freqüência $\omega$. Ela apresenta as propriedades
+
 \begin{equation}
 \langle \zeta (t)\rangle =0,
 \end{equation}
-e
+
 \begin{equation}
 \langle \zeta (t) \zeta (t')\rangle =\Gamma \delta (t-t'),
 \end{equation}
@@ -702,9 +708,9 @@ Uma vez obtida a variância da velocidade, convém determinar também o deslocament
 \begin{equation}
 x=x_{0}+\int\limits _{0}^{t}{v(t')dt'},
 \end{equation}
-em que $x_{0}$ é a posição da partícula no instante $t=0$. Substituindo na integral da equação anterior o valor de \begin{math}v(t)\end{math} já obtido, ficamos com
+em que $x_{0}$ é a posição da partícula no instante $t=0$. Substituindo na integral da equação anterior o valor de $v(t)$ já obtido, ficamos com
 \begin{equation}
-x=x_{0}+v_{0}\int\limits _{0}^{t}{e^{-\gamma t'}dt'}+\int\limits _{0}^{t}{e^{-\gamma t'}\int\limits _{0}^{t'}{e^{\gamma t''}\zeta(t'')dt''dt'}}
+x=x_{0}+v_{0}\int\limits _{0}^{t}{e^{-\gamma t'}dt'}+\int\limits _{0}^{t}{e^{-\gamma t'}\int\limits _{0}^{t'}{e^{\gamma t''}\zeta(t'')dt''dt'}}.
 \end{equation}
 Resolvendo a primeira integral, temos
 \begin{equation}
@@ -730,7 +736,7 @@ Para obtermos o desvio quadrático médio, primeiramente calculamos a diferença \b
 \begin{eqnarray}
 x-\langle x \rangle=\frac{1}{\gamma}\int\limits_{0}^{t}{\zeta(t'')(1-e^{\gamma(t''-t)t})dt''}
 \end{eqnarray}
-de onde se obtém
+obtendo
 \begin{eqnarray}
 (x-\langle x \rangle)^{2}=\frac{1}{\gamma^{2}}\int\limits_{0}^{t}{\int\limits_{0}^{t}{\zeta(t')\zeta(t'')(1-e^{\gamma(t'-t)})(1-e^{-\gamma(t''-t)})dt'dt''}}.
 \end{eqnarray}
@@ -750,11 +756,11 @@ Assim como se observa na equação acima, para tempos longos o termo dominante é o
 \begin{eqnarray}
 \langle (x-\langle x \rangle)^{2}\rangle=Dt,
 \end{eqnarray}
-em que \begin{math}D=\frac{\Gamma}{\gamma^{2}}=\frac{B}{\alpha^{2}}\end{math} é o coeficiente de difusão. Das relações obtidas acima, podemos então escrever:
+em que \begin{math}D=\frac{\Gamma}{\gamma^{2}}=\frac{B}{\alpha^{2}}\end{math} é o coeficiente de difusão. Das relações obtidas acima, podemos então escrever
 \begin{eqnarray}
 D=\frac{\Gamma}{\gamma^{2}}=\frac{2k_{B}T}{\gamma m}=\frac{2k_{B}T}{\alpha}
 \end{eqnarray}
-Esta relação é conhecida como relação de Einstein-Smoluchowski, que apesar de ter sido obtida para uma dimensão, também pode ser extendida para o caso de partículas imersas num fluido. Para partículas esféricas de raio $a$ imersas num fluido de viscosidade $\eta$, o coeficiente $\alpha$ é dado pela lei de Stokes:
+Essa relação é conhecida como relação de Einstein-Smoluchowski, que apesar de ter sido obtida para uma dimensão, também pode ser estendida para o caso de partículas imersas num fluido. Para partículas esféricas de raio $a$ imersas num fluido de viscosidade $\eta$, o coeficiente $\alpha$ é dado pela lei de Stokes
 \begin{eqnarray}
 \alpha=6\pi \eta a,
 \end{eqnarray}
@@ -762,7 +768,7 @@ de forma que a relação de Einstein-Smoluchowski pode ser reescrita como
 \begin{eqnarray}
 D=\frac{2k_{B}T}{\gamma m}=\frac{k_{B}T}{3\pi \eta \alpha}.
 \end{eqnarray}
-As equações acima permitem a determinação da constante de Boltzmann com base em medidas do desvio quadrático médio, experiência realizada por Jean Perrin examindo o movimento browniano de partículas imersas num fluido.
+As equações acima permitem a determinação da constante de Boltzmann com base em medidas do desvio quadrático médio, experiência realizada por Jean Perrin examinando o movimento browniano de partículas imersas num fluido.
 
 \subsection{Balanço Energético}
 
@@ -781,7 +787,7 @@ em que $F_{at}=\alpha v$ é a força viscosa ou força de atrito. Calculando a médi
 \frac{E_{c}}{dt}+P_{dis}=P,
 \end{eqnarray}
 em que $E_{c}=\frac{mv\langle v^{2} \rangle}{2}$ é a energia cinética média, $P_{dis}=\langle vF_{at} \rangle=\langle \alpha v^{2} \rangle$ é a taxa de dissipação de energia (potência dissipada) e $P=\langle vF \rangle$ é a taxa de transferência de energia para a partícula (potência transferida).
-As parcelas do membro à direita da equação acima podem ser reescritos levando em conta a igualdade $\langle v^{2} \rangle - \langle v \rangle^{2}=\frac{\Gamma}{2\gamma}\left( 1-e^{-2\gamma t} \right) $:
+As parcelas do membro à direita da equação acima podem ser reescritos levando em conta a igualdade $\langle v^{2} \rangle - \langle v \rangle^{2}=\frac{\Gamma}{2\gamma}\left( 1-e^{-2\gamma t} \right) $, ou seja,
 \begin{eqnarray}
 P=\frac{m\Gamma}{2}=\frac{B}{2m}=\frac{\alpha k_{B}T}{m},
 \end{eqnarray}
@@ -791,12 +797,12 @@ o que nos permite concluir ser a potência transferida independente do tempo. No 
 
 ${ }$
 
-Discutiremos nesta seção distribuições de probabilidade tanto para a velocidade quanto para a posição da partícula sujeita ao movimento browniano.
-Primeiramente, quanto à distribuição das velocidades, vimos que a velocidade das partículas livres quando sujeitas a forças aleatórias num meio viscoso podem ser descritas pela equação de Langevin. O termo $\zeta (t)$ presente na equação é uma variável estocástica dependente do tempo; a velocidade $v(t)$ também, embora esta seja desconhecida. Assim, se desejamos encontrar a distribuição de probabilidades associada a $v(t)$, primeiramente precisamos discretizar o tempo em intervalos $\tau$, de forma que
+Discutiremos nessa seção distribuições de probabilidade tanto para a velocidade quanto para a posição da partícula sujeita ao movimento browniano.
+Primeiramente, quanto à distribuição das velocidades, vimos que a velocidade das partículas livres quando sujeitas a forças aleatórias num meio viscoso podem ser descritas pela equação de Langevin. O termo $\zeta (t)$ presente na equação é uma variável estocástica dependente do tempo; a velocidade $v(t)$ também, embora essa seja desconhecida. Assim, se desejamos encontrar a distribuição de probabilidades associada a $v(t)$, primeiramente precisamos discretizar o tempo em intervalos $\tau$, de forma que
 \begin{eqnarray}
 t=n\tau.
 \end{eqnarray}
-Dessa forma, a equação de Langevin pode ser reescrita da forma aproximada:
+Dessa forma, a equação de Langevin pode ser reescrita da forma aproximada
 \begin{eqnarray}
 v_{n+1}=av_{n}+\sqrt{\tau \Gamma}\xi_{n},
 \end{eqnarray}
@@ -806,19 +812,19 @@ em que $a=(1-\tau \gamma)$. As variáveis $\xi_{j}$ possuem as seguintes propried
 \langle \xi_{j} \rangle=0 \\
 \langle \xi_{j}\xi_{k} \rangle=\delta_{jk}
 \end{eqnarray}
-Calculando sucessivamente os valores de $v_{n+1}$, chegamos à seguinte relação:
+Calculando sucessivamente os valores de $v_{n+1}$, chegamos à seguinte relação
 \begin{eqnarray}
 v_{n}=\sum\limits_{l=0}^{n-1}w_{l},
 \end{eqnarray}
-onde $w_{l}=a^{l}\sqrt{\tau \Gamma}\xi_{n-1-l}$ e $v_{0}$ é considerada nula por simplicidade. Como $v_{n}$ é uma soma de variáveis aleatórias independentes, sua função característica escreve-se da forma
+em que $w_{l}=a^{l}\sqrt{\tau \Gamma}\xi_{n-1-l}$ e $v_{0}$ é considerada nula por simplicidade. Como $v_{n}$ é uma soma de variáveis aleatórias independentes, sua função característica escreve-se da forma
 \begin{eqnarray}
 g_{n}(k)=\langle e^{ikv_{n}} \rangle=\prod\limits_{l=0}^{n-1}\langle e^{ikw_{l}} \rangle.
 \end{eqnarray}
-Supondo que a distribuição de probabilidades da variável $xi_{j}$ seja gaussiana de média zero e variância 1, concluímos que a distribuição de $w_{l}$ também será uma gaussiana de média zero, porém com variância $a^{2l}\tau \Gamma$. Assim sendo,
+Supondo que a distribuição de probabilidades da variável $x_{ij}$ seja gaussiana de média zero e variância 1, concluímos que a distribuição de $w_{l}$ também será uma gaussiana de média zero, porém com variância $a^{2l}\tau \Gamma$. Assim sendo,
 \begin{eqnarray}
 \langle e^{ikw_{l}} \rangle=\exp \left( -\frac{a^{2l\tau \Gamma k^{2}}}{2} \right),
 \end{eqnarray}
-sendo que esta relação é obtida expandindo-se o exponte em séries de Taylor. Podemos, então, escrever:
+sendo que esta relação é obtida expandindo-se o exponte em séries de Taylor. Podemos, então, escrever
 \begin{eqnarray}
 \label{2}
 g_{n}(k)=\exp\left( \frac{-b_{n}k^{2}}{2} \right) ,
@@ -827,7 +833,7 @@ em que
 \begin{eqnarray}
 b_{n}=\tau\Gamma\sum\limits_{l=0}^{n-1}{a^{2l}}=\frac{1-a^{2n}}{1-a^{2}}\tau\Gamma.
 \end{eqnarray}
-Conhecida a função característica, para calcularmos a densidade de probabilidades da variável $v_{n}$ basta aplicar a antitransformada de Fourier à Eq. (\ref{2}), isto é,
+Conhecida a função característica $g_{n}(k)$, para calcularmos a densidade de probabilidades da variável $v_{n}$ basta aplicar a antitransformada de Fourier à equação \ref{2}), isto é,
 \begin{eqnarray}
 P_{n}(v_{n})=\frac{1}{\sqrt{2\pi b_{n}}}\exp \left\{ -\frac{v_{n}^{2}}{2b_{n}} \right\}.
 \end{eqnarray}
@@ -854,11 +860,11 @@ Igualmente, podemos escrever
 \begin{eqnarray}
 x_{n}=\tau\sum\limits_{l=1}^{n-1}{v_{l}},
 \end{eqnarray}
-em que por simplicidade consideramos $v_{0}=0$ e $x_{0}=0$. Diferentemente do caso anterior, as variáveis $v_{l}$ não são independentes. Para calcularmos a função característica de $x(t)$, primeiramente faz-se necessário reescrever $v_{l}$. Chamaremos de $u_{l}$ as novas variáveis, como segue:
+em que, por simplicidade, consideramos $v_{0}=0$ e $x_{0}=0$. Diferentemente do caso anterior, as variáveis $v_{l}$ não são independentes. Para calcularmos a função característica de $x(t)$, primeiramente faz-se necessário reescrever $v_{l}$. Chamaremos de $u_{l}$ as novas variáveis, como segue
 \begin{eqnarray}
 x_{n}=\sum\limits_{l=1}^{n-1}{u_{l}},
 \end{eqnarray}
-onde
+com
 \begin{eqnarray}
 u_{l}=\frac{1}{\gamma}\left(1-a^{l}\right)\sqrt{\tau \Gamma}\xi_{n-1-l}.
 \end{eqnarray}
@@ -870,11 +876,11 @@ Assim como para a distribuição das velocidades, suporemos que $\xi_{l}$ possui d
 \begin{eqnarray}
 G_{n}(k)=\exp\left(-\frac{d_{n}k^{2}}{2}\right),
 \end{eqnarray}
-onde
+com
 \begin{eqnarray}
-d_{n}=\frac{\tau \Gamma}{\gamma^{2}}\sum\limits_{l=1}^{n-1}{\left(1-a^{l}\right)^{2}}=\frac{\tau\Gamma}{\gamma^{2}}\left\{n-2\frac{1-a^{n}}{1-a}+\frac{1-a^{2n}}{1-a^{2}}-(1-a)^{2}\right\}
+d_{n}=\frac{\tau \Gamma}{\gamma^{2}}\sum\limits_{l=1}^{n-1}{\left(1-a^{l}\right)^{2}}=\frac{\tau\Gamma}{\gamma^{2}}\left\{n-2\frac{1-a^{n}}{1-a}+\frac{1-a^{2n}}{1-a^{2}}-(1-a)^{2}\right\}.
 \end{eqnarray}
-No limite em que $\tau \to 0 $ e $n \to \infty$ com $n\tau=t$ fixo, obtemos a densidade de probabilidade $\rho_{1}(x,t)$ da variável $x$ na forma de uma gaussiana:
+No limite em que $\tau \to 0 $ e $n \to \infty$ com $n\tau=t$ fixo, obtemos a densidade de probabilidade $\rho_{1}(x,t)$ da variável $x$ na forma de uma gaussiana
 \begin{eqnarray}
 \rho_{1}(x,t)=\frac{1}{\sqrt{2\pi Dt}}\exp{\left(-\frac{x^{2}}{2d(t)}\right)}.
 \end{eqnarray}
@@ -883,19 +889,19 @@ No limite em que $\tau \to 0 $ e $n \to \infty$ com $n\tau=t$ fixo, obtemos a de
 
 ${ }$
 
-Primeiramente, suponha um sistema descrito por um conjunto de N variáveis $x_{1}$, $x_{2}$, $x_{3}$, ..., $x_{N}$. A equação do movimento deste sistema será dada pelo conjunto de equações
+Primeiramente, suponha um sistema descrito por um conjunto de $N$ variáveis $x_{1}$, $x_{2}$, $x_{3}$, ..., $x_{N}$. A equação do movimento desse sistema será dada pelo conjunto de equações
 \begin{eqnarray}
 \frac{dx_{i}}{dt}=f_{i}(x_{1}, x_{2}, ..., x_{N})+\zeta_{i}(t)
 \end{eqnarray}
 para $i=1,2,...,N$, em que as variáveis estocásticas $\zeta_{1}(t), \zeta_{2}(t),...,\zeta_{N}(t)$ possuem as seguintes propriedades:
 \begin{eqnarray}
-\langle \zeta_{1}(t) \rangle = 0
+\langle \zeta_{i}(t) \rangle = 0
 \end{eqnarray}
 e
 \begin{eqnarray}
 \langle \zeta_{i}(t) \zeta_{j}(t') \rangle  = \Gamma_{ij}\delta(t-t'),
 \end{eqnarray}
-em que $\Gamma_{11},\Gamma_{12},\Gamma_{22},...$ são constantes. A equação de Langevin descrita no início deste capítulo é uma equação estocástica em que o ruído é aditivo. Freqüentemente as equações de Langevin constituem um conjunto acoplado de equações. No caso mais simples, quando $f_{i}$ são lineares, as equações de Langevin são dadas por
+em que $\Gamma_{11},\Gamma_{12},\Gamma_{22},...$ são constantes. A equação de Langevin descrita no início deste capítulo é uma equação estocástica em que o ruído é aditivo. Freqüentemente as equações de Langevin constituem um conjunto acoplado de equações. No caso mais simples, quando as $f_{i}$ são lineares, as equações de Langevin são dadas por
 \begin{eqnarray}
 \frac{d}{dt}x_{i}=\sum\limits_{j=1}^{N}{A_{ij}x_{j}}+\zeta_{i},
 \end{eqnarray}
@@ -903,12 +909,12 @@ que pode ser escrita na forma matricial
 \begin{eqnarray}
 \frac{d}{dt}{x}=Ax+\zeta,
 \end{eqnarray}
-onde $x$ e $\zeta$ são matrizes colunas com elementos $x_{i}$ e $\zeta_{i}$, respectivamente, e $A$ é a matriz quadrada $N \times N$ cujos elementos são $A_{ij}$.
+em que $x$ e $\zeta$ são matrizes colunas com elementos $x_{i}$ e $\zeta_{i}$, respectivamente, e $A$ é a matriz quadrada $N \times N$ cujos elementos são $A_{ij}$.
 Para resolver a equação matricial anterior, determinamos inicialmente a matriz $M$ que diagonaliza a matriz $A$, isto é, $M$ tal que
 \begin{eqnarray}
 MAM^{-1}=\Lambda,
 \end{eqnarray}
-em que $\Lambda$ é a matriz diagonal cujos elemtnos $\Lambda_{i}$ são os autovalores de $A$. Em seguida, construímos a matriz $R(t)$ cujos elementos são:
+em que $\Lambda$ é a matriz diagonal cujos elementos $\Lambda_{i}$ são os autovalores de $A$. Em seguida, construímos a matriz $R(t)$ cujos elementos são
 \begin{eqnarray}
 \label{1}
 R_{ij}(t)=\sum\limits_{k}{M_{ik}e^{-\Lambda_{k}t}(M^{-1})_{kj}},
@@ -916,8 +922,9 @@ R_{ij}(t)=\sum\limits_{k}{M_{ik}e^{-\Lambda_{k}t}(M^{-1})_{kj}},
 isto é,
 \begin{eqnarray}
 R=MD(t)M^{-1},
+\label{eqMDtM}
 \end{eqnarray}
-em que $D(t)$ é a matriz diagonal cujos elementos são $D_{k}=\exp{\Lambda_{k}t}$. Diferenciando ambos os membros de Eq.(\ref{1}) com relação ao tempo, obtemos
+em que $D(t)$ é a matriz diagonal cujos elementos são $D_{k}=\exp{\Lambda_{k}t}$. Diferenciando ambos os membros de equação \ref{eqMDtM} com relação ao tempo, obtemos
 \begin{eqnarray}
 \frac{d}{dt}R(t)=M\Lambda D(t)M^{-1}.
 \end{eqnarray}
@@ -925,28 +932,12 @@ Como $M\Lambda=AM$, a equação anterior se reduz a
 \begin{eqnarray}
 \frac{d}{dt}R(t)=AR(t).
 \end{eqnarray}
-A solução da equação matricial que inicialmente apontamos se dá com o auxílio de $R(t)$. Para condição inicial $x(0)=x_{0}$, a solução é dada por:
+A solução da equação matricial que inicialmente apontamos se dá com o auxílio de $R(t)$. Para condição inicial $x(0)=x_{0}$, a solução é dada por
 \begin{eqnarray}
 x(t)=R(t)x_{0}+\int\limits_{0}^{t}{R(t-t')\zeta(t')dt'},
 \end{eqnarray}
 que pode ser facilmente verificada se levarmos em conta as propriedades já enunciadas e o fato de que $R(0)=I$ ($I$ é a matriz identidade).
 
-\subsection{Evolução temporal dos momentos}
-
-${ }$
-
-Consideremos o caso de uma equação de Langevin de apenas uma variável:
-\begin{eqnarray}
-\frac{dx}{dt}=f(x)+\zeta(t),
-\end{eqnarray}
-em que $f(x)$ é uma função somente de $x$ - que denominamos força - e $\zeta(t)$ é a variável estocástica (ruído), cujas propriedades são conhecidas:
-\begin{eqnarray}
-\langle \zeta(t) \rangle = 0
-\end{eqnarray}
-e
-\begin{eqnarray}
-\langle \zeta(t)\zeta(t') \rangle=\Gamma\delta(t-t'),
-\end{eqnarray}
 ou seja, as variáveis $\zeta(t)$ e $\zeta(t')$ são independentes se considerarmos $t \ne t'$. Quando a variável aleatória em questão possui tais propriedades, recebe o nome de ruído branco, já que a transformada de Fourier de
 $\langle \zeta(0)\zeta(t) \rangle$ escreve-se como
 \begin{eqnarray}
@@ -974,7 +965,7 @@ começamos por discretizar o tempo em intervalos $\tau$ e denotamos por $x_{n}$ a
 \begin{eqnarray}
 x_{n+1}=x_{n}+\tau f(x_{n})+\sqrt{\tau\Gamma}\xi_{n},
 \end{eqnarray}
-onde os $\xi_{n}$ ($\xi_{0},\xi_{1},\xi_{2},...$) formam uma seqüência de variáveis aleatórias independentes tais que
+em que os $\xi_{n}$ ($\xi_{0},\xi_{1},\xi_{2},...$) formam uma seqüência de variáveis aleatórias independentes tais que
 \begin{eqnarray}
 \langle \xi_{n} \rangle = 0
 \end{eqnarray}
@@ -982,7 +973,7 @@ e
 \begin{eqnarray}
 \langle \xi_{n}^{2} \rangle = 1.
 \end{eqnarray}
-Uma vez gerado uma seqüência de números aleatórios $\xi_{0},\xi_{1},\xi_{2},...$ e sendo dada a posição inicial $x_{0}$, podemos gerar a seqüência de pontos $x_{1}, x_{2},...$ que corresponde à trajetória discretizada da partícula.
+Uma vez gerado uma sequência de números aleatórios $\xi_{0},\xi_{1},\xi_{2},...$ e sendo dada a posição inicial $x_{0}$, podemos gerar a seqüência de pontos $x_{1}, x_{2},...$ que corresponde à trajetória discretizada da partícula.
 
 \subsection{Equação de Fokker-Planck}
 
@@ -996,7 +987,7 @@ Desta forma, podemos escrever $g_{n+1}(k)$ como
 \begin{eqnarray}
 \langle e^{ikx_{n+1}} \rangle = \langle e^{ik[x_{n}+\tau f(x_{n})+\tau \zeta_{n}]} \rangle ,
 \end{eqnarray}
-em que $x_{n+1}$ foi substituído pela forma discretizada já vista na Eq. (\ref{3}).
+em que $x_{n+1}$ foi substituído pela forma discretizada já vista na equação \ref{3}.
 Como as variáveis $x_{n}$ e $\zeta_{n}$ são independentes, podemos escrever
 \begin{eqnarray}
 \langle e^{ikx_{n+1}} \rangle = \langle e^{ik[x_{n}+\tau f(x_{n})]} \rangle \langle e^{ik\tau \zeta_{n}} \rangle .
@@ -1011,7 +1002,7 @@ para o primeiro termo e
 \end{eqnarray}
 Como $ \langle \zeta_{n} \rangle = 0$ e $\langle \zeta_{n}^{2} \rangle=\frac{\Gamma}{\tau} $, chegamos então a
 \begin{eqnarray}
-g_{n+1}(k)=g_{n}(k)+\tau \left\{ ik\langle f(x_{n})e^{ikx_{n}} \rangle - \frac{\Gamma}{2}k^{2}\langle e^{ikx_{n}} \rangle \right\}
+g_{n+1}(k)=g_{n}(k)+\tau \left\{ ik\langle f(x_{n})e^{ikx_{n}} \rangle - \frac{\Gamma}{2}k^{2}\langle e^{ikx_{n}} \rangle \right\}.
 \end{eqnarray}
 Duas propriedades são então utilizadas,
 \begin{eqnarray}
@@ -1021,7 +1012,7 @@ e
 \begin{eqnarray}
 -k^{2}\langle e^{ikx} \rangle = \langle \frac{d^{2}}{dx^{2}}e^{ikx} \rangle = \int{e^{ikx}\frac{d^{2}}{dx^{2}}P_{n}(x)dx} ,
 \end{eqnarray}
-para obtermos, então:
+para obtermos, então
 \begin{eqnarray}
 P_{n+1}(x)-P_{n}(x)=-\tau\frac{d}{dx}\left[ f(x)P_{n}(x) \right] + \tau\frac{\Gamma}{2}\frac{d^{2}}{dx^{2}}P_{n}(x).
 \end{eqnarray}
@@ -1035,11 +1026,11 @@ que é conhecida como equação de Fokker-Planck, que nos dá a evolução temporal da
 
 ${ }$
 
-Desejamos agora obter a solução estacionária para a equação de Fokker-Planck:
+Desejamos agora obter a solução estacionária para a equação de Fokker-Planck
 \begin{eqnarray}
 \frac{\partial}{\partial t}P(x,t)=-\frac{\partial}{\partial x}[f(x)P(x)]+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}P(x,t).
 \end{eqnarray}
-Começamos por escrever a equação acima da forma:
+Começamos por escrever a equação acima da forma
 \begin{eqnarray}
 \label{4}
 \frac{\partial}{\partial t}P(x,t)=-\frac{\partial}{\partial x}J(x,t),
@@ -1048,16 +1039,16 @@ em que $J(x,t)$ é dada por
 \begin{eqnarray}
 J(x,t)=f(x)P(x,t)-\frac{\Gamma}{2}\frac{\partial}{\partial x}P(x,t).
 \end{eqnarray}
-A equação \ref{4} é uma equação de continuidade, sendo $J(x,t)$ a corrente de probabilidade. Supomos, então, que a variável $x$ tome valores entre $[a,b]$ (sendo que tanto $a$ como $b$ podem ser infinitos). Integrando ambos os lados da Eq. \ref{4}, temos:
+A equação \ref{4} é uma equação de continuidade, sendo $J(x,t)$ a corrente de probabilidade. Supomos, então, que a variável $x$ tome valores entre $[a,b]$ (sendo que tanto $a$ como $b$ podem ser infinitos). Integrando ambos os lados da equação \ref{4}, temos
 \begin{eqnarray}
-\frac{d}{dt}\int\limits_{a}^{b}{P(x,t)dx}=J(a,t)-J(b,t)
+\frac{d}{dt}\int\limits_{a}^{b}{P(x,t)dx}=J(a,t)-J(b,t).
 \end{eqnarray}
-A densidade de probabilidade $P(x,t)$ deve estar sempre normalizada. Por isso mesmo, o valor da integral no termo à esquerda da equação anterior é nulo. Assim, ficamos com:
+A densidade de probabilidade $P(x,t)$ deve estar sempre normalizada. Por isso mesmo, o valor da integral no termo à esquerda da equação anterior é nulo. Assim, ficamos com
 \begin{eqnarray}
-J(a,t)-J(b,t)=0
+J(a,t)-J(b,t)=0.
 \end{eqnarray}
 Como podemos observar, a conservação da probabilidade não depende somente da equação de Fokker-Planck, mas também das condições de contorno $x=a$ e $x=b$. A condição para a qual a corrente de probabilidade é nula chama-se refletora.
-No regime estacionário, a densidade de probabilidades torna-se independente do tempo $t$. A equação \ref{4} tem seu lado esquerdo anulado e a corrente $J(x,t)$ é também independente de $x$. Isto significa que seu valor será constante para qualquer valor de $x$; como ela é nula nos extremos do intervalo $[a,b]$, concluímos então que será nula para qualquer $x$. A solução estacionária deve, portanto, satisfazer:
+No regime estacionário, a densidade de probabilidades torna-se independente do tempo $t$. A equação \ref{4} tem seu lado esquerdo anulado e a corrente $J(x,t)$ é também independente de $x$. Isto significa que seu valor será constante para qualquer valor de $x$; como ela é nula nos extremos do intervalo $[a,b]$, concluímos então que será nula para qualquer $x$. A solução estacionária deve, portanto, satisfazer
 \begin{eqnarray}
 f(x)P(x)-\frac{\Gamma}{2}\frac{d}{dx}P(x)=0,
 \end{eqnarray}
@@ -1082,32 +1073,32 @@ em que foi adicionada a constante $A$ de normalização. Dependendo da força em qu
 
 ${ }$
 
-Para demonstrar que a solução $P(x,t)$ tende para a solução estacionária $P(x)$ em tempos longos, introduziremos na equação de Fokker-Planck o operador de evolução $\mathcal{W}$ como segue:
+Para demonstrar que a solução $P(x,t)$ tende para a solução estacionária $P(x)$ em tempos longos, introduziremos na equação de Fokker-Planck o operador de evolução $\mathcal{W}$ como segue
 \begin{eqnarray}
-\frac{\partial}{\partial t}P(x,t)=-\mathcal{W}P(x,t)
+\frac{\partial}{\partial t}P(x,t)=-\mathcal{W}P(x,t).
 \end{eqnarray}
 O operador age sobre funções $\phi(x)$ e é tal que
 \begin{eqnarray}
-\mathcal{W}\phi(x)=-\frac{\partial}{\partial x}[f(x)\phi(x)]+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\phi(x)
+\mathcal{W}\phi(x)=-\frac{\partial}{\partial x}[f(x)\phi(x)]+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\phi(x).
 \end{eqnarray}
 As funções sobre as quais atua o operador de evolução são tais que
 \begin{eqnarray}
 -f(x)\phi(x)+\frac{\Gamma}{2}\phi '(x)
 \end{eqnarray}
-se anulam nos dois extremos $x=a$ e $x=b$. Vale também a propriedade:
+se anulam nos dois extremos $x=a$ e $x=b$. Vale também a propriedade
 \begin{eqnarray}
-\int\limits_{a}^{b}{\mathcal{W}\phi(x)dx}=0
+\int\limits_{a}^{b}{\mathcal{W}\phi(x)dx}=0.
 \end{eqnarray}
 Isso significa que a distribuição que satisfaz a equação de Fokker-Planck estará sempre normalizada para $t>0$, uma vez que estiver normalizada para $t=0$.
 A distribuição estacionária $P(x)$ satisfaz:
 \begin{eqnarray}
 \label{6}
-\mathcal{W}P(x)=0
+\mathcal{W}P(x)=0.
 \end{eqnarray}
 A solução formal da equação de Fokker-Planck pode, então, ser escrita em termos do operador de evolução $\mathcal{W}$ como segue
 \begin{eqnarray}
 \label{5}
-P(x,t)=e^{t\mathcal{W}}P(x,0)
+P(x,t)=e^{t\mathcal{W}}P(x,0),
 \end{eqnarray}
 em que $e^{t\mathcal{W}}$ é o operador definido por
 \begin{eqnarray}
@@ -1117,62 +1108,62 @@ Diferenciando ambos os membros da equação \ref{5} com relação ao tempo e usando 
 Supomos agora que $\mathcal{W}$ possua um espectro discreto. Assim
 \begin{eqnarray}
 \label{7}
-\mathcal{W}\phi_{l}(x)=\Lambda_{l}\phi_{l}(x)
+\mathcal{W}\phi_{l}(x)=\Lambda_{l}\phi_{l}(x),
 \end{eqnarray}
-com $l=1,2,...$, onde $\phi_{l}(x)$ são as autofunções e $\Lambda_{l}$ são os autovalores de $\mathcal{W}$. Também consideramos que $P(x,0)$ admita a expansão
+com $l=1,2,...$, em que $\phi_{l}(x)$ são as autofunções e $\Lambda_{l}$ são os autovalores de $\mathcal{W}$. Também consideramos que $P(x,0)$ admita a expansão
 \begin{eqnarray}
-P(x,0)=\sum\limits_{l=0}^{\infty}{a_{l}\phi_{l}(x)}
+P(x,0)=\sum\limits_{l=0}^{\infty}{a_{l}\phi_{l}(x)},
 \end{eqnarray}
-Que pela Eq. \ref{5} nos permite escrever:
+que, pela equação \ref{5}, permite-nos escrever
 \begin{eqnarray}
-P(x,t)=\sum\limits_{l=0}^{\infty}{a_{l}e^{t\Lambda_{l}}\phi_{l}(x)}
+P(x,t)=\sum\limits_{l=0}^{\infty}{a_{l}e^{t\Lambda_{l}}\phi_{l}(x)}.
 \end{eqnarray}
 As autofunções devem satisfazer a equação
 \begin{eqnarray}
 \Lambda_{l}\int\limits_{a}^{b}{\phi_{l}(x)dx}=0.
 \end{eqnarray}
-Este resultado se obtém a partir de Eq. (\ref{6}) e Eq. (\ref{7}). Podemos mostrar que, de fato, uma das autofunções de $\mathcal{W}$ deve ser a distribuição de probabilidade estacionária. $P(x)$ é a autofunção de valor nulo. Com $\phi_{0}(x)=P(x)$, $\Lambda_{0}=0$ e considerando $a_{0}=1$
+Este resultado se obtém a partir de equação \ref{6} e equação \ref{7}. Podemos mostrar que, de fato, uma das autofunções de $\mathcal{W}$ deve ser a distribuição de probabilidade estacionária. $P(x)$ é a autofunção de valor nulo. Com $\phi_{0}(x)=P(x)$, $\Lambda_{0}=0$ e considerando $a_{0}=1$, temos
 \begin{eqnarray}
 P(x,t)=P(x)+\sum\limits_{l=1}^{\infty}{a_{l}e^{t\Lambda_{l}}\phi_{l}(x)}
 \end{eqnarray}
-O comportamento da solução $P(x,t)$ será exponencial quando $t \to \infty$ e caracterizado pelo segundo autovalor dominante $\Lambda_{1}$:
+O comportamento da solução $P(x,t)$ será exponencial quando $t \to \infty$ e caracterizado pelo segundo autovalor dominante $\Lambda_{1}$
 \begin{eqnarray}
-P(x,t)=P(x)+a_{1}\phi_{l}(x)e^{-t|\Lambda_{l}|}
+P(x,t)=P(x)+a_{1}\phi_{l}(x)e^{-t|\Lambda_{l}|}.
 \end{eqnarray}
 A grandeza $t_{R}=\frac{1}{|\Lambda_{l}|}$ é denominada tempo de relaxação (para a solução estacionária). A solução da equação de autovalores deve respeitar as condições de contorno expostas de início, isto é, $-f(x)\phi(x)+(\Gamma/2)\phi '(x)=0$ em $x=a$ e $x=b$.
 \subsection{Equação Adjunta}
 
 ${ }$
 
-Associamos à equação de Fokker-Planck unidimensional escrita na forma:
+Associamos à equação de Fokker-Planck unidimensional escrita na forma
 \begin{eqnarray}
 \frac{\partial}{\partial t}P(x,t)=\mathcal{W}P(x,t)
 \end{eqnarray}
 a equação adjunta
 \begin{eqnarray}
-\frac{\partial}{\partial t}Q(x,t)=\mathcal{W}^{\dagger}Q(x,t)
+\frac{\partial}{\partial t}Q(x,t)=\mathcal{W}^{\dagger}Q(x,t),
 \end{eqnarray}
 em que $\mathcal{W}^{\dagger}$ é o operador adjunto de $\mathcal{W}$, definito por:
 \begin{equation}
-\int{\phi(\mathcal{W}^{\dagger}\chi)^{*}dx}=\int{\chi^{*}(\mathcal{W}\phi)dx}
+\int{\phi(\mathcal{W}^{\dagger}\chi)^{*}dx}=\int{\chi^{*}(\mathcal{W}\phi)dx},
 \end{equation}
-para quaisquer funções $\phi(x)$ e $\chi(x)$ que pertençam à classe de funções sobre a qual opera o operador $\mathcal{W}$. Das definições dadas, podemos concluir que:
+para quaisquer funções $\phi(x)$ e $\chi(x)$ que pertençam à classe de funções sobre a qual atua o operador $\mathcal{W}$. Das definições dadas, podemos concluir que:
 \begin{eqnarray}
-\mathcal{W}^{\dagger}\chi(x)=f(x)\frac{\partial}{\partial x}\chi(x)+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\chi(x)
+\mathcal{W}^{\dagger}\chi(x)=f(x)\frac{\partial}{\partial x}\chi(x)+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\chi(x).
 \end{eqnarray}
-O operador $\mathcal{W}$ é auto-adjunto (hermitiano) somente quando $f(x)\equiv 0$. Se denotarmos por $\chi_{l}(x)$ as autofunções de $\mathcal{W}^{\dagger}$, podemos escrever:
+O operador $\mathcal{W}$ é auto-adjunto (hermitiano) somente quando $f(x)\equiv 0$. Se denotarmos por $\chi_{l}(x)$ as autofunções de $\mathcal{W}^{\dagger}$, podemos escrever
 \begin{eqnarray}
-\mathcal{W}^{\dagger}\chi_{l}=\Lambda_{l}\chi_{l}
+\mathcal{W}^{\dagger}\chi_{l}=\Lambda_{l}\chi_{l}.
 \end{eqnarray}
-uma vez que o operador adjunto $\mathcal{W}^{\dagger}$ deve ter os mesmos autovalores de $\mathcal{W}$. Os conjuntos das autofunções desses dois operadores formam um conjunto bi-ortonormal, possuindo as seguintes propriedades:
+uma vez que o operador adjunto $\mathcal{W}^{\dagger}$ deve ter os mesmos autovalores de $\mathcal{W}$. Os conjuntos das autofunções desses dois operadores formam um conjunto ortonormal, possuindo as seguintes propriedades
 \begin{eqnarray}
 \int{\chi^{*}_{l'}(x)\phi_{l}(x)dx}=\delta_{l'l}
 \end{eqnarray}
 e
 \begin{eqnarray}
-\sum_{l}{\chi_{l}(x')\phi_{l}(x)}=\delta(x-x')
+\sum_{l}{\chi_{l}(x')\phi_{l}(x)}=\delta(x-x').
 \end{eqnarray}
-Podemos relacionar as autofunções de $\mathcal{W}$ e $\mathcal{W}^{\dagger}$ pela seguinte equação:
+Podemos relacionar as autofunções de $\mathcal{W}$ e $\mathcal{W}^{\dagger}$ pela seguinte equação
 \begin{eqnarray}
 \phi_{l}=P(x)\chi_{l},
 \end{eqnarray}
@@ -1180,7 +1171,7 @@ que ao ser substituída em $\mathcal{W}\phi_{l}=\Lambda_{l}\phi_{l}$ e usando
 \begin{eqnarray}
 \mathcal{W}\phi(x)=-\frac{\partial}{\partial x}\left[ f(x)\phi(x) \right]+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\phi(x)
 \end{eqnarray}
-e $\mathcal{W}P(x)=0$, obtemos:
+e $\mathcal{W}P(x)=0$, obtemos
 \begin{eqnarray}
 -Pf\frac{\partial}{\partial x}\chi_{l}+\frac{\Gamma}{2}P\frac{\partial^{2}}{\partial x^{2}}\chi_{l}+\Gamma\frac{\partial P}{\partial x}\frac{\partial \chi_{l}}{\partial x}=\Gamma \Lambda_{l}P\chi_{l}.
 \end{eqnarray}
@@ -1188,7 +1179,7 @@ Por meio da relação
 \begin{eqnarray}
 f(x)P(x)-\frac{\Gamma}{2}\frac{d}{dx}P(x)=0
 \end{eqnarray}
-chegamos à equação de autovalores para o operador adjunto $\mathcal{W}^{\dagger}$:
+chegamos à equação de autovalores para o operador adjunto $\mathcal{W}^{\dagger}$
 \begin{eqnarray}
 f\frac{\partial}{\partial x}\chi_{l}+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}\chi_{l}=\Lambda_{l}\chi_{l}
 \end{eqnarray}
@@ -1196,7 +1187,7 @@ f\frac{\partial}{\partial x}\chi_{l}+\frac{\Gamma}{2}\frac{\partial^{2}}{\partia
 
 ${ }$
 
-Uma vez que, em geral, o operador $\mathcal{W}$ não é hermitiano, seria interessante poder fazer uma transformação sobre $\mathcal{W}$ de modo a obter um operador que o seja. Denotamos tal operador por $\mathcal{K}$ e o definimos como:
+Uma vez que, em geral, o operador $\mathcal{W}$ não é hermitiano, seria interessante poder fazer uma transformação sobre $\mathcal{W}$ de modo a obter um operador que o seja. Denotamos tal operador por $\mathcal{K}$ e o definimos como
 \begin{eqnarray}
 \mathcal{K}\phi(x)=[\psi_{0}(x)]^{-1}\mathcal{W}[\psi_{0}(x)\phi(x)],
 \end{eqnarray}
@@ -1208,7 +1199,7 @@ pois temos
 \begin{eqnarray}
 \mathcal{K}\psi_{l}=\psi_{0}^{-1}\mathcal{W}\phi_{l}=\phi_{0}^{-1}\Lambda_{l}\phi_{l}=\Lambda_{l}\phi_{l},
 \end{eqnarray}
-em que observamos que de fato os autovalores são os mesmos. A forma explícita de $\mathcal{K}$ obtemos aplicando-o numa função qualquer $\phi(x)$ com o auxílio da definição de $\mathcal{W}$:
+em que observamos que de fato os autovalores são os mesmos. A forma explícita de $\mathcal{K}$ obtemos aplicando-o numa função qualquer $\phi(x)$ com o auxílio da definição de $\mathcal{W}$
 \begin{eqnarray}
 \mathcal{K} \psi = \psi_{0}^{-1}\mathcal{W}(\psi_{0}\psi)=\psi_{0}^{-1}\left\{ - \frac{\partial}{\partial x}(f \psi_{0}\psi )+\frac{\Gamma}{2}\frac{\partial^{2}}{\partial x^{2}}(\psi_{0}\psi) \right\},
 \end{eqnarray}
@@ -1224,7 +1215,7 @@ nos permite obter
 
 ${ }$
 
-Neste capítulo estenderemos o caso anteriomente tratado da equação de Fokker-Planck para uma dimensão para o caso de mais de uma variável. Para isto, suponha que possamos descrever um sistema por um conjunto de $N$ variáveis $x_{1},x_{2},...,x_{N}$. A equação do movimento para este sistema é dada pelo conjunto de equações
+Nessa seção estenderemos o caso anteriomente tratado da equação de Fokker-Planck para uma dimensão para o caso de mais de uma variável. Para isso, suponha que possamos descrever um sistema por um conjunto de $N$ variáveis $x_{1},x_{2},...,x_{N}$. A equação do movimento para esse sistema é dada pelo conjunto de equações
 \begin{eqnarray}
 \label{8}
 \frac{dx_{i}}{dt}=f_{i}(x_{1},x_{2},...,x_{N})+\zeta_{i}(t),
@@ -1237,60 +1228,61 @@ e
 \begin{eqnarray}
 \langle \zeta_{i}(t)\zeta_{j}(t') \rangle = \Gamma_{ij}(t-t')
 \end{eqnarray}
-onde $\Gamma_{ij}$ são constantes. A equação da evolução temporal da distribuição de probabilidades para múltiplas variáveis é obtida de modo semelhante à do caso de uma variável. A equação que se obtém é denominada equação de Fokker-Planck em muitas variáveis:
+em que $\Gamma_{ij}$ são constantes. A equação da evolução temporal da distribuição de probabilidades para múltiplas variáveis é obtida de modo semelhante à do caso de uma variável. A equação que se obtém é denominada equação de Fokker-Planck em muitas variáveis
 \begin{eqnarray}
 \frac{\partial}{\partial t}P=\sum\limits_{i=1}^{N}{\frac{\partial}{\partial x_{i}}(f_{i}P)}+\frac{1}{2}\sum\limits_{i=1}^{N}{\sum\limits_{j=1}^{N}{\Gamma_{ij}\frac{\partial^{2}}{\partial x_{i}\partial x_{j}}}}P.
+\label{eqFokkerPlanck}
 \end{eqnarray}
-Se considerarmos o caso duma partícula se movendo ao longo do eixo x, que realiza movimento browniano e esteja sujeita à uma força externa $F_{e}(x)$ e uma força viscosa, descrito por:
+Se considerarmos o caso duma partícula se movendo ao longo do eixo $x$, que realiza movimento browniano e esteja sujeita à uma força externa $F_{e}(x)$ e uma força viscosa, descrito por
 \begin{eqnarray}
 m\frac{dv}{dt}=-\alpha v+F_{e}(x)+F(t)
 \end{eqnarray}
-e tal que $\langle F(t) \rangle = 0$, $\langle F(t)F(t') \rangle =B\delta(t-t')$ e $dx/dt=v$, podemos obter após cálculos de rotina uma equação na forma da Eq.(\ref{8}):
+e tal que $\langle F(t) \rangle = 0$, $\langle F(t)F(t') \rangle =B\delta(t-t')$ e $dx/dt=v$, podemos obter uma equação na forma da equação \ref{eqFokkerPlanck}:
 \begin{eqnarray}
 \frac{\partial}{\partial t} P =-v \frac{\partial}{\partial x}P-\frac{1}{m}F_{e}(x)\frac{\partial}{\partial v}P+\frac{\alpha}{m}\frac{\partial}{\partial v}(vP)+\frac{\Gamma}{2}\frac{\partial ^{2}}{\partial v^{2}}P,
 \end{eqnarray}
-que é denominada equação de Kramers. Podemos também escrever a equação de Fokker-Planck na forma de uma equação de continuidade:
+que é denominada equação de Kramers. Podemos escrever também a equação de Fokker-Planck na forma de uma equação de continuidade
 \begin{eqnarray}
 \frac{\partial}{\partial t}P=-\sum\limits_{i=1}^{N}{\frac{\partial}{\partial x_{i}}J_{i}},
 \end{eqnarray}
-em que $J_{i}$ é a i-ésima componente da corrente de probabilidade, dada por:
+em que $J_{i}$ é a $i$-ésima componente da corrente de probabilidade, dada por
 \begin{eqnarray}
 J_{i}=f_{i}P-\frac{1}{2}\sum\limits_{j=1}^{N}{\Gamma_{ij}\frac{\partial}{\partial x_{j}}P}.
 \end{eqnarray}
-As soluções da equação de Fokker-Planck dependerão das condições de contorno dadas. No caso seguinte, consideraremos somente aquelas condições tais que a corrente de probabilidade normal à superfície se anule e o contorno se situe no infinito. No regime estacionário a densidade de probabilidade independe do tempo e satisfaz:
+As soluções da equação de Fokker-Planck dependerão das condições de contorno dadas. No caso seguinte, consideraremos somente aquelas condições tais que a corrente de probabilidade normal à superfície se anule e o contorno se situe no infinito. No regime estacionário a densidade de probabilidade independe do tempo e satisfaz
 \begin{eqnarray}
--\sum\limits_{i=1}^{N}{\frac{\partial}{\partial x_{i}}(f_{i}P)}+\frac{1}{2}\sum\limits_{i=1}^{N}{\sum\limits_{j=1}^{N}{\Gamma_{ij}\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}P}}=0
+-\sum\limits_{i=1}^{N}{\frac{\partial}{\partial x_{i}}(f_{i}P)}+\frac{1}{2}\sum\limits_{i=1}^{N}{\sum\limits_{j=1}^{N}{\Gamma_{ij}\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}P}}=0.
 \end{eqnarray}
-Escrevendo na forma de equação de continuidade, temos:
+Escrevendo na forma de equação de continuidade, temos
 \begin{eqnarray}
 \sum\limits_{i=1}^{N}{\frac{\partial}{\partial x_{j}}J_{i}}=0.
 \end{eqnarray}
-No presente caso, diferentemente do que tínhamos quando era apenas uma a variável, a corrente de probabilidade estacionária não é necessariamente constante. Temos que analisar as condições que tanto $f_{i}$ quanto $\Gamma_{ij}$ precisam satisfazer de modo que, no regime estacionário, a corrente se anule em todos os pontos. Nesta situação temos equilíbrio termodinâmico. Se $J_{i}=0$ no regime estacionário, então
+No presente caso, diferentemente do que tínhamos quando era apenas uma a variável, a corrente de probabilidade estacionária não é necessariamente constante. Temos que analisar as condições que tanto $f_{i}$ quanto $\Gamma_{ij}$ precisam satisfazer de modo que, no regime estacionário, a corrente se anule em todos os pontos. Nessa situação temos equilíbrio termodinâmico. Se $J_{i}=0$ no regime estacionário, então
 \begin{eqnarray}
 f_{i}=\frac{1}{2}\sum\limits_{j=1}^{N}{\Gamma_{ij}\frac{\partial}{\partial x_{j}}\ln{P}}.
 \end{eqnarray}
-Definimos então a matriz quadrada $G$ cujos elementos são $\Gamma_{ij}$ e construímos a grandeza $F_{i}$ dada por:
+Definimos a matriz quadrada $G$ cujos elementos são $\Gamma_{ij}$ e construímos a grandeza $F_{i}$ dada por
 \begin{eqnarray}
 F_{i}=2\sum\limits_{k=1}^{N}{(G^{-1})_{ik}f_{k}},
 \end{eqnarray}
-sendo $(G_{-1})_{ij}$ os elemtnos da matriz inversa de $G$. Assim, podemos
-escrever:
+sendo $(G^{-1})_{ij}$ os elementos da matriz inversa de $G$. Assim, podemos
+escrever
 \begin{eqnarray}
-F_{i}=\frac{\partial}{\partial x_{i}}\ln{P}
+F_{i}=\frac{\partial}{\partial x_{i}}\ln{P}.
 \end{eqnarray}
-Dessa equação resulta a condição procurada:
+Dessa equação resulta a condição procurada
 \begin{eqnarray}
-\frac{\partial}{\partial x_{j}}F_{i}=\frac{\partial}{\partial x_{i}}F_{j}
-\end{eqnarray},
-que deve ser satisfeita para todos os pares $i,j$. Sistemas que não obecedem a essa condição são chamados irreversíveis. Sendo satisfeita a condição, então $F_{i}$ deve ser o gradiente de um potencial $\Phi(x_{1},x_{2},...,x_{N})$. Assim:
+\frac{\partial}{\partial x_{j}}F_{i}=\frac{\partial}{\partial x_{i}}F_{j},
+\end{eqnarray}
+que deve ser satisfeita para todos os pares $i,j$. Sistemas que não obecedem a essa condição são chamados irreversíveis. Sendo satisfeita a condição, então $F_{i}$ deve ser o gradiente de um potencial $\Phi(x_{1},x_{2},...,x_{N})$, ou seja,
 \begin{eqnarray}
 F_{i}=-\frac{\partial}{\partial x_{i}}\Phi.
 \end{eqnarray}
-Determinando $\Phi$, escrevemos:
+Determinando $\Phi$, escrevemos
 \begin{eqnarray}
-\ln{P}=-\Phi+constante.
+\ln{P}=-\Phi+constante,
 \end{eqnarray}
-Tomando a exponencial da equação anterior:
+tomando a exponencial da equação anterior, temos
 \begin{eqnarray}
 P=A\exp{(-\Phi)},
 \end{eqnarray}
@@ -1300,21 +1292,21 @@ em que $A$ é uma constante de normalização.
 
 ${ }$
 
-Apesar de muito menos conhecido, o cálculo fracionário é tão antigo quanto o próprio cálculo diferencial e integral usual. Poderíamos enxergá-lo como uma extensão do cálculo de ordem inteira, sendo este uma parte daquele. Uma característica marcante do cálculo fracionário é que tanto as derivadas quanto as integrais de ordem fracionária relacionam-se não somente com pontos específicos, mas adquire um comportamento não-local. O nascimento do cálculo fracionário nos remete ao século XVII, quando numa carta a Leibnitz, L'Hospital o indagou quanto à notação que havia usado para a n-ésima derivada de uma função:
+Apesar de muito menos conhecido, o cálculo fracionário é tão antigo quanto o próprio cálculo diferencial e integral usual. Poderíamos enxergá-lo como uma extensão do cálculo de ordem inteira, sendo este uma parte daquele. Uma característica marcante do cálculo fracionário é que tanto as derivadas quanto as integrais de ordem fracionária relacionam-se não somente com pontos específicos, mas adquirem um comportamento não-local. O nascimento do cálculo fracionário nos remete ao século XVII, quando numa carta a Leibnitz, L'Hospital o indagou quanto à notação que havia usado para a n-ésima derivada de uma função,
 \begin{eqnarray}
-\frac{D^{n}f(x)}{Dx^{n}}
+\frac{D^{n}f(x)}{Dx^{n}},
 \end{eqnarray}
 caso $n=1/2$. Uma solução satisfatória para a questão só seria dada anos depois. O Cálculo Fracionário deve ser entendido como uma generalização do cálculo de ordem inteira, de forma semelhante ao que ocorre entre o fatorial
 \begin{eqnarray}
 \label{9}
-n!=1.2.3...(n-1)n
+n!=1.2.3...(n-1)n,
 \end{eqnarray}
-onde $n$ é um inteiro e sua versão definida pela função Gama:
+em que $n$ é um inteiro, e sua versão definida pela função Gama
 \begin{eqnarray}
 \label{101}
 n!=\Gamma(n+1),
 \end{eqnarray}
-em que $n$ é um real qualquer. A Eq.(\ref{101}) é nada mais do que uma extensão da Eq.(\ref{9}). Mesmo que nos pareça difícil de visualizar quanto vale, por exemplo, $\pi ! $, o resultado existe e de forma semelhante ocorre com o Cálculo Fracionário quando comparado com o cálculo de ordem inteira.
+em que $n$ é um real qualquer. A equação \ref{101} é nada mais do que uma extensão da equação \ref{9}. Mesmo que nos pareça difícil de visualizar quanto vale, por exemplo, $\pi ! $, o resultado existe e de forma semelhante ocorre com o Cálculo Fracionário quando comparado com o cálculo de ordem inteira.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% SECAO  ADAPTADA DA DISSERTACAO DE ALEXANDRE SCHOT %%
@@ -1324,13 +1316,13 @@ em que $n$ é um real qualquer. A Eq.(\ref{101}) é nada mais do que uma extensão 
 
 ${ }$
 
-Neste cap\'{\i}tulo, vamos abordar algumas equa\c{c}\~oes de difus\~ao que envolvem derivadas fracion\'arias na
+Nessa seção, vamos abordar algumas equa\c{c}\~oes de difus\~ao que envolvem derivadas fracion\'arias na
 vari\'avel temporal ou na vari\'avel espacial, usualmente empregadas na descri\c{c}\~ao de processos difusivos
 an\^omalos. Como ve\-re\-mos, a aplicação de derivadas fracion\'arias na vari\'avel temporal nos leva a uma
-difus\~ao an\^omala com o segundo momento finito, i.e., $\langle
+difus\~ao an\^omala com o segundo momento finito, ou seja, $\langle
  x^{2}\rangle\propto t^{\alpha}$, em contraste com a derivada
 fracion\'aria aplicada na vari\'avel espacial, que resulta em uma difus\~ao an\^omala cujo segundo momento n\~ao
-\'e finito. Neste contexto, usaremos o formalismo de caminhantes aleat\'orios
+\'e finito. Nesse contexto, usaremos o formalismo de caminhantes aleat\'orios
 para explorar as implica\c{c}\~oes obtidas pelo uso de derivadas fracion\'arias na equa\c{c}\~ao de difus\~ao.
 
 \section{Derivadas fracionárias aplicadas à variável temporal}
@@ -1338,17 +1330,17 @@ para explorar as implica\c{c}\~oes obtidas pelo uso de derivadas fracion\'arias 
 ${ }$
 
 Come\c{c}aremos nosso estudo considerando a seguinte
-equa\c{c}\~ao fracion\'aria de Fokker-Planck:
+equa\c{c}\~ao fracion\'aria de Fokker-Planck
 \begin{eqnarray}
 \frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)={\cal{D}}\frac{\partial^2 }{\partial x^2}\rho(x,t)
  - \frac{\partial} {\partial x} \left [ F(x,t) \rho(x,t)
-\right]\;\;, \label{eq2.1}
+\right]\;\; \label{eq2.1}
 \end{eqnarray}
-onde o operador $\partial^{\gamma}/\partial t^{\gamma}$ representa o operador de derivada fracionária de Caputo,
-aplicado neste caso à variável temporal. Este operador é definido como
+na qual $\partial^{\gamma}/\partial t^{\gamma}$ representa o operador de derivada fracionária de Caputo,
+aplicado neste caso à variável temporal. Esse operador é definido como
 \begin{eqnarray}
 \frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)= \frac{1}{\Gamma \left(n-\gamma\right)}\int_{0}^{t} dt'
-\frac{\rho^{(n)}(x,t')}{(t-t')^{\gamma +1-n}}\;\;,\label{eq2.2}
+\frac{\rho^{(n)}(x,t')}{(t-t')^{\gamma +1-n}}\;\;\label{eq2.2}
 \end{eqnarray}
 com $n-1 <\gamma< n$ e $\rho^{(n)}(x,t)$ é a n-ésima derivada de $\rho(x,t)$ em relação ao tempo. Temos ainda a
 presença do termo de força externa $F(x,t)$ e do coeficiente de difusão $\cal{D}$, que inicialmente consideraremos
@@ -1356,35 +1348,35 @@ constante. Mais adiante veremos situações nas quais $\cal{D}$ poder\'a apresenta
 e\-xem\-plo, com o espaço e com o tempo. Ainda com relação à equação (\ref{eq2.1}), vale comentar que ela
 generaliza a equação usual de difusão, conforme vimos acima, mediante a presença do operador fracionário atuando
 na variável temporal, e que para $\gamma=1$ recuperamos a equação usual de difusão. Com o intuito de mostrar que a
-distribuição $\rho(x,t)$ na Eq.(\ref{eq2.1}) é normalizável, vamos reescrevê-la na forma
+distribuição $\rho(x,t)$ na equação \ref{eq2.1} é normalizável, vamos reescrevê-la na forma
 
 \begin{eqnarray}
-\frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)-\frac{\partial}{\partial x}{\cal{J}}(x,t)= 0 \;\;,\label{eq2.3}
+\frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)-\frac{\partial}{\partial x}{\cal{J}}(x,t)= 0 \;\;\label{eq2.3}
 \end{eqnarray}
 ou seja, na forma de uma equação de continuidade, com
 \begin{eqnarray}
-{\cal{J}}(x,t)={\cal{D}}\frac{\partial}{\partial x}\rho(x,t)-F(x,t)\rho(x,t)\;\;.\label{eq2.4}
+{\cal{J}}(x,t)={\cal{D}}\frac{\partial}{\partial x}\rho(x,t)-F(x,t)\rho(x,t)\;\;\label{eq2.4}
 \end{eqnarray}
-A normalização é verificada quando integramos a Eq.(\ref{eq2.3}) sobre todo o espaço e consideramos que
-${\cal{J}}(x=\pm\infty,t)=0$, pois estamos admitindo que $\rho(x=\pm\infty,t)=0$. Assim, esta importante
+A normalização é verificada quando integramos a equação \ref{eq2.3} sobre todo o espaço e consideramos que
+${\cal{J}}(x=\pm\infty,t)=0$, pois estamos admitindo que $\rho(x=\pm\infty,t)=0$. Assim, essa importante
 propriedade das densidades de probabilidades continua válida mesmo com a presença do operador de derivada
 fracionária do tipo Caputo.
 
-Voltando à análise das solu\c{c}\~oes da Eq.(\ref{eq2.1}) faremos desenvolvimentos para esta equação considerando
+Voltando à análise das solu\c{c}\~oes da equação \ref{eq2.1}, faremos desenvolvimentos para essa equação considerando
 diferentes situações para o coeficiente de difusão $\cal{D}$, para a força externa $F(x,t)$ e para as condições de
 contorno. Inicialmente, consideraremos uma situação caracterizada pela ausência de força externa, com $\cal{D}$
 constante e a condição inicial $\rho(x,0)=\tilde{\rho}(x)$. Como condição de contorno vamos tomar inicialmente
-$\rho(x=\pm\infty,t)=0$. Devido a estas considerações, a equação a ser resolvida é
+$\rho(x=\pm\infty,t)=0$. Devido a essas considerações, a equação a ser resolvida é
 \begin{eqnarray}
 \frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)={\cal{D}}\frac{\partial^{2}}{\partial
-x^{2}}\rho(x,t)\;\;,\label{eq2.5}
+x^{2}}\rho(x,t)\;\;\label{eq2.5}
 \end{eqnarray}
 sujeita às já referidas condições de contorno e inicial. Tal situação é melhor trabalhada se fizermos uso de
-transformadas integrais. Realmente, empregando as transformadas de Fourier e Laplace na Eq.(\ref{eq2.5}), obtemos
+transformadas integrais. Realmente, empregando as transformadas de Fourier e Laplace na equação \ref{eq2.5}, obtemos
 \begin{eqnarray}
-\rho(k,s) = \frac{\rho(k,0)}{s+ {\cal{D}}s^{1-\gamma}k^2}\;\;,\label{eq2.6}
+\rho(k,s) = \frac{\rho(k,0)}{s+ {\cal{D}}s^{1-\gamma}k^2}\;\;\label{eq2.6}
 \end{eqnarray}
-com $0<\gamma<1$, onde empregamos o resultado
+com $0<\gamma<1$, na qual empregamos o resultado
 \begin{eqnarray}
 {\cal{L}}\left\{\frac{\partial^{\gamma}}{\partial
 t^{\gamma}}\rho(x,t)\right\}=s^{\gamma}\rho(x,s)+\sum_{i=0}^{i-1} s^{\gamma-i-1}
@@ -1394,17 +1386,17 @@ que é válido para $n-1<\gamma<n$. Agora, para obtermos a solução desejada temos 
 transformadas. Realizando inicialmente a inversão da transformada de Fourier e levando em conta o teorema de
 convolução obtemos
 \begin{eqnarray}
-\hat{\rho}(x,s)=\int_{-\infty}^{\infty}dx' \tilde{\rho}(x-x'){\cal{G}}(x',s)\;\;\label{eq2.8}
+\hat{\rho}(x,s)=\int_{-\infty}^{\infty}dx' \tilde{\rho}(x-x'){\cal{G}}(x',s),\;\;\label{eq2.8}
 \end{eqnarray}
-onde
+com
 \begin{eqnarray}
 {\cal{G}}(x,s)= \frac{1}{2s} \left(\frac{s^{\gamma}}{{\cal{D}}}\right)^{\frac{1}{2}} \exp
-\left[-\left(\frac{s^{\gamma}}{{\cal{D}}}\right)^{\frac{1}{2}}|x| \right ] \;\;. \label{eq2.9}
+\left[-\left(\frac{s^{\gamma}}{{\cal{D}}}\right)^{\frac{1}{2}}|x| \right ] \;\; \label{eq2.9}
 \end{eqnarray}
-Em particular, observando a Eq.(\ref{eq2.8}) vemos que ${\cal{G}}(x,s)$ é a função de Green associada à condição
+Em particular, observando a equação \ref{eq2.8} vemos que ${\cal{G}}(x,s)$ é a função de Green associada à condição
 inicial considerada. Por sua vez, para invertermos a transformada de Laplace faremos uso do seguinte procedimento:
-relacionaremos a transformada de Laplace com a transformada de Mellin, inverteremos esta transformada (Mellin)
-mediante a identificação do integrando da operação inversa desta transformada com o integrando das funções
+relacionaremos a transformada de Laplace com a transformada de Mellin, inverteremos essa transformada (Mellin)
+mediante a identificação do integrando da operação inversa dessa transformada com o integrando das funções
 ${\mbox{H}}$ de Fox, obtendo então $\rho(x,t)$. Observamos que as funções de Fox são definidas como \cite{Fox1}
 \begin{eqnarray}
 & &\left.{\mbox {\large{H}}}_{p \; q}^{m \; n} \left[ x
@@ -1417,8 +1409,7 @@ i}\int_L ds \;\chi(s) x^s \nonumber \\
 {\prod_{i=m+1}^{q} \Gamma\left(1- b_i + B_i s\right)\prod_{i=1+n}^{p} \Gamma\left(a_i-A_i s \right)} \;\;
 .\label{eq2.10}
 \end{eqnarray}
-
-Assim, aplicando o procedimento discutido acima, após alguns cálculos é possível mostrar que as transformadas de
+Assim, aplicando o procedimento discutido acima, é possível mostrar que as transformadas de
 Laplace e de Mellin estão relacionadas uma com a outra por meio de
 \begin{eqnarray}
 \rho(x,s')=\frac{1}{\Gamma\left(1-s'\right)} \int_{0}^{\infty}ds \; s^{-s'}\rho(x,s) \;,\label{eq2.11}
@@ -1429,15 +1420,13 @@ Laplace. Lembrando que a transformada de Mellin é definida como
 \rho(x,s')= \int_{0}^{\infty}dt \; t^{s'-1}\rho(x,t)\;\;\;\;\left(\rho(x,t)=\frac{1}{2\pi
 i}\int_L\rho(x,s')t^{-s'}ds'\right)\;.\label{eq2.12}
 \end{eqnarray}
-Assim, utilizando a relação (\ref{eq2.11}) na Eq.(\ref{eq2.9}), obtemos
+Assim, utilizando a relação (\ref{eq2.11}) na equação \ref{eq2.9}, obtemos
 \begin{eqnarray}
 {\cal{G}}(x,s')= \frac{1}{\gamma |x|}
 \left(\frac{|x|}{\sqrt{{\cal{D}}}}\right)^{\frac{2}{\gamma}s'}
 \frac{\Gamma\left(1-\frac{2}{\gamma}s'\right)}{\Gamma\left(1-s'\right)}\;\;.
 \label{eq2.13}
 \end{eqnarray}
-
-
 A partir de (\ref{eq2.13}), após a inversão da transformada de Mellin, obtemos
 \begin{eqnarray}
 {\cal{G}}(x,t)= \frac{1}{\sqrt{4\pi {\cal{D}} t^{\gamma}}} {\mbox
@@ -1447,27 +1436,13 @@ A partir de (\ref{eq2.13}), após a inversão da transformada de Mellin, obtemos
 \left(1-\frac{\gamma}{2},\gamma \right)} \right.\right] \;\; .
 \label{eq2.14}
 \end{eqnarray}
-Este resultado é obtido mediante a comparação direta entre a integral
-de inversão de Mellin.
-%(veja Fig.(\ref{figure1cap2}) e Fig.(2.2)) Este resultado é obtido mediante a %comparação direta entre a integral
-%de inversão de Mellin
-
-\begin{figure}[!b]
-\label{figure1cap2} \centering \DeclareGraphicsRule{ps}{eps}{}{*}
-\includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cm]{pictures/figure1cap2.ps}
-\caption{{\it Comportamento de $(4\pi {\cal{D}} t^{\gamma})^{1/2}{\cal{G}}(x,t)$ vs. $x/(4{\cal{D}}t^{\gamma})$,
-ilustra a Eq.(\ref{eq2.14}) para valores t\'{\i}picos de $\gamma$.}}
-\end{figure}
-
+Esse resultado é obtido mediante a comparação direta entre a integral
+de inversão de Mellin
 \begin{eqnarray}
-{\cal{G}}(x,t)=\frac{1}{2\pi i}\int_{L}{\cal{G}}(x,s')t^{-s'}ds'\label{eq2.15}
+{\cal{G}}(x,t)=\frac{1}{2\pi i}\int_{L}{\cal{G}}(x,s')t^{-s'}ds'\label{eq2.15},
 \end{eqnarray}
 e a forma integral das funções $\mbox{H}$ de Fox anteriormente representadas pela relação (\ref{eq2.10}). Com base
 nesses resultados, concluímos que nossa solução é
-\begin{figure} \label{figure2cap2} \centering \DeclareGraphicsRule{ps}{eps}{}{*}
-\includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cmm]{pictures/figure2cap2.ps}
-\caption{{\it Comportamento da Eq.(\ref{eq2.14}) para grandes argumentos.}}
-\end{figure}
 
 \begin{eqnarray}
 \rho(x,t)= \frac{1}{\sqrt{4\pi {\cal{D}} t^{\gamma}}}
@@ -1478,7 +1453,14 @@ H}}}_{1 \; 2}^{2 \; 0} \left
 \left(1-\frac{\gamma}{2},\gamma \right)}
 \right.\right]  \;. \label{eq2.16}% \right.
 \end{eqnarray}
+A figura \ref{figure1cap2} ilustra o comportamento da equação \ref{eq2.14} para alguns valores de $\lambda$, evidenciando o comportamento não gaussiano de ${\cal{G}}(x,t)$ para $\lambda \neq 1$.
 
+\begin{figure}[h]
+\centering \DeclareGraphicsRule{ps}{eps}{}{*}
+\includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cm]{pictures/figure1cap2.ps}
+\caption{{\it Comportamento de $(4\pi {\cal{D}} t^{\gamma})^{1/2}{\cal{G}}(x,t)$ vs. $x/(4{\cal{D}}t^{\gamma})\label{figure1cap2}$,
+para a equação \ref{eq2.14} para alguns valores t\'{\i}picos de $\gamma$ indicados no gráfico.}}
+\end{figure}}
 
 Vamos agora considerar situações nas quais há a presença de barreiras absorventes e refletoras no sistema. Para
 estes casos a aplicação de transformadas integrais não é, ao contrário do caso anterior, apropriada. De fato, a
@@ -1495,8 +1477,8 @@ com
 \begin{eqnarray}
 {\cal{B}}_{n}(t)=\frac{2}{L}\int_{0}^{L}dx\; sen\left(\frac{n\pi}{L}x\right)\rho(x,t)\;\label{eq2.18}
 \end{eqnarray}
-é apropriada para o tratamento deste caso, pois satisfaz a condição de contorno. Substituindo a Eq.(\ref{eq2.17})
-na Eq.(\ref{eq2.5}), multiplicando ambos os lados por $sen(nx\pi/L)$, integrando desde $0$ a $L$ e identificando
+é apropriada para o tratamento desse caso, pois satisfaz a condição de contorno. Substituindo a equação \ref{eq2.17}
+na equação \ref{eq2.5}, multiplicando ambos os lados por $sen(nx\pi/L)$, integrando desde $0$ a $L$ e identificando
 ${\cal{B}}_{n}(t)$, obtemos
 \begin{eqnarray}
 \frac{d^{\gamma}}{dt^{\gamma}}{\cal{B}}_{n}(t)=-\frac{n^2\pi^2}{L^2}{\cal{D}}{\cal{B}}_{n}(t)\;.\label{eq2.19}
@@ -1513,7 +1495,7 @@ s^{1-\alpha}}\right\}\nonumber \\ &=&%\;.\label{eq2.20}
 %{\mbox{E}}_{\alpha}=
 \sum_{n=0}^{\infty}\frac{\left(-t^{\alpha}\right)^n}{\Gamma\left(1+n\alpha\right)}\;.\label{eq2.20}
 \end{eqnarray}
-Ent\~ao, ap\'os alguns c\'alculos podemos mostrar que
+Ent\~ao, podemos mostrar que
 \begin{eqnarray}
 {\cal{B}}_{n}(t)={\cal{B}}_{n}(0){\mbox{E}}_{\gamma}\left(-\frac{n^2\pi^2}{L^2}
 {\cal{D}}{t}^{\gamma}\right)\;.\label{eq2.21}
@@ -1521,7 +1503,7 @@ Ent\~ao, ap\'os alguns c\'alculos podemos mostrar que
 Agora, considerando uma condição inicial do tipo $\rho(x,0)=\tilde{\rho}(x)$ e utilizando o resultado acima em
 (\ref{eq2.17}) temos
 \begin{eqnarray}
-\rho(x,t)&=&\int_{0}^{L}dx'\;{\cal{G}}(x,x',t) \tilde{\rho}(x')\nonumber
+\rho(x,t)&=&\int_{0}^{L}dx'\;{\cal{G}}(x,x',t) \tilde{\rho}(x')\nonumber,
 \end{eqnarray}
 com
 \begin{eqnarray}
@@ -1529,18 +1511,18 @@ com
 sen\left(\frac{n\pi}{L}x'\right)sen\left(\frac{n\pi}{L}x\right){\mbox{E}}_{\gamma} \left(-\frac{n^2\pi^2}{L^2}
 {\cal{D}}{t}^{\gamma}\right) \;.\label{eq2.22}
 \end{eqnarray}
-Por outro lado, para o caso de barreiras refletoras, onde no contorno devemos ter $\partial_x
+Por outro lado, para o caso de barreiras refletoras, em cujo contorno devemos ter $\partial_x
 \rho|_{x=0}=\partial_x \rho|_{x=L}=0$, consideramos que a solução possa ser expressa em termos de uma série em
 cossenos de Fourier. Assim, aplicando o pro\-ce\-di\-men\-to do caso anterior, obtemos
 \begin{eqnarray}
-\rho(x,t)=\frac{1}{L}\int_{0}^{L}dx'\tilde{\rho}(x')+\int_{0}^{L}dx'{\cal{G}}(x,x',t)\tilde{\rho}(x')\nonumber
+\rho(x,t)=\frac{1}{L}\int_{0}^{L}dx'\tilde{\rho}(x')+\int_{0}^{L}dx'{\cal{G}}(x,x',t)\tilde{\rho}(x')\nonumber,
 \end{eqnarray}
 com
 \begin{eqnarray}
 {\cal{G}}(x,x')=\frac{2}{L}\sum_{n=1}^{\infty}cos\left(\frac{n\pi}{L}x'\right)cos\left(\frac{n\pi}{L}x\right)
 {\mbox{E}}_{\gamma}\left(-\frac{n^2\pi^2}{L^2}{\cal{D}}t^{\gamma}\right)\;.\label{eq2.23}
 \end{eqnarray}
-Neste ponto, é interessante observar que para esta situação podemos obter uma solução estacionária. De fato, considerando
+Nesse ponto, é interessante observar que para essa situação podemos obter uma solução estacionária. De fato, considerando
 $t\rightarrow \infty$ na solução acima chegamos em
 $$\rho(x,t\rightarrow \infty)\sim \frac{1}{L}\int_0^Ldx'\tilde{\rho}(x')\;,$$
 pois ${\mbox{E}}_{\gamma}(-n^2\pi^2{\cal{D}}t^{\gamma}/L^2)\rightarrow 0$ quando $t\rightarrow \infty$ . Isto se
@@ -1551,30 +1533,29 @@ estão relacionadas. Esta função é definida como
 \begin{eqnarray}
 \left<x(t)x(0)\right>_{s}=\int_0^Ldx\int_0^Ldx'xx'\rho(x,t)\rho_s(x)\;,\label{eq2.24}
 \end{eqnarray}
-onde $\rho_s(x)$ é a solução para o regime estacionário. Considerando, por simplicidade, $\rho(x,0)=\delta(x-x')$
+em que $\rho_s(x)$ é a solução para o regime estacionário. Considerando, por simplicidade, $\rho(x,0)=\delta(x-x')$
 como nossa condição inicial, obtemos $\rho_s(x)=1/L$.  Com este resultado e a solução (\ref{eq2.23}) encontramos,
-após alguns cálculos,
 \begin{eqnarray}
 \left<x(t)x(0)\right>_s=\frac{L^2}{4}+\frac{8L^4}{\pi^4}\sum_{n=0}^{\infty}\frac{1}{(2n+1)^4}{\mbox{E}}_{\gamma}\left[-\frac{(2n+1)^2}
 {L^2}{\cal{D}}t^{\gamma}\right]\;.\label{eq2.25}
 \end{eqnarray}
 Se tomarmos o limite de tempos longos na equação acima verificaremos que $\langle x(t)x(0) \rangle \sim L^2/4$.
-Este resultado foi obtido em \cite{GARDINER} para a equação de difusão usual, indicando que a derivada fracionária
+Esse resultado foi obtido em \cite{GARDINER} para a equação de difusão usual, indicando que a derivada fracionária
 somente fará com que o sistema relaxe de forma anômala até a situação de equilíbrio.
 
-Voltemos nossa atenção agora para a forma do segundo momento obtido para a Eq.(\ref{eq2.5}), a partir da qual
+Voltemos nossa atenção agora para a forma do segundo momento obtido para a equação \ref{eq2.5}, a partir da qual
 discutimos os três casos precedentes. O segundo momento rotula um
 processo difusivo como anômalo ou usual. Para a situação que aqui está em con\-si\-de\-ra\-ção, ou seja, aquela na
 qual há a  presença de derivadas não inteiras na variável temporal de uma equação de difusão, o segundo momento se
 mostra na forma de uma potência de $t$, ou seja, $\left<x^2\right>\propto t^{\gamma}$. Além disso, é marcante a
-forma com que a presença do operador de Caputo altera a distribuição de tempo de espera $\omega(t)$. Neste
-sentido, utilizando os conceitos de caminhantes aleatórios anteriormente discutidos, chegamos em uma distribuição
+forma com que a presença do operador de Caputo altera a distribuição de tempo de espera $\omega(t)$. Nesse
+sentido, utilizando os conceitos de caminhantes aleatórios, chegamos em uma distribuição
 de probabilidades para a parte temporal da forma
 \begin{eqnarray}
 w(t)=\frac{1}{\tau_{0}}\left(\frac{t}{\tau_{0}}\right)^{\gamma-1}{\mbox
 {E}}_{\gamma,\gamma}\left(-\frac{t^{\gamma}}{\tau_{0}^{\gamma}}\right)\;,\label{eq2.26}
 \end{eqnarray}
-onde $\tau_{0}$ \'e uma constante e ${\mbox {E}}_{\alpha,\beta}(t)$
+na qual $\tau_{0}$ \'e uma constante e ${\mbox {E}}_{\alpha,\beta}(t)$
 \'e a fun\c{c}\~ao de Mittag-Leffter generalizada
 \begin{eqnarray}
 {\mbox {E}}_{\alpha,\beta}(t)=\sum_{n=0}^{\infty}\frac{x^n}{\Gamma\left(n\alpha+\beta\right)}\;.\label{eq2.27}
@@ -1583,21 +1564,21 @@ Vemos que agora a distribuição apresenta uma dependência com o parâmetro $\gamma
 processos subdifusivos quanto a superdifusivos. Assim, a presença de operadores diferenciais fracionários na
 equação de difusão representa uma situação na qual as distribuições de probabilidades para o tempo e para o
 espaço, que emergem da abordagem de caminhantes aleatórios, são alteradas, ou seja, a difusão ocorre de forma
-anômala. Neste caso em particular, a alteração ocorreu apenas na distribuição de tempos, já que a derivada
+anômala. Nesse caso em particular, a alteração ocorreu apenas na distribuição de tempos, já que a derivada
 fracionária foi aplicada na variável temporal. Mais à frente veremos a alteração causada na distribuição de saltos
 quando da aplicação de derivadas fracionárias na variável espacial.
 
 Vejamos agora o caso em que o coeficiente de difusão \'e dado por ${\cal{D}}(x,t)={\cal{D}}|x|^{-\theta}$. Cabe
-mencionar aqui que esta depend\^encia espacial no coeficiente de difus\~ao tem sido empregada na
+mencionar aqui que essa depend\^encia espacial no coeficiente de difus\~ao tem sido empregada na
 investiga\c{c}\~ao de, por exemplo, sistemas turbulentos e difus\~ao em fractais. Ainda considerando $F(x,t)=0$ na
-Eq.(\ref{eq2.1}) e utilizando transformadas integrais definidas anteriormente, podemos mostrar que
+equação \ref{eq2.1} e utilizando transformadas integrais definidas anteriormente, podemos mostrar que
 \begin{eqnarray}
 \rho(x,t)=\frac{2+\theta}{2\Gamma\left({\frac{1}{2+\theta}}\right)}\!\!\left[\frac{1}{(2+\theta)^2{\cal{D}}t^{\gamma}}\right]^{\frac{1}{2+\theta}}
 {\mbox {\large{H}}}_{1 \; 2}^{2 \; 0} \left [\frac{|x|^{2+\theta}}{(2+\theta)^2{\cal{D}}t^{\gamma}} \left
 |_{\left(1-\frac{1}{2+\theta},1 \right) \; \left( 0,1\right)}^{\left(1-\frac{\gamma}{2+\theta},\gamma
-\right)}\right.\!\!\right],\label{eq2.28}
+\right)}\right.\!\!\right].\label{eq2.28}
 \end{eqnarray}
-lembrado que para $\gamma=1$ e $\theta=0$ recuperamos a solução gaussiana obtida para o caso usual. Se, além desta
+Vale lembrar que para $\gamma=1$ e $\theta=0$ recuperamos a solução gaussiana obtida para o caso usual. Se, além dessa
 dependência do coeficiente de difusão com o espaço, tivermos a presença de uma força externa do tipo linear, ou
 seja, $F(x)=-kx$, obteremos mediante separação de variáveis o resultado
 \begin{eqnarray}
@@ -1612,24 +1593,13 @@ e^{-\frac{k|x|^{2+\theta}}{(2+\theta){\cal{D}}}}{\mbox{L}}_n^
 &\times& \frac{\Gamma(1+n)}{\Gamma(1+n-a) }\;,\label{eq2.29}
 \end{eqnarray}
 com $\lambda_n=(2+\theta)nk$.
-%Trataremos agora de uma situação na qual há a presença de um termo de força externa linear. Ainda considerando o coeficiente de
-%difusão constante, vamos fazer $F(x)=-kx$ na Eq.(\ref{eq2.1}) e aplicar o método de separação de variáveis. Dessa forma
-%obtemos que
-%\begin{eqnarray}
-%\rho(x,t)&=&\int_{-\infty}^{\infty}d\xi e^{-\xi^2}\tilde{\rho}(\xi){\cal{G}}(x,\xi,t)\nonumber\\
-%{\cal{G}}(x,\xi,t)&=&\frac{1}{\sqrt{\pi}}\sum_{n}\frac{1}{2^n \Gamma(n+1)}{\mbox{H}}_n\left(\sqrt{\frac{k}{2{\cal{D}}}}\;\xi\right)
-%{\mbox{H}}_n\left(\sqrt{\frac{k}{2{\cal{D}}}}\;x\right)\nonumber\\
-%&\times&
-%{\mbox{E}}_{\gamma}(-\lambda_n t^{\gamma})\;,
-%\end{eqnarray}
-%onde novamente consideramos uma condição inicial qualquer. Se
 
 Da discuss\~ao feita acima percebemos que s\~ao poucos os potenciais cuja presença na equa\c{c}\~ao de difus\~ao
 nos conduz a uma solução exata expressa em termos de fun\c{c}\~oes especiais conhecidas. Entretanto, na maioria
 das situa\c{c}\~oes somos obrigados a fazer aproxima\c{c}\~oes da situa\c{c}\~ao original devido à dificuldade de
-encontrarmos uma solu\c{c}\~ao em forma fechada. Neste sentido, é in\-te\-res\-san\-te obter a equação integral
-relativa à Eq.(\ref{eq2.1}) que torna possível uma solução recursiva na forma de uma abordagem perturbativa que
-pode ser relevante na an\'alise do problema. Assim, vamos reescrever a Eq.(\ref{eq2.1}) como
+encontrarmos uma solu\c{c}\~ao em forma fechada. Nesse sentido, é in\-te\-res\-san\-te obter a equação integral
+relativa à equação \ref{eq2.1} que torna possível uma solução recursiva na forma de uma abordagem perturbativa que
+pode ser relevante na an\'alise do problema. Assim, vamos reescrever a equação \ref{eq2.1} como
 \begin{eqnarray}
 \frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)={\cal{D}}\frac{\partial^2 }{\partial x^2}\rho(x,t)
  -\alpha(x,t)\;,\label{eq2.30}
@@ -1638,12 +1608,12 @@ com
 \begin{eqnarray}
 \alpha(x,t)=\frac{\partial}{\partial x}\left[F(x,t)\rho(x,t)\right]\;.\label{eq2.31}
 \end{eqnarray}
-Empregando transformadas de Fourier e Laplace na Eq.(\ref{eq2.30}) obtemos
+Empregando transformadas de Fourier e Laplace na equação \ref{eq2.30} obtemos
 \begin{eqnarray}
 \rho(k,s) = \frac{\rho(k,0)}{s+ {\cal{D}}s^{1-\gamma}k^2}-\frac{\alpha(k,s)}{s+ {\cal{D}}s^{1-\gamma}k^2} \; .
 \label{eq2.32}
 \end{eqnarray}
-A inversão destas transformadas fornece
+A inversão dessas transformadas fornece
 \begin{eqnarray}
 \rho(x,t)=\rho^{(0)}(x,t)-\int_{0}^{t}dt'\int_{-\infty}^{\infty}dx' {\cal{G}}_{\gamma}(x-x',t-t')
 \alpha(x',t')\;\; . \label{eq2.33}
@@ -1659,35 +1629,32 @@ Substituindo $\alpha(x,t)$ na equa\c{c}\~ao (2.33) obtemos, via integração por p
 \begin{eqnarray}
 \rho(x,t)&=& \rho^{(0)}(x,t)\nonumber \\
 &+&\int_{0}^{t}dt'\int_{-\infty}^{\infty}dx' {\cal{G}}^{(2)}_{\gamma}(x-x',t-t')\;
-\left[F(x',t')\rho(x',t')\right]\;\; . \label{eq2.35}
+\left[F(x',t')\rho(x',t')\right]\;\;, \label{eq2.35}
 \end{eqnarray}
-onde
+em que
 \begin{eqnarray}
 {\cal{G}}^{(2)}_{\gamma}(x,t)&=& \frac{d }{dx}
 {\cal{G}}_{\gamma}(x,t)\nonumber \\
 &=&\frac{1}{\sqrt{\pi {\cal{D}} t^{\gamma}}} {\mbox {\large{ H}}}_{2 \; 3}^{2 \; 1} \left
 [\frac{x^{2}}{4{\cal{D}}t^{\gamma}} \left |_{\left(\frac{1}{2},1 \right) \;\;\;\; \left( 0,1 \right)\;\;\;\;
 \left(1,2 \right)}^{ \left(0,2 \right) \;\;\;\; \left(1-\frac{\gamma}{2},\gamma \right)} \right.\right]\;\;
-,\label{eq2.37}
+.\label{eq2.37}
 \end{eqnarray}
-onde utilizamos a propriedade (A.2) do apêndice. A Eq.(2.35) é a forma integral correspondente à Eq.(\ref{eq2.1})
+A equação \ref{eq2.35} é a forma integral correspondente à equação \ref{eq2.1}
 e pode ser empregada no cálculo da influência de uma força externa aplicada ao sistema.
 
 \section{Equação de difusão: derivadas fracionárias no espaço}
 
 ${ }$
 
-Até o presente momento tratamos apenas de situações onde foram empregadas derivadas fracionárias na variável
+Até o presente momento tratamos apenas de situações em que foram empregadas derivadas fracionárias na variável
 temporal, de modo que, à luz da abordagem de caminhantes aleatórios, obtivemos alterações somente na função
 distribuição de tempos de espera $\omega(t)$. Além disso, vimos que as soluções obtidas forneciam segundos
 momentos finitos, embora não fossem, como no caso usual, lineares com o tempo. O emprego de derivadas fracionárias
 na variável espacial é representativo de uma situação onde o segundo momento diverge. Este comportamento é
-característico de distribuições do tipo Lèvy, que têm sido aplicadas, por exemplo, no estudo de sistemas caóticos
+característico de distribuições do tipo Lèvy, as quais têm sido aplicadas, por exemplo, no estudo de sistemas caóticos
 \cite{report}, na descrição de transporte em plasma turbulento \cite{plasma}, no movimento bacteriano
-\cite{bacteria1,bacteria2,bacteria3} e também em estudos de Econofísica \cite{economia1,economia2} lembrando que
-estas distribuições apresentam a propriedade da auto-similaridade. Não entraremos em mais detalhes acerca do
-emprego de distribuições do tipo Lèvy em sistemas que apresentam comportamento caótico pois isto transcende os
-objetivos desta dissertação.
+\cite{bacteria1,bacteria2,bacteria3} e também em estudos de Econofísica \cite{economia1,economia2}.
 
 Iniciaremos com a observação de que a distribuição de Lèvy
 \begin{eqnarray}
@@ -1706,16 +1673,12 @@ ${\cal{F}}\{\partial_{|x|}^{\mu}\rho(x,t)\}\equiv-|k|^{\mu}\rho(k,t)$, onde
 \begin{eqnarray}
 {\cal{F}}\{\rho(x,t) \}=\int_{-\infty}^{\infty}\frac{dx}{\sqrt{2\pi}}e^{ikx}\rho(x,t)
 \end{eqnarray}
-é a transformada de Fourier. Esta consideração conduz a $\rho(x,t)={\mbox{L}}_{\mu}(x)$, confirmando nossa
-afirmação inicial. Neste contexto, aplicando o pro\-ce\-di\-men\-to do capítulo anterior relativo a caminhates
-aleat\'orios na Eq.(\ref{eq2.39}) obtemos que a distribuição relacionada ao comprimento dos saltos é  agora dada
+é a transformada de Fourier. Essa consideração conduz a $\rho(x,t)={\mbox{L}}_{\mu}(x)$, confirmando nossa
+afirmação inicial. Nesse contexto, aplicando o pro\-ce\-di\-men\-to do capítulo anterior relativo a caminhantes
+aleat\'orios na equação \ref{eq2.39}, obtemos que a distribuição relacionada ao comprimento dos saltos é  agora dada
 por $\lambda(k)=1-\sigma^{\mu}|k|^{\mu}$, com $\sigma^{\mu}={\cal{D}}/\tau^{\mu}$, para a qual recuperamos o caso
-usual com $\mu=2$. Esta distribuição apresenta comportamento assintótico de cauda longa, ou seja, saltos longos
+usual com $\mu=2$. Essa distribuição apresenta comportamento assintótico de cauda longa, ou seja, saltos longos
 possuem uma  maior probabilidade de ocorrerem quando comparados com o caso usual.
-
-%Devido ao fato de não possuírem segundo momento finito, as
-%distribuições de Lèvy não obedecem ao teorema do limite central, mas sim sua generalização, conhecida como teorema
-%de Lèvy -Gnedenko \cite{Gnedenko}.
 
 Ainda na ausência de força externa, vamos considerar agora que o coeficiente de difusão apresenta uma dependência
 temporal do tipo ${\cal{D}}(t)={\cal{D}}t^{\alpha-1}/\Gamma(\alpha)$. Utilizando transformadas integrais e
@@ -1724,18 +1687,14 @@ propriedades das funções de Mittag-Leffler e de Fox pode-se mostrar que
 \rho(x,t)=\frac{\pi}{\mu |x|}{\mbox{\large{H}}}_{3 \; 3}^{2 \; 1}
 \left[\frac{|x|}{\left({\cal{D}}t^{\alpha+1}\right)^{\frac{1}{\mu}}}
 \Bigg|_{(1,1)\;\left(1,\frac{1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}^{\left(1,\frac{1}{\mu}\right)\;
-\left(1,\frac{\alpha+1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}\right]\;\label{eq2.40}
+\left(1,\frac{\alpha+1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}\right].\;\label{eq2.40}
 \end{eqnarray}
-%(veja Fig.(2.3)).
-
 \begin{figure}[!b]
  \centering \DeclareGraphicsRule{ps}{eps}{}{*}
  \includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cmm]{pictures/figure3cap2.ps}
  \caption{{\it Comportamento de $({\cal{D}}t)^{\frac{1}{\mu}}L_{\mu}(x,t)$ vs.
-$x/({\cal{D}}t)^{\frac{1}{\mu}}$, ilustra a Eq.(\ref{eq2.40}) para valores t\'{\i}picos de $\mu$.}}
+$x/({\cal{D}}t)^{\frac{1}{\mu}}$, para a equação \ref{eq2.40}) para alguns valores t\'{\i}picos de $\mu$ indicados nos gráficos.}\label{mittag}}
 \end{figure}
-
-
 Se, por outro lado, considerarmos ${\cal{D}}$ constante e $F(x)=-kx$ obtemos, empregando método semelhante ao do
 caso anterior, a solução
 \begin{eqnarray}
@@ -1743,7 +1702,7 @@ caso anterior, a solução
 \mu}{{\cal{\overline{D}}}(t)}\right)^{\frac{1}{\mu}}|x|\Bigg|_{(1,1)\;\left(1,\frac{1}{2}\right)}^{\left(1,\frac{1}{\mu}\right)
 \;\left(1,\frac{1}{2}\right)}\right]\;,\label{eq2.41}
 \end{eqnarray}
-onde ${\cal{\overline{D}}}(t)={\cal{D}}[1-exp(-\alpha \mu t)]\;$. Vamos analisar agora a Eq.(\ref{eq2.39}) para
+com ${\cal{\overline{D}}}(t)={\cal{D}}[1-exp(-\alpha \mu t)]\;$. A figura \ref{mittag} ilustra o comportamento dessa distribuição para alguns valores de $\mu$. Vamos analisar agora a equação \ref{eq2.39} para
 uma condição inicial do tipo $\rho(x,0)=\tilde{\rho}(x)$. Repetindo o procedimento empregado acima obtemos,
 tomando a transformada de Laplace e Fourier da equa\c{c}\~ao (\ref{eq2.39}), que
 \begin{eqnarray}
@@ -1753,114 +1712,92 @@ Invertendo a equa\c{c}\~ao anterior obtemos
 \begin{eqnarray}
 \rho(x,t) =\int_{-\infty}^{\infty} dx'{\cal{G}}_{\mu}(x-x',t-t') \tilde{\rho}(x') \;\;,  \label{eq2.43}
 \end{eqnarray}
-onde ${\cal{G}}_{\mu}(x,t)=L_{\mu}(x,t)$. E a equa\c{c}\~ao integral associada a Eq.(\ref{eq2.39}) \'e
+com ${\cal{G}}_{\mu}(x,t)=L_{\mu}(x,t)$. E a equa\c{c}\~ao integral associada a equação \ref{eq2.39} \'e
 \begin{eqnarray}
 \rho(x,t) =\rho^{(0)}(x,t)-\int_{0}^{t}dt'\int_{-\infty}^{\infty}dx' {\cal{G}}_{\mu}^{(2)}(x-x',t-t')
-F(x',t')\rho(x',t')\;\; . \label{eq2.44}
+F(x',t')\rho(x',t')\;\; \label{eq2.44}
 \end{eqnarray}
-onde
+com
 \begin{eqnarray}
 {\cal{G}}^{(2)}_{\mu}(x,t)&=& -\frac{d }{dx} L_{\mu}(x,t) \nonumber
 \\
 &=&\int_{0}^{\infty}\frac{dk}{\pi}k \sin(kx)e^{-t{\cal{D}}|k|^{\mu}}\;\; .\label{eq2.45}
 \end{eqnarray}
-A Eq.({\ref{eq2.44}}) \'e justamente a equação integral correspondente à Eq.(\ref{eq2.39}) que pode ser usada para
+A equação {\ref{eq2.44}} \'e justamente a equação integral correspondente à equação \ref{eq2.39} que pode ser usada para
 calcular perturbativamente a influ\^encia de uma for\c{c}a externa qualquer aplicada ao sistema.
 
-
-Discutimos neste capítulo as conseqüências do emprego de derivadas fracionárias na equação de difusão,
+Discutimos, nesse capítulo, as consequências do emprego de derivadas fracionárias na equação de difusão,
 considerando também dependência espacial e temporal para o coeficiente de difusão, além da presença de uma força
 externa. Vimos que, quando aplicadas à variável espacial, a derivada fracionária nos conduz às distribuições de
 Lèvy, que apresentam comportamento superdifusivo.
 
-\section{Soluções para a equação de difusão com um termo não local}
-
-${ }$
-
-Recentemente, extensões da equação de difusão têm sido sucessivamente investigadas devido a grande variedade de aplicações existentes, em particular, a difusão anômala. Entre elas temos as equações de difusão fracionárias \cite{RHRMAB,i1,i2,varios2} que têm sido aplicadas a várias situações físicas tais como o transporte de uma substância de um recipiente a outro num solvente através de membranas finas \cite{Kosztoowicz}, no transporte em semicondutores desordenados \cite{semiconductor}, meios porosos \cite{porous}, no fluxo de fluidos \cite{Chukbar} e no estudo do desenvolvimento de tumores modelando a taxa de disseminação do câncer \cite{tumor}. Esta grande variedade de aplicações também motivou do estudo de vários aspectos formais das equações de difusão fracionárias na tentativa de compreender sua aplicação na descrição de situações que possuem um comportamento dinâmico diferente do usual. De fato, \cite{nnew2} mostraram como uma equação fracionária de Fokker-Planck pode ser derivada da equação mestra generalizada, \cite{nnew4} estudou o comportamento da equação de difusão fracionária na origem, \cite{nnew7} introduziram uma equação fracionária de Kramers consistente com as equações fracionárias de difusão, a presença de reação têm sido analisadas por diversos pesquisadores \cite{reaction1,reaction2,reaction11} e várias soluções têm sido obtidas para estas equações \cite{nnew3,nnew5,ne1,ne111,ne12,ne13,ne14,lenzi2003,lenzi2005,lenzi2006}. Neste sentido, dedicamos este trabalho ao estudo da seguinte equação de difusão:
+Recentemente, extensões da equação de difusão têm sido sucessivamente investigadas devido a grande variedade de aplicações existentes, em particular, a difusão anômala. Entre elas temos as equações de difusão fracionárias \cite{RHRMAB,i1,i2,varios2} que têm sido aplicadas a várias situações físicas tais como o transporte de uma substância de um recipiente a outro num solvente através de membranas finas \cite{Kosztoowicz}, no transporte em semicondutores desordenados \cite{semiconductor}, meios porosos \cite{porous}, no fluxo de fluidos \cite{Chukbar} e no estudo do desenvolvimento de tumores modelando a taxa de disseminação do câncer \cite{tumor}. Essa grande variedade de aplicações também motivou do estudo de vários aspectos formais das equações de difusão fracionárias na tentativa de compreender sua aplicação na descrição de situações que possuem um comportamento dinâmico diferente do usual. De fato, os autores de \cite{nnew2} mostraram como uma equação fracionária de Fokker-Planck pode ser derivada da equação mestra generalizada, a referência \cite{nnew4} estudou o comportamento da equação de difusão fracionária na origem, a referência \cite{nnew7} introduziu uma equação fracionária de Kramers consistente com as equações fracionárias de difusão, a presença de reação têm sido analisadas por diversos pesquisadores \cite{reaction1,reaction2,reaction11} e várias soluções têm sido obtidas para essas equações \cite{nnew3,nnew5,ne1,ne111,ne12,ne13,ne14,lenzi2003,lenzi2005,lenzi2006}. Nesse sentido, dedicamos essa seção ao estudo da seguinte equação de difusão
 \begin{eqnarray}
 \frac{\partial}{\partial t} \rho (x,t)&=& {\cal{D}}
 \frac{\partial^{2}}{\partial x^{2}} \rho(x,t)-
 \int_{0}^{t}d\overline{t} \int^{\infty}_{- \infty}
-\!\!d\overline{x}\;{\cal{K}}(x-\overline{x},t-\overline{t})\rho(\overline{x},\overline{t})
+\!\!d\overline{x}\;{\cal{K}}(x-\overline{x},t-\overline{t})\rho(\overline{x},\overline{t}),
 \label{10}
 \end{eqnarray}
-onde a última parte da equação acima representa um termo não local atuando sobre no sistema que depende de ${\cal{K}}(x,t)$. Este termo pode ser relacionado a vários contextos em particular, com processos de reação \cite{SLW,Fonte} e com derivadas de ordem fracionárias \cite{livroC} dependendo da escolha de ${\cal{K}}(x,t)$ e é tal que para ${\cal{K}}(x,t)=0$   a forma usual da equação de difusão na ausência de forças externas é recuperada. O comportamento da solução é governado pelos termos difusivo e não local que dependendo da escolha do último pode manifestar diferentes regimes difusivos. Desta forma, um deles é dominado pelo comportamento gaussiano devido ao termo difusivo e o outro é dependente da escolha de ${\cal{K}}(x,t)$, conforme mencionamos anteriormente. Em particular, para ${\cal{K}}(x,t)\propto \delta(t) /|x|^{1+\mu}$ a solução é assintoticamente governada por uma lei de potência para tempos longos, que está relacionada com as distribuições de Lévy. Neste sentido, devemos ressaltar que situações caracterizadas pelos dois regimes têm sido relatadas em vários contextos físicos, como, por exemplo, sistemas com interações de longo alcance \cite{doisregime} e difusão intracelular \cite{Caspi}. A Eq.~\ref{10} ainda pode ser relacionada com as equações de fracionárias de ordem distribuída \cite{DISTRIBUTED}.
+na qual a última parte da equação acima representa um termo não local atuando sobre no sistema que depende de ${\cal{K}}(x,t)$. Este termo pode ser relacionado a vários contextos em particular, com processos de reação \cite{SLW,Fonte} e com derivadas de ordem fracionárias \cite{livroC} dependendo da escolha de ${\cal{K}}(x,t)$ e é tal que, para ${\cal{K}}(x,t)=0$, a forma usual da equação de difusão na ausência de forças externas é recuperada. O comportamento da solução é governado pelos termos difusivo e não local que dependendo da escolha do último pode manifestar diferentes regimes difusivos. Dessa forma, um deles é dominado pelo comportamento gaussiano devido ao termo difusivo e o outro é dependente da escolha de ${\cal{K}}(x,t)$, conforme mencionamos anteriormente. Em particular, para ${\cal{K}}(x,t)\propto \delta(t) /|x|^{1+\mu}$ a solução é assintoticamente governada por uma lei de potência para tempos longos, que está relacionada com as distribuições de Lévy. Nesse sentido, devemos ressaltar que situações caracterizadas pelos dois regimes têm sido relatadas em vários contextos físicos, como em sistemas com interações de longo alcance \cite{doisregime} e difusão intracelular \cite{Caspi}. A equação (\ref{10}) ainda pode ser relacionada às equações fracionárias de ordem distribuída \cite{DISTRIBUTED}.
 
-Investigaremos agora soluções para a Eq.~\ref{10} considerando algumas formas da função ${\cal{K}}(x,t)$ presentes no termo não local da mesma. Particularmente, analisaremos três casos:  $(i)$ ${\cal{K}}(x,t)\propto
+Investigaremos agora soluções para a equação (\ref{10}) considerando algumas formas da função ${\cal{K}}(x,t)$ presentes no termo não local da mesma. Particularmente, analisaremos três casos:  $(i)$ ${\cal{K}}(x,t)\propto
 \delta(t)/|x|^{1+\mu}$ com $0<\mu<2$ $
 ({\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu})$, $(ii)$
 ${\cal{K}}(x,t)\propto \delta(t)\overline{{\cal{K}}}(x)$, $(iii)$
 ${\cal{K}}(x,t)\propto t^{\gamma-1}/|x|^{1+\mu} $ com $0<\mu<2$
-$({\cal{K}}(k,s)=\widehat{{\cal{K}}}s^{-\gamma}|k|^{\mu})$ e após o estudo destes casos discutiremos o caso em que ${\cal{K}}(x,t)$ representa uma função arbitrária que possui transformada de Fourier e Laplace definidas. A primeira escolha para ${\cal{K}}(x,t)$ tem um comportamento de cauda longa e está relacionada com a derivada espacial de ordem fracionária do tipo Riesz-Weyl \cite{livroC}. A solução para este caso apresenta dois regimes distintos, sendo que um deles, para tempos longos, pode ser relacionado com as distribuições de Lévy. Esta característica poderá ser verificada ao analisarmos a função de Green no limite de tempos longos, como será demonstrado mais tarde. O segundo caso pode ser relevante na investigação da solução quando temos um termo não local com uma dependência arbitrária na parte espacial. A terceira escolha incorpora uma dependência temporal no termo não local (discutida no primeiro caso) que poderá ser relacionada com uma derivada temporal de ordem fracionária \cite{livroC} mediante uma escolha apropriada de $\gamma$.
-Começaremos nossa análise aplicando a transformada de Fourier ${\cal{F}}\{...\}=\int_{-\infty}^{\infty}dx e^{-ikx}...$ and
-${\cal{F}}^{-1}\{...\}=\int_{-\infty}^{\infty}\frac{dk}{2\pi}
-e^{ikx}...$) na Eq.~(\ref{10}) de maneira a obter a equação integro-diferencial
+$({\cal{K}}(k,s)=\widehat{{\cal{K}}}s^{-\gamma}|k|^{\mu})$ e após o estudo desses casos discutiremos o caso em que ${\cal{K}}(x,t)$ representa uma função arbitrária que possui transformada de Fourier e Laplace definidas. A primeira escolha para ${\cal{K}}(x,t)$ tem um comportamento de cauda longa e está relacionada com a derivada espacial de ordem fracionária do tipo Riesz-Weyl \cite{livroC}. A solução para esse caso apresenta dois regimes distintos, sendo que um deles, para tempos longos, pode ser relacionado às distribuições de Lévy. Essa característica poderá ser verificada ao analisarmos a função de Green no limite de tempos longos, como será demonstrado mais tarde. O segundo caso pode ser relevante na investigação da solução quando temos um termo não local com uma dependência arbitrária na parte espacial. A terceira escolha incorpora uma dependência temporal no termo não local (discutida no primeiro caso) que poderá ser relacionada com uma derivada temporal de ordem fracionária \cite{livroC} mediante uma escolha apropriada de $\gamma$.
+Começaremos nossa análise aplicando a transformada de Fourier na equação (\ref{10}) de maneira a obter a equação integro-diferencial
 \begin{eqnarray}
 \frac{d}{d t} \rho (k,t) = -{\cal{D}}k^{2} \rho(k,t)
 -\int_{0}^{t}d\overline{t}
 {\cal{K}}(k,t-\overline{t})\rho(k,\overline{t}) \;.
 \label{0015556}
 \end{eqnarray}
-Esta equação integro-diferencial pode ser simplificada utilizando a transformada de Laplace (${\cal{L}}\{...\}=\int_{0}^{\infty}dte^{-st}...$ and
-${\cal{L}}^{-1}\{...\}=\frac{1}{2\pi i}
-\int_{-i\infty+c}^{i\infty+c}dse^{st}...$). Assim, após aplicarmos a transformada de Laplace obtemos a equação algébrica:
+Essa equação integro-diferencial pode ser simplificada utilizando a transformada de Laplace. Assim, após aplicarmos a transformada de Laplace obtemos a equação algébrica
 \begin{eqnarray}
 s\rho (k,s)- \rho (k,0)= -{\cal{D}}k^{2} \rho(k,s)
--{\cal{K}}(k,s)\rho(k,s) \label{001555}
+-{\cal{K}}(k,s)\rho(k,s), \label{001555}
 \end{eqnarray}
 cuja solução é dada por $\rho (k,s)=\rho (k,0){\cal{G}}(k,s)$, com \begin{eqnarray}
 {\cal{G}}(k,s)=\frac{1}{s+{\cal{D}} k^{2} +{\cal{K}}(k,s)}
 \label{0015551a}
 \end{eqnarray}
-onde $\rho (k,0)$ é a transformada de Fourier da condição inicial e ${\cal{G}}(k,s)$ é a função de Green da Eq.(\ref{10}) no espaço de Fourier-Laplace. Note que a Eq.~(\ref{0015551a}) retorna ao caso usual, isto é, à função de Green para o caso livre, quando ${\cal{K}}(k,s)=0$. Substituindo a primeira escolha por ${\cal{K}}(x,t)$, que no espaço de Fourier-Laplace é dado por ${\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu}$, obtemos
+na qual $\rho (k,0)$ é a transformada de Fourier da condição inicial e ${\cal{G}}(k,s)$ é a função de Green da equação (\ref{10}) no espaço de Fourier-Laplace. Note que a equação (\ref{0015551a}) retorna ao caso usual, isto é, à função de Green para o caso livre, quando ${\cal{K}}(k,s)=0$. Substituindo a primeira escolha por ${\cal{K}}(x,t)$, que no espaço de Fourier-Laplace é dado por ${\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu}$, obtemos
 \begin{eqnarray}
 \rho (k,s)= \frac{\rho (k,0)}{s+{\cal{D}} k^{2}
 +\widetilde{{\cal{K}}} |k|^{\mu}} \;.\label{001555a}
 \end{eqnarray}
-A Eq.~(\ref{0015551a}) pode ser relacionada ao formalismo CTRW (Continuous Time Random Walk) \cite{i2} considerando-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e a função densidade de probabilidade de salto $\lambda(k)=1-\tau({\cal{D}} k^{2} +\widetilde{{\cal{K}}}
-|k|^{\mu})$, onde $\tau$ é o tempo de espera característico. O resultado obtido para $\omega(s)$ e $\lambda(k)$ indica que a opção anterior para o termo não local muda somente a função densidade de probabilidade do salto. Em particular, esta escolha para ${\cal{K}}(x,t)$ manifesta na solução um comportamento de cauda longa quando consideramos o limite de tempos grandes. Aplicando a transformada inversa de Laplace, a Eq.~(\ref{001555a}) fica dada por
+A equação (\ref{0015551a}) pode ser relacionada ao formalismo de caminhada aleatória \cite{i2} considerando-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e a função densidade de probabilidade de salto $\lambda(k)=1-\tau({\cal{D}} k^{2} +\widetilde{{\cal{K}}}
+|k|^{\mu})$, na qual $\tau$ é o tempo de espera característico. O resultado obtido para $\omega(s)$ e $\lambda(k)$ indica que a opção anterior para o termo não local muda somente a função densidade de probabilidade do salto. Em particular, esta escolha para ${\cal{K}}(x,t)$ manifesta na solução um comportamento de cauda longa quando consideramos o limite de tempos grandes. Aplicando a transformada inversa de Laplace, a equação (\ref{001555a}) fica dada por
 \begin{equation}
 \rho(k,t) = \rho(k,0) \exp \left(-{\cal{D}}k^{2}t-
 \widetilde{{\cal{K}}}|k|^{\mu}t \right). \label{00311}
 \end{equation}
-A transformada inversa de Fourier da equação Eq.~(\ref{00311}) é
-%\begin{widetext}
+A transformada inversa de Fourier da equação equação (\ref{00311}) é
 \begin{eqnarray}
 \label{sol11}
-\rho(x,t)&=&\int_{-\infty}^{\infty}d\overline{x}\;{\cal{G}}(x-\overline{x},t)\rho(\overline{x},0)
-\nonumber \\
+\rho(x,t)&=&\int_{-\infty}^{\infty}d\overline{x}\;{\cal{G}}(x-\overline{x},t)\rho(\overline{x},0) \nonumber
+\end{eqnarray}
+com
+\begin{eqnarray}
 {\cal{G}}(x,t)&=& \frac{1}{2|x|} \displaystyle\sum_{n=0}^{\infty}
 \frac{1}{n!} \left(- \frac{\widetilde{{\cal{K}}}
 t}{\left({\cal{D}}t\right)^{\frac{\mu}{2}}}\right)^{n} \nonumber
 {\mbox{H}}^{1,1}_{2,2} \left[\frac{|x|}{\sqrt{{\cal{D}}t}}
 \left|^{\left(1-\frac{n\mu}{2}, \frac{1}{2}\right), \left(1,
 \frac{1}{2} \right)}_{\left(1, 1\right), \left(1, \frac{1}{2}
-\right)}\right.\right]
+\right)}\right.\right] \nonumber
 \end{eqnarray}
-%\end{widetext}
-onde $\left.{\mbox {H}}_{p \; q}^{m \; n} \left[ x
+e $\left.{\mbox {H}}_{p \; q}^{m \; n} \left[ x
 \left|_{(b_{1},B_{1}), \cdots,
 (b_{q},B_{q})}^{(a_{1},A_{1}),\cdots ,(a_{p},A_{p})} \right]
-\right.\right.$ é a função ${\mbox {H}}$ de Fox \cite{Fox}
-(ver figuras abaixo).
+\right.\right.$ sendo a função ${\mbox {H}}$ de Fox \cite{Fox}.
 
-\begin{figure}[!b]
-\begin{center}
-    \includegraphics*[width=7.93cm,height=11.23cm]{pictures/artigo1.eps}
-\caption{Elemento de volume de dimensões 2dx, 2dy, 2dz centrado em P(x,y,z).}
-\end{center}
-\end{figure}
-\begin{figure}[!b]
-\begin{center}\DeclareGraphicsRule{ps}{eps}{}{*}
-\includegraphics*[width=7.93cm,height=11.23cm]{pictures/artigo2.eps}
-\caption{Elemento de volume de dimensões 2dx, 2dy, 2dz centrado em P(x,y,z).}
-\end{center}
-\end{figure}
-A presença desta função na solução indica que o termo não local na Eq.~(\ref{10}) produz uma dispersão anômala da solução. Neste sentido, uma característica importante da solução encontrada acima é a presença de dois regimes, um deles é caracterizado pelo caso usual (i.e., Gaussiano) e o outro é dominado assintoticamente por uma lei de potência (i.e., do tipo Lévy). De fato, é possível verificar que para tempos pequenos
+A presença dessa função na solução indica que o termo não local na equação (\ref{10}) produz uma dispersão anômala da solução. Nesse sentido, uma característica importante da solução encontrada acima é a presença de dois regimes, um deles é caracterizado pelo caso usual (Gaussiano) e o outro é dominado assintoticamente por uma lei de potência (do tipo Lévy). De fato, é possível verificar que para tempos pequenos
 \begin{equation}
 {\cal{G}}(x,t)\sim \frac{e^{-\frac{x^2}{4{\cal{D}}t}}}{\sqrt{4\pi
-{\cal{D}}t}}
+{\cal{D}}t}},
 \end{equation}
 enquanto que para tempos longos
 \begin{equation}
@@ -1868,16 +1805,16 @@ enquanto que para tempos longos
 \left[\frac{|x|}{\left({\cal{K}}t\right)^{\frac{1}{\mu}}}
 \left|^{\left(1, \frac{1}{\mu}\right), \left(1, \frac{1}{2}
 \right)}_{\left(1, 1\right), \left(1, \frac{1}{2}
-\right)}\right.\right]
+\right)}\right.\right].\label{eqngh}
 \end{equation}
-A equação (9) é essencialmente uma a distribuição do tipo Lévy comumente encontrada em situações onde temos difusão anômala.
+A equação (\ref{eqngh}) é essencialmente uma a distribuição do tipo Lévy comumente encontrada em situações de difusão anômala.
 Agora, conduziremos nossa discussão ao segundo caso, caracterizado por ${\cal{K}}(x,t)=\overline{{\cal{K}}}(x)\delta(t)$, com
-$\overline{{\cal{K}}}(x)$ arbitrário. Utilizando a Eq.~(\ref{0015551a}), com ${\cal{K}}(k,s)=\overline{{\cal{K}}}(k)$ e aplicando a transformada inversa de Laplace, obtemos
+$\overline{{\cal{K}}}(x)$ arbitrário. Utilizando a equação (\ref{0015551a}), com ${\cal{K}}(k,s)=\overline{{\cal{K}}}(k)$ e aplicando a transformada inversa de Laplace, obtemos
 \begin{equation}
 \rho(k,t) = \rho(k,0) \exp \left(-{\cal{D}}k^{2}t  -
-\overline{{\cal{K}}}(k)t \right) \label{g1}
+\overline{{\cal{K}}}(k)t \right). \label{g1}
 \end{equation}
-Fazendo uso da transformada inversa de Fourier, juntamente com o teorema de convolução, na Eq.~(\ref{g1}), obtemos como solução
+Fazendo uso da transformada inversa de Fourier, juntamente com o teorema de convolução, na equação (\ref{g1}), obtemos como solução
 \begin{eqnarray}
 \rho(x,t)
 &=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0)
@@ -1885,34 +1822,38 @@ Fazendo uso da transformada inversa de Fourier, juntamente com o teorema de conv
 {\cal{G}}(x,t)&=&\overline{{\cal{G}}}(x,t)+\sum_{n=1}^{\infty}\frac{(-t)^{n}}{n!}
 \int_{-\infty}^{\infty}dx_{n}\overline{{\cal{K}}}(x-x_{n})\cdots
 \nonumber
-\\ &\times&\int_{-\infty}^{\infty}dx_{1}\overline{{\cal{K}}}(x_{2}-x_{1})\overline{{\cal{G}}}(x_{1},t)
+\\ &\times&\int_{-\infty}^{\infty}dx_{1}\overline{{\cal{K}}}(x_{2}-x_{1})\overline{{\cal{G}}}(x_{1},t),
 \label{g2}
 \end{eqnarray}
-onde $\rho(x,0)$ é a condição inicial e
+com $\rho(x,0)$ sendo a condição inicial e
 \begin{equation}
 \overline{{\cal{G}}}(x,t)=
 \frac{e^{-\frac{x^2}{4{\cal{D}}t}}}{\sqrt{4\pi{\cal{D}}t}}\;
 \label{usual1}
 \end{equation}
-é a função de Green usual obtida a partir da equação de difusão na ausência de forças e termos de reação. De forma análoga ao caso explorado acima, este caso também pode ser relacionado ao formalismo CTRW escolhendo-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e distribuição dos saltos $\lambda(k)=1-\tau({\cal{D}}k^2+{\cal{K}}(k))$.
+é a função de Green usual obtida a partir da equação de difusão na ausência de forças e termos de reação. De forma análoga ao caso explorado acima, esse caso também pode ser relacionado ao formalismo de caminhada aleatória escolhendo-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e distribuição dos saltos $\lambda(k)=1-\tau({\cal{D}}k^2+{\cal{K}}(k))$.
 
-Dando prosseguimento em nossa análise, vamos incorporar uma dependência temporal em ${\cal{K}}(x,t)$ considerando  ${\cal{K}}(x,t) \propto
-t^{\gamma-1}/|x|^{1+\mu}$ (${\cal{K}}(k,s)=$ $\widehat{{\cal{K}}}$ $s^{-\gamma}|k|^{\mu}$) que nos leva a obter a partir da Eq.~(\ref{001555a})
+Dando prosseguimento em nossa análise, vamos incorporar uma dependência temporal em ${\cal{K}}(x,t)$, considerando  ${\cal{K}}(x,t) \propto
+t^{\gamma-1}/|x|^{1+\mu}$ (${\cal{K}}(k,s)=$ $\widehat{{\cal{K}}}$ $s^{-\gamma}|k|^{\mu}$) que nos leva a obter a partir da equação (\ref{001555a})
 \begin{eqnarray}
 \rho (k,s)= \frac{\rho (k,0)}{s+{\cal{D}} k^{2}
 +\widehat{{\cal{K}}} s^{-\gamma}|k|^{\mu}}\;. \label{001555av}
 \end{eqnarray}
-Note que a Eq.~(\ref{001555av}) retorna ao caso anterior quando tomado $\gamma=0$ e ao caso usual quando $\widehat{{\cal{K}}}=0$. Por outro lado, esta dependência no termo não-local introduz um efeito memória, de forma semelhante ao que ocorre com as equações temporais fracionárias de difusão. Deste modo, a solução obtida para este caso (assim como os casos previamente estudados) tem um caráter não-Markoviano. Para encontrar a solução, começamos aplicando a transformada inversa de Laplace. Seguindo o procedimento apresentado por \cite{Ta}, após alguns cálculos é possível mostrar que
+Note que a equação (\ref{001555av}) retorna ao caso anterior quando tomado $\gamma=0$ e ao caso usual quando $\widehat{{\cal{K}}}=0$. Por outro lado, essa dependência no termo não-local introduz um efeito memória semelhante ao que ocorre com as equações temporais fracionárias de difusão. Deste modo, a solução obtida para esse caso (assim como os casos previamente estudados) tem um caráter não-Markoviano. Para encontrar a solução, começamos aplicando a transformada inversa de Laplace. Seguindo o procedimento apresentado por \cite{Ta}, é possível mostrar que
 \begin{eqnarray}
 \rho(k,t)=\rho(k,0)\sum_{n=0}^{\infty}\frac{1}{n!}\left(-\widehat{{\cal{K}}}t^{1+\gamma}|k|^{\mu}\right)^{n}
-{\mbox{E}}_{1,1+n\gamma}^{(n)}\left(-{\cal{D}}k^2t\right)
+{\mbox{E}}_{1,1+n\gamma}^{(n)}\left(-{\cal{D}}k^2t\right),
 \label{g3}
 \end{eqnarray}
-onde ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ é a $n$-ésima derivada da função de Mittag-Leffler generalizada, isto é, ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ $\equiv$ $
-\frac{d^{n}}{dx^{n}}\;{\mbox {E}}_{\mu,\beta}(x)$ \cite{livroC}. A transformada inversa de Fourier da equação (14) é dada por
+em que ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ é a $n$-ésima derivada da função de Mittag-Leffler generalizada, isto é, ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ $\equiv$ $
+\frac{d^{n}}{dx^{n}}\;{\mbox {E}}_{\mu,\beta}(x)$ \cite{livroC}. A transformada inversa de Fourier da equação (\ref{g3}) é dada por
 \begin{eqnarray}
 \rho(x,t)&=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0){\cal{G}}(x-\overline{x},t)
-\nonumber \\ {\cal{G}}(x,t)&=&\frac{1}{2|x|}
+\nonumber
+\end{eqnarray}
+com
+\begin{eqnarray}
+{\cal{G}}(x,t)&=&\frac{1}{2|x|}
 \displaystyle\sum_{n=0}^{\infty} \frac{t^{n}}{n!} \left(
 -\frac{\widehat{{\cal{K}}}t^{\gamma}}{\left({\cal{D}}t\right)^{\frac{\mu}{2}}}\right)^{n}
 {\mbox{H}}^{2,1}_{3,3} \left[\frac{|x|}{\sqrt{{\cal{D}}t}}
@@ -1920,9 +1861,9 @@ onde ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ é a $n$-ésima derivada da função de Mitt
 \left(1+\left(1+\gamma-\frac{\mu}{2}\right)n, \frac{1}{2}\right),
 \left(1, \frac{1}{2} \right)}_{\left(1, 1\right),
 \left(1-\left(1-\frac{\mu}{2}\right)n,\frac{1}{2}\right), \left(1,
-\frac{1}{2} \right)}\right.\right].
+\frac{1}{2} \right)}\right.\right]. \nonumber
 \end{eqnarray}
-Neste contexto, a solução geral que considera uma forma arbitrária para o termo não-local pode ser encontrada utilizando a transformada inversa de Laplace e o Teorema da Convolução correspondente. Assim sendo, após alguns cálculos de rotina, podemos mostrar que
+Nesse contexto, a solução geral que considera uma forma arbitrária para o termo não-local pode ser encontrada utilizando a transformada inversa de Laplace e o Teorema da Convolução correspondente. Assim sendo, podemos mostrar que
 \begin{eqnarray}
 \rho(x,t)
 &=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0)
@@ -1934,845 +1875,14 @@ Neste contexto, a solução geral que considera uma forma arbitrária para o termo 
 t_{1}^{n}\overline{{\cal{K}}}(x_{2}-x_{1},t_{2}-t_{1})\overline{{\cal{G}}}(x_{1},t_{1})
 \label{geral}
 \end{eqnarray}
-onde $\rho(x,0)$ é a condição inicial e $\overline{{\cal{G}}}(x,t)$ é dada pela Eq.~(\ref{usual1}). A Eq.~(\ref{geral}) estende a Eq.~(\ref{g2}) e pode ser usada para obter soluções aproximadas quando o termo não local permite ser considerado como uma perturbação na solução usual.
+na qual $\rho(x,0)$ é a condição inicial e $\overline{{\cal{G}}}(x,t)$ é dada pela equação (\ref{usual1}). A equação (\ref{geral}) estende a equação (\ref{g2}) e pode ser usada para obter soluções aproximadas quando o termo não local permite ser considerado como uma perturbação na solução usual.
 
 \chapter{Conclusão}
 
 ${ }$
 
-Inicialmente buscamos melhor compreender o fenômeno da difusão, sendo que para isso nos utilizamos tanto da história do desenvolvimento desta área, quanto da resolução de problemas simples envolvendo as leis de Fick. Terminada esta fase inicial, dedicamo-nos ao estudo de vários casos envolvendo a equação de difusão usual, destacando-se as soluções para uma dimensão referentes a uma fonte instantânea no plano, aos casos em que ocorre reflexão numa borda, distribuições iniciais extendidas e sistemas finitos. Dando prosseguimento ao estudo, seguiram-se os métodos de rotina utilizados na resolução de equações diferenciais parciais do tipo da equação da difusão. Neste passo, situações envolvendo o método de separação das variáveis e das transformadas de Laplace foram analisadas. A abordagem estocástica da difusão foi também estudada, tendo sido deduzida da equação de Langevin a equação de Fokker-Planck, que nos dá a evolução temporal da distribuição de probabilidades. Na segunda parte do trabalho, partiu-se para o estudo das equações de difusão fracionárias, que se diferenciam do caso usual por apresentar o segundo momento $\langle x^{2} \rangle \propto t^{\alpha}$, em que $\alpha > 1$ ou $\alpha < 1$. Foi então analisado primeiramente o caso mais simples, da difusão unidimensional, seguindo-se aquele em que a derivada fracionária atua na derivada temporal. O comportamento da solução para a situação em que a derivada espacial é de ordem fracionária termina a parte inicial do capítulo, que é fechado por uma discussão acerca da influência de um termo não-local na equação de difusão. Particularmente, obtivemos soluções exatas para os casos:  (i) ${\cal{K}}(x,t)\propto
-\delta(t)/|x|^{1+\mu}
-({\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu})$, (ii)
-${\cal{K}}(x,t)\propto \delta(t)\widetilde{{\cal{K}}}(x) \;
-({\cal{K}}(k,s)=\widetilde{{\cal{K}}}(k))$, (iii)
-${\cal{K}}(x,t)\propto t^{\gamma-1}/|x|^{1+\mu}
-({\cal{K}}(k,s)=\widehat{{\cal{K}}}s^{-\gamma}|k|^{\mu})$, além de termos discutido a situação geral. Constatamos regimes de dispersão diferenciados para cada um dos casos acima citados.
+Inicialmente buscamos melhor compreender o fenômeno da difusão, sendo que para isso nos utilizamos tanto da história do desenvolvimento dessa área, quanto da resolução de problemas simples envolvendo as Leis de Fick. Terminada essa fase inicial, dedicamo-nos ao estudo de vários casos envolvendo a equação de difusão usual, destacando-se as soluções para uma dimensão referentes a uma fonte instantânea no plano, aos casos em que ocorre reflexão numa borda, distribuições iniciais extendidas e sistemas finitos. Dando prosseguimento ao estudo, seguiram-se os métodos utilizados na resolução de equações diferenciais parciais do tipo da equação da difusão. Nesse passo, situações envolvendo o método de separação das variáveis e das transformadas de Laplace foram analisadas. A abordagem estocástica da difusão foi também estudada, tendo sido deduzida da equação de Langevin a equação de Fokker-Planck, que nos dá a evolução temporal da distribuição de probabilidades. Ressaltando que a equação de Fokker-Planck tem a equação de difusão como uma situação particular. Na segunda parte do trabalho, partiu-se para o estudo das equações de difusão fracionárias, que se diferenciam do caso usual por apresentar o segundo momento $\langle x^{2} \rangle \propto t^{\alpha}$, em que $\alpha > 1$ ou $\alpha < 1$. Foi então analisado primeiramente o caso mais simples, da difusão unidimensional, seguindo-se aquele em que a derivada fracionária atua na derivada temporal.
 
-\newpage
-\chapter{Introdução}
-%\chapter*{I - A difusão} \addcontentsline{toc}{chapter}{I - A difusão} \vspace{-0.9cm}
-
-${ }$
-
-A difusão é um fenômeno de transporte pelo qual ocorre transferência
-de matéria entre diferentes regiões do espaço devido ao movimento
-molecular aleatório, isto é, embora não seja possível dizer para que
-direção uma determinada molécula se moverá, podemos saber pelo
-simples fato de existirem mais moléculas numa certa região do meio
-que noutras, que haverá um transporte líquido de moléculas para
-áreas de menor concentração, como resultado dos movimentos já
-citados. Um exemplo simples deste fenômeno pode ser verificado
-colocando-se um frasco aberto de perfume num ambiente fechado. O
-perfume que evapora tenderá a ocupar todo o volume do
-local, difundindo-se através do ar. Esta difusão se explica pela
-diferença de concentração entre o ar próximo à boca do frasco e seus
-arredores. Fato análogo se verifica no caso de um recipiente
-contendo água em que é colocada uma pequena quantidade de tinta.
-Após um tempo suficientemente grande, toda a tinta terá se
-dissolvido pela água, distribuindo-se uniformemente.
-A difusão é um dos poucos fenômenos na natureza que é onipresente. O comportamento coletivo das partículas envolvidas é macroscopicamente regular, seguindo uma dinâmica determinística. A partir daí, podemos obter o comportamento para um conjunto de elementos (por exemplo, átomos, moléculas e animais). O primeiro estudo importante sobre o fenômeno da difusão se deve ao
-químico escocês Thomas Graham. Graham, além de ter sido o inventor
-da diálise, realizou experimentos que resultaram nas primeiras
-determinações do coeficiente de difusão. Contudo, foi com o alemão
-Adolf Fick que tivemos o surgimento da primeira equação da difusão
-propriamente dita. Fick, embora tenha inicialmente visado estudar
-matemática e física, acabou por cursar medicina. Suas contribuições
-no campo da física restringem-se aos anos por volta de 1855, quando
-publicou trabalhos sobre difusão, estabelecendo a equação que hoje
-conhecemos por Equação da Difusão (primeira e segunda leis de Fick).
-Baseado nos resultados obtidos por Graham, Fick identificou uma
-profunda analogia entre a difusão e a condução de calor (Joseph
-Fourier, 1822). Assim sendo, ele concluiu que o fluxo de matéria
-seria proporcional ao gradiente de concentração, com um fator de
-proporcionalidade k, chamado por ele de ``uma constante dependente
-da natureza das substâncias''. Além da abordagem macroscópica desenvolvida especialmente por Adolf Fick, surgiu no início do século XX, com Albert Einstein, uma nova visão dos processos difusivos. Estudando flutuações de sistemas
-termodinâmicos, Einstein desejava encontrar uma forma de determinar
-experimentalmente a constante de Boltzmann e a constante de
-Avogadro. Tendo-se convencido de que isso seria possível, Einstein
-se interessou pelo estudo de partículas suspensas em fluidos, pois
-estas poderiam oferecer auxílio na compreensão dos movimentos
-moleculares. Tais partículas moviam-se de forma irregular quando
-imersas numa solução, fato observado inicialmente pelo botânico
-inglês Robert Brown em 1828. A este movimento errático deu-se o nome
-de movimento browniano em homenagem ao seu descobridor. Em sua
-pesquisa, Einstein basicamente descreveu a segunda lei de Fick com a
-difusividade descrita microscopicamente.
-
-Desde esse período até o presente momento muitos modelos e situações físicas envolvendo processos difusivos têm sido investigados. Entretanto, investigações recentes de várias situações presentes na natureza têm mostrado que muitos fenômenos difusivos (ou relacionados à difusão) podem possuir um comportamento difusivo diferente do observado usualmente, i.e., $\langle r^{2} \rangle$ não varia linearmente com o tempo. Tais processos difusivos são considerados anômalos e têm despertado muito interesse, ocorrendo em situações tais como o crescimento de superfícies, transporte de um fluido através de um meio poroso, na análise do histograma obtido a partir das batidas do coração de um indivíduo saudável, na difusão através de uma superfície líquida e nas flutuações de sistemas financeiros.  
-
-Iniciaremos nosso estudo analisando soluções para a equação de difusão com simetria radial. Prosseguiremos, então, passando pela simetria esférica até a equação de difusão $\mathcal{N}$-dimensional, que engloba todos os casos anteriores. Desta forma, levando em conta as aplicações das equações de difusão fracionárias à
-difusão anômala e sua conexão a outros formalismos como
-o CTRW (Continuous Random Walk), abordagem de Langevin
- e equação mestra, que têm
-motivado o estudo destas equações de forma a compreender
-suas aplicações a contextos físicos onde comportamentos dinâmicos
-não-convencionais podem ser encontrados, consideraremos, então,
-a seguinte equação de difusão fracionária
-
-\begin{eqnarray}
-\label{pedrao1} \frac{\partial^{\gamma}}{\partial
-t^{\gamma}}\rho(\overline{r},t)=
-\int_{0}^{t}d\overline{t}\;\nabla\cdot\left(
-\widetilde{{\mathcal{D}}} (r,t-\overline{t})
-\nabla\rho(r,\overline{t})\right)+\widetilde{\alpha}(r,t)
-\end{eqnarray}
-tomando em conta o caso ${\mathcal{N}}$-dimensional com simetria radial ($\nabla\cdot( \widetilde{{\mathcal{D}}} (r,t) \nabla\cdots )
-\equiv
-r^{1-{\mathcal{N}}}\partial_{r}(r^{{\mathcal{N}}-1}\widetilde{{\mathcal{D}}}
-(r,t)\partial_{r} \cdots)$),
- $0<\gamma\leq 1$ (caso subdifusivo),  $\widetilde{\alpha}(r,t)$ representa um termo de reação, sendo o coeficiente de difusão dado por
-$\widetilde{{\mathcal{D}}}(\overline{r},t)=
-{\mathcal{D}}(t)r^{-\eta}$ em que ${\mathcal{D}}(t)$ é uma
-função arbitrária dependente do tempo e a derivada fracionária do
-tempo considerada aqui é a de Caputo~\cite{livroC}.
-A Equação~(\ref{pedrao1}) tem como casos particuláres várias
-situações como aquelas abordadas em~\cite{e1} e~\cite{e2}
-para os casos de duas e três dimensões numa região confinada e
-os resultados apresentados em~\cite{JML1} para a simetria cilíndrica. Deste
-modo, muitos dos casos presentes na literatura foram extendidos a um
-contexto amplo que pode apresentar, por exemplo, diferentes regimes de
-dispersão da solução ou conexão com a equação fracionária de ordem
-distribuída para uma escolha apropriada de ${\mathcal{D}}(t)$.
-
-Para investigar a Eq.~(\ref{pedrao1}) sujeita a condições de borda
-dependentes do tempo, i.e. superfícies que não sejam homogêneas,
-usaremos a abordagem da função de Green ~\cite{Green}. A função de
-Green será útil para encontrar várias propriedades relacionadas ao
-sistema e devem esclarecer a influência da superfície na dispersão
-da solução e o comportamento da probabilidade de sobrevivência. %survival...
-A este respeito, as soluções obtidas têm características importantes
-e podem encontrar aplicações, por exemplo, no fenômeno da adsorção
-onde o efeito memória possivelmente apresentam um importante papel~\cite{ref1,ref2}, na presença de uma borda reativa~\cite{PRLMALIMZRM2007} e no primeiro tempo de passagem em regiões confinadas~\cite{PRL2007,nature}. Nossa análise será primeiramente realizada considerando-se a Eq.~(\ref{pedrao1}) com
-$\widetilde{{\mathcal{D}}}(t)={\mathcal{D}}\delta(t)r^{-\eta}$, na
-ausência do termo de reação, i.e., $\alpha(r,t)=0$, sujeito à
-condição de borda $\rho(r,t)|_{r=a}=\widetilde{\Phi}_{a}(t)$
-e $\rho(r,t)|_{r=b}=\widetilde{\Phi}_{b}(t)$, onde
-$\widetilde{\Phi}_{a}(t)$ e $\widetilde{\Phi}_{b}(t)$ são duas
-funções arbitrárias dependentes do tempo. A solução para este caso tem
-um caso particular encontrado em~\cite{e1,e2,PA1} e tomando-se o
-limite de $a\rightarrow 0$ com $\rho(b,t)=0$ recupera-se o resultado
-encontrado em ~\cite{e3}. Após isso, analisamos as soluções para a
-Eq.(\ref{pedrao1}) com o coeficiente de difusão $\widetilde{{\mathcal{D}}}(\overline{r},t)=
-({\mathcal{D}}\delta(t)+\overline{{\mathcal{D}}}(t))r^{-\eta}$ e
-incorporando o termo de reação $\widetilde{\alpha}(r,t)$ que
-representa a taxa de geração ou remoção da substância a se difundir
-\cite{r23}. Assim, também é interessante salientar que as
-equações de difusão fracionárias com termos de reação tem sido
-investigadas tomando-se variadas situações em consideração, como
-por exemplo, a conversão monomolecular \cite{reaction11} (uma extensão
-deste modelo e condições para a aparição da instabilidade de Turing
-é pode ser encontrado em \cite{reaction111}), reação reversível de isomerização
-linear \cite{reaction12} e reação auto-catalítica de conversão \cite{reaction13}.
-
-\newpage
-\chapter{Difusão em um cilindro}
-
-${ }$
-
-Iniciaremos nosso estudo analisando a situação em que a difusão se processa radialmente num cilindro longo, dependendo tão somente de $t$ e $r$.
-A equação de difusão para uma dimensão toma a seguinte forma em coordenadas cilíndricas:
-\begin{eqnarray}
-\label{simples}
-\frac{\partial C}{\partial t}=\frac{1}{r}\frac{\partial}{\partial r}\left( rD\frac{\partial C}{\partial r} \right)
-\end{eqnarray}
-O cilindro em questão pode ser esboçado como segue:
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=8.7cm,height=5.26cm]{pictures/cilindro1.eps}
-\caption{Cilindro infinito}
-\end{center}
-\end{figure}
-\newline
-O caso mais simples é o estacionário, no qual $\frac{\partial C}{\partial t}=0$, o que nos dá
-\begin{eqnarray}
-\label{eq1}
-\frac{d}{dr}\left(r\frac{dC}{dr}\right)=0,
-\end{eqnarray}
-com $a < r < b$. A solução para este caso pode ser facilmente encontrada integrando-se a equação \ref{eq1} duas vezes e, posteriormente, dadas as condições de contorno, determinando-se os valores de $A$ e $B$:
-\begin{eqnarray}
-C=A+B\ln{r}.
-\end{eqnarray}
-Para o caso específico em que a concentração é $C_{1}$ em $r=a$ e $C_{2}$ para $r=b$, a solução é da forma:
-\begin{eqnarray}
-C=\frac{C_{1}\ln{(b/r)}+C_{2}\ln{(r/a)}}{\ln{(b/a)}}
-\end{eqnarray}
-Podemos pensar também em outra situação estacionária. Consideremos a superfície $r=a$ com concentração constante $C_{1}$ e que, em $r=b$, há evaporação para a atmosfera, sendo $C_{2}$ a concentração de equilíbrio. A condição de borda, então, será:
-\begin{eqnarray}
-\frac{dC}{dr}+h(C-C_{2})=0
-\end{eqnarray}
-em $r=b$.
-Aplicando as condições de contorno dadas à equação \ref{eq1}, obtemos como solução:
-\begin{eqnarray}
-C=\frac{C_{1}\left[ 1+hb\ln{(b/r)} \right] + hbC_{2}\ln{(r/a)}}{1+hb\ln{(b/a)}}
-\end{eqnarray}
-
-\section{Difusão em duas dimensões}
-${ }$
-Consideraremos agora o caso mais geral da equação \ref{simples} já explorada acima. Seja $a$ o raio do cilindro. As condições de contorno consideradas são $C(a,t)=0$ e $C(0,t)$ (que deve ser finito). A condição inicial será $C(r,0)=\tilde{C}(r)$.
-Começamos a resolução deste caso separando as variáveis:
-\begin{eqnarray}
-\label{solutio}
-C(r,t)=T(t)\Phi(r)
-\end{eqnarray}
-Substituímos a solução acima na equação \ref{simples}, de maneira a obter:
-\begin{eqnarray}
-\frac{1}{\mathcal{D}T_{n}(t)}\frac{d}{dt}T_{n}(t)=
-\frac{1}{\Phi_{n}(r)}\frac{1}{r}\frac{d}{dr}\left[ r\frac{d}{dr}\Phi_{n}(r)\right] =-\lambda_{n}^{2}
-\end{eqnarray}
-Duas equações resultam da igualdade acima:
-\begin{eqnarray}
-\frac{d}{dt}T_{n}(t)=-\lambda_{n}^{2}\mathcal{D}T_{n}(t)
-\end{eqnarray}
-e
-\begin{eqnarray}
-\label{segunda1}
-\frac{d}{dr}\left( r\frac{d\Phi_{n}}{r}\right)=-\lambda_{n}^{2}r\Phi_{n}(r).
-\end{eqnarray}
-Obtemos, então, para o primeira equação a solução $T_{n}(t)=\exp{(-\lambda_{n}^{2}\mathcal{D}t)}$. Reescrevemos a equação \ref{segunda1}, assumindo $\Phi_{n}(a)T_{n}(t)=0$, $t>0$, uma vez que $\Phi_{n}(a)=0$, ficando com:
-\begin{eqnarray}
-\frac{d^{2}\Phi_{n}}{dr^{2}}+\left(\frac{1}{r}\right)\frac{d\Phi_{n}}{dr}+\lambda_{n}^{2}\Phi_{n}=0,
-\end{eqnarray}
-ou
-\begin{eqnarray}
-\Phi_{n}''+\left(\frac{1}{r}\right)\Phi_{n}'+\lambda_{n}^{2}\Phi_{n}=0.
-\end{eqnarray}
-Comparando à solução tabelada para a equação
-\begin{eqnarray}
-u''+\left(\frac{1-2\alpha}{z}\right)u'+\left( \beta^{2} + \frac{\alpha^{2}-\nu^{2}}{z^{2}} \right)u=0,
-\end{eqnarray}
-que é
-\begin{eqnarray}
-u=z^{\alpha}Z_{\nu}(\beta z),
-\end{eqnarray}
-onde $Z=AJ_{\nu}(\beta z)+BJ_{-\nu}(\beta z)$ ou $Z=AJ_{\nu}(\beta z)+BY_{\nu}(\beta z)$, concluímos que $z=r$, $ \alpha=1-n/2$, $ \nu=\pm  \alpha$, $ \beta=\pm  \lambda$. Como nossos autovalores são positivos, temos $ \beta=k$. Construímos então nossa solução:
-\begin{eqnarray}
-\Phi_{n}(r)=A_{n}J_{0}(\lambda_{n}r)
-\end{eqnarray}
-A solução geral é obtida retornando à \ref{solutio} combinando-se os resultados obtidos acima:
-\begin{eqnarray}
-C(r,t)=\sum_{n=1}^{\infty}{A_{n}J_{0}(\lambda_{n}r)}\exp{(-\lambda_{n}^{2}\mathcal{D}t)}.
-\end{eqnarray}
-Necessitamos também determinar os auto-valores para completar nossa solução. Uma vez que \begin{equation}
-A_{n}=\frac{\int_{0}^{a}{\tilde{C}(r)J_{0}(\lambda_{n}r)rdr}}
-{\int_{0}^{a}{J_{0}(\lambda_{n}r)rdr}}
-\end{equation}
-Como:
-\begin{eqnarray}
-\int_{0}^{a}{J_{0}(\lambda_{n}r)rdr}=\frac{a^{2}}{2}J_{1}^{2}(\lambda_{n}r),
-\end{eqnarray}
-Temos então como solução completa:
-\begin{eqnarray}
-C(r,t)=\frac{2}{a^{2}}\sum_{n=1}^{\infty}{\exp{(-\lambda_{n}^{2}\mathcal{D}t)}
-\int_{0}^{a}{\tilde{C}(r)J_{0}(\lambda_{n}r)rdr}\frac{J_{0}(\lambda_{n}r)}{J_{1}^{2}(\lambda_{n}r)}}
-\end{eqnarray}
-Se $M_{t}$ denota a quantidade de substância a se difundir que entrou ou saiu do cilindro em um tempo $t$ e $M_{\infty}$ a quantidade correspondente para $t \to \infty$, a relação $M_{t}/M_{\infty}$ é dada por:
-\begin{eqnarray}
-\frac{M_{t}}{M_{\infty}}=1-\frac{2}{a}\sum_{n=1}^{\infty}{\frac{\exp{(-\mathcal{D}\lambda_{n}^{2}t)}J_{0}(\lambda_{n}r)}
-{k_{n}J_{1}(\lambda_{n}a)}},
-\end{eqnarray}
-que está graficamente representada na figura \ref{fig_ms}.
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=14.36cm,height=11.60cm]{pictures/novo_cilindro_razao.eps}
-\caption{Relação $M_{t}/M_{\infty}$}
-\label{fig_ms}
-\end{center}
-\end{figure}
-
-Resolveremos agora a equação \ref{ndimens} para o caso em que $C(a,t)=\Phi(r)$. As condições iniciais do problema são análogas às do caso anterior, com $C(r,0)=\tilde{C}(r)$. Estabelecemos também que $C(r,t)=\tilde{C}(r,t)+C_{0}$, $\tilde{C}(a,t)=0$ e $\tilde{C}(r,0)=\Phi(t)-C_{0}$. Começamos por substituir $C(r,t)$ na equação \ref{simples}:
-\begin{eqnarray}
-\frac{\partial}{\partial t}\left[ \tilde{C}(r,t)+C_{0} \right]=\frac{1}{r}\frac{\partial}{\partial r} \left\{  r\mathcal{D}\frac{\partial}{\partial r} \left[ \tilde{C}(r,t)+C_{0} \right] \right\}
-\nonumber
-\\
-\frac{\partial}{\partial t}\tilde{C}(r,t)=\frac{1}{r}\frac{\partial}{\partial r}\left[r\mathcal{D}\frac{\partial}{\partial r} \tilde{C}(r,t)\right]
-\end{eqnarray}
-Supondo separável $\tilde{C}$, isto é, $\tilde{C}=\Phi(r)T(t)$, obtemos:
-\begin{eqnarray}
-\frac{1}{\mathcal{D}}\frac{1}{T_{n}(t)}\frac{dT_{n}(t)}{dt}=\frac{1}{r}\frac{1}{\Phi_{n}(r)}
-\frac{d}{dr}\left[ r\frac{d\Phi_{n}(r)}{dr} \right]
-\end{eqnarray}
-Como no caso anterior, da equação acima obtemos outras duas. Sendo $-\lambda^{2}$ a variável de separação:
-\begin{eqnarray}
-\frac{dT_{n}}{dt}+\mathcal{D}T_{n}\lambda_{n}^{2}=0
-\end{eqnarray}
-e
-\begin{eqnarray}
-\frac{d^{2}\Phi_{n}}{dr^{2}}+\frac{1}{r}\frac{d\Phi_{n}}{dr}+\lambda_{n}^{2}\Phi_{n}=0
-\end{eqnarray}
-A primeira equação é de fácil solução, sendo $T_{n}(t)=\exp{(-\mathcal{D}\lambda_{n} t)}$. A segunda equação resolvemos por comparação com soluções tabeladas da equação de Bessel. Com isso, chegamos a:
-\begin{eqnarray}
-\Phi_{n}(r)=A_{n}J_{0}(\lambda_{n}r).
-\end{eqnarray}
-Retomando a suposição inicial de que $\tilde{C}=\Phi(r)T(t)$ e lembrando que a solução geral será a soma de todas as soluções individuais possíveis (princípio da superposição), podemos então escrever nossa solução geral:
-\begin{eqnarray}
-\tilde{C}=\sum_{n=1}^{\infty}{A_{n}J_{0}(\lambda_{n}r)\exp{(-\mathcal{D}\lambda_{n}^{2} t)}}
-\label{quase_completa}
-\end{eqnarray}
-Precisamos agora obter os autovalores $A_{n}$. Faremos isso usando a condição inicial $\tilde{C}(r,0)=f(r)-C_{0}$ em \ref{quase_completa}:
-\begin{eqnarray}
-\tilde{C}(r,0)=\sum_{n=1}^{\infty}{A_{n}J_{0}(\lambda_{n} r)}.
-\end{eqnarray}
-Multiplicando ambos os lados por $rJ_{0}(\lambda_{n}r)$ e integrando em $0 \leq r \leq a$, suponho a soma integrável termo a termo:
-\begin{eqnarray}
-\int_{0}^{a}{drrJ_{0}(\lambda_{n}r)[f(r)-C_{0}]}=A_{n}\int_{0}^{a}{drrJ_{0}^{2}(\lambda_{n} r)},
-\end{eqnarray}
-que nos leva a
-\begin{eqnarray}
-A_{n}=\frac{\int_{0}^{a}{drrJ_{0}(\lambda_{n} r)[f(r)-C_{0}]}}{\int_{0}^{a}{drrJ_{0}^{2}(\lambda_{n} r)}}.
-\end{eqnarray}
-Resolvendo as integrais, substituímos então $A_{n}$ em \ref{quase_completa} e retomamos $C(r,t)=\tilde{C}+C_{0}$ e chegamos à solução completa:
-\begin{eqnarray}
-C(r,t)&=&C_{0}\left(1-\frac{2}{a}\sum_{n=1}^{\infty}\frac{1}{\lambda_{n}}
-\frac{J_{0}(\lambda_{n} r)}{J_{1}(\lambda_{n}
-a)}e^{-D\lambda_{n}^{2} t}\right)
-\nonumber\\
-&+&\frac{2}{a^{2}}\sum_{n=1}^{\infty}{\exp{(-D\lambda_{n}
-t)}\frac{J_{0}(\lambda_{n} r)}{J_{1}^{2}(\lambda_{n}
-a)}\int_{0}^{a}{drrJ_{0}(\lambda_{n} r)f(r)}}
-\end{eqnarray}
-Resolveremos agora o caso em que a equação da difusão assume para $r=a$ a condição $C=\Phi(t)$. Partimos considerando os seguintes dados:
-\begin{eqnarray}
-\nonumber
-C(a,t)=\Phi(t) \\
-\nonumber
-C(r,0)=\tilde{C}(r) \\
-C(r,t)=\sum_{n=1}^{\infty}{A_{n}\Psi_{n}(r)},
-\end{eqnarray}
-em que $\Psi_{n}(r)=r^{\frac{1}{2}(2-\mathcal{N})}J_{\frac{n}{2}-1}(\lambda_{n}r)$ e $\Psi(a)=0$. Começamos multiplicando ambos os lados de $C(r,t)$ por $r^{\mathcal{N}-1}\Psi_{n}(r)$:
-\begin{eqnarray}
-\int\limits_{0}^{a}{C(r,t)r^{\mathcal{N}-1}\Psi_{n}(r)dr}=\sum_{n=1}^{\infty}{A_{n}(t)\int\limits_{0}^{a}{r^{\mathcal{N}-1}\Psi_{n}(r)\Psi_{n'}(r)dr}}
-\end{eqnarray}
-Devido às condições de ortogonolidade, a integral no segundo membro pode ser simplificada. Isolando $A_{n}(t)$, obtemos:
-\begin{eqnarray}
-A_{n}=\frac{\int\limits_{0}^{a}{drC(r,t)r^{\mathcal{N}-1}}}{\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi^{2}_{n}(r)}}
-\end{eqnarray}
-Prosseguimos integrando ambos os membros da equação de difusão e aplicando alguns artifícios de cálculo:
-\begin{eqnarray}
-\nonumber
-\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}(r)\frac{\partial C}{\partial t}}=
-D\int\limits_{0}^{a}{dr\left[\frac{\partial}{\partial r}\left(r^{\mathcal{N}-1}\frac{\partial C
-}{\partial r}\right)\right]\Psi_{n}(r)}
-\end{eqnarray}
-\begin{eqnarray}
-\frac{d}{dt}\left[ \int\limits_{0}^{a}{ drr^{\mathcal{N}-1}\Psi_{n}(r)C}\right] =\left. Dr^{\mathcal{N}-1}\Psi_{n}(r)\frac{\partial C}{\partial r}\right|_{0}^{a}-\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\frac{\partial C}{\partial r}}
-\nonumber
-\end{eqnarray}
-\begin{eqnarray}
-\nonumber
-\int_{0}^{a}{drr^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\frac{\partial C}{\partial r}}=\left. Cr^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\right|_{0}^{a}-\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\frac{C}{r^{N}-1}\frac{d}{dr}\left( r^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\right)}
-\end{eqnarray}
-\begin{eqnarray}
-\nonumber
-\frac{1}{r^{\mathcal{N}-1}}\frac{d}{dr}\left( r^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\right)=-\lambda_{n}^{2}\Psi_{n}
-\end{eqnarray}
-\begin{eqnarray}
-\nonumber
-\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\frac{d\Psi_{n}}{dr}\frac{\partial C}{\partial r}}=\Phi(t)\frac{d\Psi_{n}}{dt}+\lambda_{n}^{2}\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}C}
-\end{eqnarray}
-
-\begin{eqnarray}
-\frac{\frac{d}{dt}\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}C}}{\int\limits_{0}^{a}{drr^{\mathcal{N}}\Psi_{n}^{2}}}=-\mathcal{D}\frac{\left. \Phi(t)\frac{d\Psi_{n}}{dr}\right|_{r=a}}{
-\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}^{2}}}-\lambda_{n}^{2}A_{n}(t)
-\end{eqnarray}
-
-\begin{eqnarray}
-\frac{d}{dt}A_{n}(t)=-\mathcal{D}\frac{\left. \frac{d\Psi_{n}}{dr}\right|_{r=a}}{\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}^{2}}}-\lambda_{n}^{2}A_{n}(t)
-\end{eqnarray}
-Chamando o primeiro termo do lado direito de $\mathcal{K}(t)$, reescrevemos a equação anterior como:
-\begin{eqnarray}
-\frac{d}{dt}A_{n}(t)+\lambda_{n}^{2}A(t)=-\mathcal{K}(t).
-\end{eqnarray}
-Resolvemos então a EDO:
-\begin{eqnarray}
-\nonumber
-\frac{d}{dt}A_{n}(t)\exp{(\lambda_{n}^{2}t)}+\lambda_{n}^{2}\exp{(\lambda_{n}^{2}t)}A_{n}(t)=
--\mathcal{K}(t)\exp{(\lambda_{n}^{2}t)}
-\nonumber \\
-\frac{d}{dt}(A_{n}(t)\exp{(\lambda_{n}^{2}t)})=-\int\limits_{0}^{t}{d\overline{t}\mathcal{K}(\overline{t})
-\exp{(-\lambda_{n}^{2}t)}}
-\end{eqnarray}
-Chegamos, então, a:
-\begin{eqnarray}
-A_{n}(t)=A_{n}(0)\exp{(-\lambda_{n}^{2}t)}-\int\limits_{0}^{t}{d\overline{t}\exp{[-\lambda_{n}^{2}(t-\overline{t})]}},
-\end{eqnarray}
-onde $A_{n}(0)$ é dado por:
-\begin{eqnarray}
-A_{n}(0)=\frac{\int\limits_{0}^{a}{drC(r,0)r^{\mathcal{N}-1}\Psi_{n}(r)}}{\int\limits_{0}^{a}{drr^{\mathcal{N}-1}\Psi_{n}^{2}(r)}}
-\end{eqnarray}
-
-\chapter{Difusão em uma esfera}
-Iniciaremos agora o estudo da difusão com simetria esférica.
-
-\section{Para o caso em que $C(a,t)=aC_{0}$}
-Queremos resolver a equação:
-\begin{eqnarray}
-\frac{\partial C}{\partial t}=\mathcal{D}\left(\frac{\partial^{2}C}{\partial r^{2}}+\frac{2}{r}\frac{\partial C}{\partial r}\right).
-\end{eqnarray}
-Para tal, nos valeremos da substituição $u(r,t)=C(r,t)r$, permitindo-nos escrever a equação anterior da seguinte forma:
-\begin{eqnarray}
-\label{esfera0}
-\frac{\partial u}{\partial t}=\mathcal{D}\frac{\partial^{2}u}{\partial r^{2}},
-\end{eqnarray}
-que é análoga àquela da difusão unidimensional. Consideraremos as condições iniciais e de borda abaixo:
-\begin{eqnarray}
-\nonumber
-u(0,t)=0 \\
-\nonumber
-u(a,t)=aC_{0} \\
-u(r,0)=rf(r),
-\end{eqnarray}
-para $0<r<a$ na última condição. Iniciaremos supondo $u(r,t)$ separável em $r,t$, isto é:
-\begin{eqnarray}
-\label{esfera1}
-u(r,t)=\Phi(r)T(t),
-\end{eqnarray}
-onde $T$ é uma função somente de $t$ e $\Phi$ é uma função somente de r. Substituindo a Eq.(\ref{esfera1}) em Eq.(\ref{esfera0}) e separando as variáveis, chegamos a
-\begin{eqnarray}
-\frac{1}{\mathcal{D}}\frac{1}{T_{n}(t)}\frac{dT_{n}(t)}{dt}=\frac{1}{\Phi_{n}(r)}\frac{d^{2}\Phi_{n}(r)}{dr^{2}}.
-\end{eqnarray}
-Como os lados desta equação são independentes, devem ser iguais a uma constante, que chamaremos $\lambda_{n}$. Ficamos então com duas equações a resolver:
-\begin{eqnarray}
-\frac{dT_{n}(t)}{dt}-\lambda_{n}\mathcal{D}T_{n}(t)=0
-\end{eqnarray}
-e
-\begin{eqnarray}
-\frac{d\Phi_{n}(r)^{2}}{dr^{2}}-\lambda_{n}\Phi_{n}(r)=0.
-\end{eqnarray}
-A primeira das equações é de fácil resolução, mas por motivos que serão esclarecidos logo a frente, será resolvida mais tarde. A segunda equação tem como solução:
-\begin{eqnarray}
-\Phi_{n}(r)=B_{n}'\sin{\left(r\sqrt{-\lambda_{n}}\right)},
-\end{eqnarray}
-que é determinada com base nas condições de contorno citadas acima, onde $\lambda_{n}=-\frac{n^{2}\pi^{2}}{a^{2}}$. Até o momento, determinamos apenas parcialmente solução e ainda não lidamos com a parte temporal. A forma inicial da função $u(r,t)$ é:
-\begin{eqnarray}
-u(r,t)=\sum\limits_{n=1}^{\infty}{A_{n}(t)\sin{\left( \frac{n\pi r}{a} \right)}}.
-\end{eqnarray}
-Nosso objetivo agora será encontrar a função $A_{n}(t)$, que corresponde à parte temporal de nossa solução. Começamos por multiplicar ambos os lados da equação anterior por $\sin{\left( \frac{n\pi r}{a} \right)}$, posteriormente integrando em $0\le r \le a$:
-\begin{eqnarray}
-\label{esfera_tempo1}
-\int\limits_{0}^{a}{dr\sin{\left( \frac{n\pi r}{a} \right)}u(r,t)}=
-\sum\limits_{n=1}^{\infty}A_{n}(t)\int\limits_{0}^{a}{dr\sin{\left( \frac{n\pi r}{a} \right)}sin{\left(\frac{\bar{n}\pi r}{a}\right)}}.
-\end{eqnarray}
-Considerando o resultado,
-\begin{eqnarray}
-\int\limits_{0}^{a}{dr\sin{\left(\frac{n\pi r}{a}\right)}\sin{\left(\frac{\bar{n}\pi r}{a}\right)}}=\frac{a}{2}\delta_{n\bar{n}}
-\end{eqnarray}
-escrevemos, então, a Eq.(\ref{esfera_tempo1}) como:
-\begin{eqnarray}
-A_{n}(t)=\frac{a}{2}\int\limits_{0}^{a}{dr\sin{\left(\frac{n\pi r}{a}\right)}u(r,t)}
-\end{eqnarray}
-Prosseguimos multiplicando a Eq.(\ref{esfera0}) por $\sin{\left( \frac{n\pi r}{a}\right)}$ em ambos os lados:
-\begin{eqnarray}
-\sin{\left( \frac{n\pi r}{a}\right)}\frac{\partial u}{\partial t}=\mathcal{D}\sin{\left( \frac{n\pi r}{a}\right)}\frac{\partial^{2}u}{\partial r^{2}}
-\end{eqnarray}
-Integramos em $0 \le r \le a$:
-\begin{eqnarray}
-\frac{1}{\mathcal{D}}\int\limits_{0}^{a}{\sin{\left( \frac{n\pi r}{a}\right)}\frac{\partial u}{\partial t}}=\int\limits_{0}^{a}{\sin{\left( \frac{n\pi r}{a}\right)}\frac{\partial^{2}u}{\partial r^{2}}}
-\end{eqnarray}
-Resolvendo a integral por partes, reorganizando chegamos a:
-\begin{eqnarray}
-\frac{dA_{n}(t)}{dt}+\mathcal{D}\left(\frac{n\pi}{a}\right)^{2}A_{n}(t)=-\frac{2\pi C_{0}\mathcal{D}n\cos(n\pi)}{a}
-\end{eqnarray}
-Resolvendo esta EDO, obtemos:
-\begin{eqnarray}
-A_{n}(t)=-\frac{2\pi C_{0}\mathcal{D}n\cos{n\pi}}{a}\exp{\left(\frac{-\mathcal{D}n^{2}\pi^{2}t}{a^{2}}\right)}
-\int\limits_{0}^{t}{\exp{\left(\frac{\mathcal{D}\pi^{2}n^{2}\bar{t}}{a}\right)}d\bar{t}}\\
-+A_{0}\exp{\left( \frac{-\mathcal{D}n^{2}\pi^{2}t}{a}\right)}
-\end{eqnarray}
-
-Uma vez que
-\begin{eqnarray}
-A_{n}(0)=\frac{2}{a}\int\limits_{0}^{a}{dr\sin{\left( \frac{n\pi r}{a} \right)}rf(r)},
-\end{eqnarray}
-após cálculos de rotina chegamos a:
-\begin{eqnarray}
-A_{n}(t)=-\frac{2C_{0}a\cos(n\pi)}{n\pi}-\frac{2C_{0}a\cos(n\pi)}{n\pi}
-\exp{\left( \frac{-\mathcal{D}n^{2}\pi^{2}t}{a^{2}}\right)}\\
-+\exp{\left( \frac{-\mathcal{D}n^{2}\pi^{2}t}{a^{2}}\right)}
-\int\limits_{0}^{a}{d\bar{r}\bar{r}\sin{\left( \frac{n\pi \bar{r}}{a} \right)}f(\bar{r})}
-\end{eqnarray}
-
-Substituindo o resultado anterior em $u(r,t)$ e lembrando que $u(r,t)=C(r,t)r$, obtemos a solução final:
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=14.36cm,height=11.60cm]{pictures/novo_esferar.eps}
-\caption{Solução $C(r,t)$ para vários tempos ($r=3$,$\mathcal{D}=1$)}
-\label{fig_esfera_r}
-\end{center}
-\end{figure}
-\begin{eqnarray}
-C(r,t)=-\frac{2C_{0}a}{\pi r}\sum\limits_{n=1}^{\infty}{\frac{(-1)^{n}}{n}\sin{\left( \frac{n\pi r}{a} \right)}} \\
--\frac{2C_{0}a}{\pi r}\sum\limits_{n=1}^{\infty}{\frac{(-1)^{n}}{n}
-\sin{\left( \frac{n\pi r}{a} \right)}\exp{\left( \frac{-\mathcal{D}\pi^{2}n^{2}t}{a} \right)}} \\
-+\frac{1}{r}\sum\limits_{n=1}^{\infty}{\sin{\left( \frac{n\pi r}{a} \right)}\exp{\left( \frac{-\mathcal{D}\pi^{2}n^{2}t}{a^{2}} \right)}\int\limits_{0}^{a}{d\bar{r}\bar{r}\sin{\left( \frac{n\pi \bar{r}}{a} \right)}f(\bar{r})}}
-\end{eqnarray}
-
-
-
-\section{Para o caso em que $C(a,t)=a\phi(t)$}
-
-Prosseguiremos agora nossos cálculos generalizando o resultado anterior. Ao invés de uma constante, consideraremos $C(a,t)$ uma função dependente do tempo. As condições iniciais e de fronteira deste caso são:
-\begin{eqnarray}
-\label{esfera2_1}
-\nonumber
-u(a,t)=a\phi(t) \\
-u(0,t)=0 \\
-u(r,0)=0,
-\end{eqnarray}
-com $0 \le r \le a$ (para a última condição). Repetimos os procedimentos adotados para a resolução do caso anterior. Chegamos à mesma forma de $u(r,t)$:
-\begin{eqnarray}
-u(r,t)=\sum\limits_{n=1}^{\infty}{A_{n}(t)\sin{\left( \frac{n\pi r}{a} \right)}}
-\end{eqnarray}
-É neste ponto que as duas resoluções diferem. Consideraremos, agora, a nova condição de borda. Inicialmente, multiplicamos ambos os membros da equação anterior por $\sin{\left( \frac{n\pi r}{a} \right)}$ e integramos:
-\begin{eqnarray}
-\int\limits_{0}^{a}{d\bar{r}\bar{r}\sin{\left( \frac{n\pi r}{a} \right)}u(r,t)}=
-\sum\limits_{n=1}^{\infty}{A_{n}(t)\int\limits_{0}^{a}{d\bar{r}\sin{\left( \frac{n\pi \bar{r}}{a} \right)}\sin{\left( \frac{n\pi \bar{r}'}{a} \right)}}}
-\end{eqnarray}
-Resolvendo as integrais, ficamos com
-\begin{eqnarray}
-A_{n}(t)=\frac{2}{a}\int_{0}^{a}{d\bar{r}\sin{\left( \frac{n\pi \bar{r}}{a} \right)}u(\bar{r},t)}
-\end{eqnarray}
-Multiplicando a equação de difusão (já se tendo substituído $u=Cr$) por $\sin{\left( \frac{n\pi r}{a} \right) }$ e integrando, chegamos, após cálculos de rotina, a:
-\begin{eqnarray}
-\frac{dA_{n}(t)}{dt}+\mathcal{D}\left(\frac{n\pi}{a}\right)^{2}A_{n}(t)=
--\frac{2\mathcal{D}\pi}{a}\cos{(n\pi)}\phi(t)
-\end{eqnarray}
-Resolvendo esta EDO, chegamos à expressão final para $A_{n}(t)$:
-\begin{eqnarray}
-A_{n}(t)=-\frac{2\mathcal{D}\pi n}{a} \cos{(n\pi)}\exp{\left( \frac{-\mathcal{D}\pi^{2}n {2}t}{a^{2}}\right)} \times \\
-\int\limits_{0}^{t}{\phi(\bar{t})\exp{\left( \frac{\mathcal{D}n^{2}\pi^{2}\bar{t} }{a^{2}}\right)}d\bar{t}}
-\end{eqnarray}
-Substituindo na expressão para $u(r,t)$ considerada no início e lembrando que $u=Cr$, obtemos a solução final para o presente caso:
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=14.36cm,height=11.60cm]{pictures/novo_esferat.eps}
-\caption{Solução $C(r,t)$ para vários tempos ($r=3$,$\mathcal{D}=1$)}
-\label{fig_esfera_t}
-\end{center}
-\end{figure}
-\begin{eqnarray}
-C(r,t)=-\frac{2\mathcal{D}}{ra}\sum\limits_{n=1}^{\infty}{(-1)^{n}
-\exp{\left( \frac{-\mathcal{D}\pi^{2}n^{2}t}{a^{2}}\right) }n\pi\sin{\left( \frac{n\pi r}{a} \right)} } \times \\
-\int\limits_{0}^{t}{\phi(\bar{t})\exp{\left( \frac{\mathcal{D}n^{2}\pi^{2}\bar{t} }{a^{2}}\right)}d\bar{t}}
-\end{eqnarray}
-
-
-\chapter{Caso n-dimensional}
-${ }$
-Consideraremos agora o caso de uma equação da difusão $\mathcal{N}$-dimensional:
-\begin{eqnarray}
-\label{ndimens}
-\frac{\partial C }{\partial t}=\mathcal{D}\nabla^{2}C,
-\end{eqnarray}
-em que
-\begin{eqnarray}
-\nabla^{2}\equiv \frac{1}{r^{\mathcal{N}-1}}\frac{\partial}{\partial r}\left( r^{\mathcal{N}-1}\frac{\partial}{\partial r}\right),
-\nonumber
-\end{eqnarray}
-definida na região $0\leq r \leq a$. Como condições de contorno, temos que $C(a,t)=0$ e $C(0,t)$ deve ser finito por motivos que exporemos mais adiante. Como condição inicial, faremos $C(r,0)=\tilde{C}(r)$.
-Iniciamos a resolução deste caso separando as variáveis:
-\begin{eqnarray}
-\label{solutio}
-C(r,t)=T(t)\Phi(r)
-\end{eqnarray}
-Substituímos, então, a solução acima na equação \ref{ndimens}, de maneira a obter:
-\begin{eqnarray}
-\frac{1}{\mathcal{D}T_{n}(t)}\frac{d}{dt}T_{n}(t)=
-\frac{1}{\Phi_{n}(r)}\frac{1}{r^{\mathcal{N}-1}}\frac{d}{dr}\left[r^{\mathcal{N}-1}\frac{d\Phi_{n}(r)}{dr}\right]=-\lambda_{n}^{2}
-\end{eqnarray}
-Disto, extraímos duas equações ordinárias que devem ser satisfeitas:
-\begin{eqnarray}
-\frac{d}{dt}T_{n}(t)=-\lambda^{2}\mathcal{D}T_{n}(t)
-\end{eqnarray}
-e
-\begin{eqnarray}
-\label{segunda}
-\frac{d}{dr}\left(r^{\mathcal{N}-1}\frac{d\Phi_{n}}{dr}\right)=-\lambda_{n}^{2}r^{\mathcal{N}-1}\Phi_{n}(r).
-\end{eqnarray}
-Para a primeira, chegamos à solução $T_{n}(t)=\exp{(-\lambda_{n}^{2}\mathcal{D}t)}$, sendo que a constante de normalização foi omitida aqui por não ser necessária. Expandimos a equação \ref{segunda}, assumindo $\Phi(a)T(t)=0$, $t>0$, uma vez que $\Phi(a)=0$, ficando com:
-\begin{eqnarray}
-\frac{d^{2}\Phi_{n}}{dr^{2}}+\left(\frac{\mathcal{N}-1}{r}\right)\frac{d\Phi_{n}}{dr}+\lambda_{n}^{2}\Phi_{n}=0,
-\end{eqnarray}
-ou
-\begin{eqnarray}
-\Phi_{n}''+\left(\frac{\mathcal{N}-1}{r}\right)\Phi_{n}'+\lambda_{n}^{2}\Phi_{n}=0.
-\end{eqnarray}
-Comparando à solução tabelada para a equação
-\begin{eqnarray}
-u''+\left(\frac{1-2\alpha}{z}\right)u'+\left( \beta^{2} + \frac{\alpha^{2}-\nu^{2}}{z^{2}} \right)u=0,
-\end{eqnarray}
-que é
-\begin{eqnarray}
-u=z^{\alpha}Z_{\nu}(\beta z),
-\end{eqnarray}
-onde $Z=AJ_{\nu}(\beta z)+BJ_{-\nu}(\beta z)$ ou $Z=AJ_{\nu}(\beta z)+BY_{\nu}(\beta z)$, concluímos que $z=r$, $ \alpha=1-n/2$, $ \nu=\pm  \alpha$, $ \beta=\pm  \lambda_{n}$. Como nossos autovalores são positivos, temos $ \beta=\lambda$. Construímos então nossa solução:
-\begin{eqnarray}
-\Phi_{n}(r)=r^{1-\frac{\mathcal{N}}{2}}\left[ A_{n}J_{1-\frac{\mathcal{N}}{2}}(\lambda_{n}r)+B_{n}J_{-\left( 1-\frac{\mathcal{N}}{2}\right)}(\lambda_{n}r)\right]
-\end{eqnarray}
-Substituímos, então, $J_{-\left( \frac{1-\mathcal{N}}{2}\right)}(\lambda_{n}r)$ pela função de Neumann, sua correspondente. Uma vez que $Y_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r) \to \infty$ quando $\mathcal{N}/2-1 \to 0$, seria útil omiti-la da solução. Isso é fisicamente possível, pois temos $B_{n}=0$ (note a restrição que fizemos no início sobre as condições de contorno serem finitas). A solução fica:
-\begin{eqnarray}
-\Phi_{n}(r)=r^{1-\frac{\mathcal{N}}{2}}\left( A_{n}J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)\right)
-\end{eqnarray}
-com $\mathcal{N}=1,2,3...$. A solução será dada combinando-se os resultados obtidos acima, retomando \ref{solutio}. Já a solução geral será a combinação de todas as soluções existentes:
-\begin{eqnarray}
-C(r,t)=\sum_{n=1}^{\infty}{A_{n}r^{1-\frac{\mathcal{N}}{2}}J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)}\exp{(-\lambda_{n}^{2}\mathcal{D}t)}.
-\end{eqnarray}
-Precisamos agora econtrar os auto-valores para substitui-los na solução. Faremos isso sabendo que:
-\begin{equation}
-A_{n}=\frac{\int_{0}^{a}{\tilde{C}(r)J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)rdr}}
-{\int_{0}^{a}{J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)rdr}}
-\end{equation}
-Como:
-\begin{eqnarray}
-\int_{0}^{a}{J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)rdr}=\frac{a^{2}}{2}J_{\frac{\mathcal{N}}{2}}^{2}(\lambda_{n}r),
-\end{eqnarray}
-a solução final fica dada por:
-\begin{eqnarray}
-C(r,t)=\frac{2}{a^{2}}\sum_{n=1}^{\infty}{\exp{(-\lambda_{n}^{2}\mathcal{D}t)}r^{\frac{\mathcal{N}}{2}-1}
-\int_{0}^{a}{\tilde{C}(r)J_{\frac{\mathcal{N}}{2}-1}(\lambda_{n}r)rdr}\frac{1}{J_{\frac{\mathcal{N}}{2}}^{2}(\lambda_{n}r)}}
-\end{eqnarray}
-
-
-\chapter{Equação de difusão fracionária numa região confinada com simetria radial}
-
-Comecemos nossa análise considerando a Eq.~(\ref{pedrao1})
-sujeita às condições de borda depedentes do tempo
-$\rho(r,t)|_{r=a}=\widetilde{\Phi}_{a}(t)$ e
-$\rho(r,t)|_{r=b}=\widetilde{\Phi}_{b}(t)$, à condição inicial
-$\rho(r,0)=\widetilde{\rho}(r)$ e coeficiente de difusão $
-\widetilde{{\mathcal{D}}}(r,t)={\mathcal{D}}\delta(t)r^{-\eta}$. Para
-este caso, a Eq.~(\ref{pedrao1}) pode ser escrita
-\begin{eqnarray}\label{eq-21}
-\frac{\partial^{\gamma}}{\partial t^{\gamma}} \rho(r,t)=
-{\mathcal{D}}\nabla\cdot\left( r^{-\eta}
-\nabla\rho(r,t)\right)
-\end{eqnarray}
-com $0<\gamma\leq 1$. Esta equação extende a difusão usual ao incorporar
-a derivada fracionária, que produz uma dispersão anômala das condições iniciais
-e pode ser obtida por meio do formalismo CTRW utilizando o procedimento descrito
-em ~\cite{SLW}. Além disso, é digno de nota o fato de que dependendo a escolha
-de $\Phi_{a}(t)$ e $\Phi_{b}(t)$ o sistema pode exibir uma solução estacionária
-que é a mesma obtida para o caso da difusão usual.
-Esta propriedade indica que a presença da derivada temporal fracionária produz
-uma relaxação anômala num estado estacionário, em contraste com as derivadas
-espaciais fracionárias que nos levam às distribuições de L\'evy.
-
-Para se obter uma solução para a Eq.~(\ref{eq-21}) e investigar a
-influência da condição de borda na relaxação do sistema e na probabilidade
-de sobrevivência, utilizamos a abordagem da transformada de Laplace e
-função de Green. Depois de alguns cálculos, pode-se mostrar que a solução para a Eq.~(\ref{eq-21}) no espaço de Laplace é dada por
-\begin{eqnarray}
-\label{P2}
-\widehat{\rho}(r,s)&=&-s^{\gamma-1}\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}\widehat{{\mathcal{G}}}(r,r';s)\widetilde{\rho}(r')\nonumber\\
-&+&
-\left[\left.\!{\mathcal{D}}b^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{b}(s)\frac{\partial}{\partial
-r'}\widehat{{\mathcal{G}}}(r,r';s)\right|_{r'=b} \right.
--\left.\left.{\mathcal{D}}a^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{a}(s)\frac{\partial}{\partial
-r'}\widehat{{\mathcal{G}}}(r,r';s)\right|_{r'=a}\right]
-\end{eqnarray}
-na qual os últimos termos correspondem aos efeitos de superfície e determinam
-a existência de uma solução estacionária para o processo. Eles podem estar
-relacionados a inúmeros casos, em particular com a adsorção em superfícies
-fractais \cite{afs}. A função de Green
-$\widehat{{\mathcal{G}}}(\overline{r},\overline{r}';s)$ satisfaz
-a equação
-\begin{eqnarray}\label{eq-2}
-{\mathcal{D}} \nabla \cdot \left( r^{-\eta}
-\nabla \widehat{{\mathcal{G}}}(r,r';s)\right)
--s^{\gamma}
-\widehat{{\mathcal{G}}}(r,r';s)=\frac{1}{r^{{\mathcal{N}}-1}}\; \delta(r-r')
-\end{eqnarray}
-sujeita às condições ${\mathcal{G}}(r,r';s)|_{r=b}=0$ e
-${\mathcal{G}}(r,r';s)|_{r=a}=0$. Reorganizando para as funções características do
-problema de Sturm-Liouville relacionado ao operador espacial da Eq.~(\ref{eq-2}) ($  \nabla \cdot \left( r^{-\eta} \nabla
-\Psi(r,k_n)\right)= -k_n^{2}\Psi(r,k_n)$ with
-$\Psi(a,k_n)=\Psi(b,k_n)=0$),  é possível mostrar que
-\begin{eqnarray}
-\widehat{{\mathcal{G}}}(\overline{r},\overline{r}';s)=-\frac{1}{2+\eta}\sum_{n=1}^{\infty}
-\frac{{\mathcal{N}}_{n}}{s^{\gamma}+{\mathcal{D}}k_{n}^{2}}\Psi(r,k_{n})
-\Psi(r',k_{n})\;.
-\end{eqnarray}
-onde
-\begin{eqnarray}
-\Psi(r,k_{n})&=&r^{\frac{1}{2}(2+\eta-{\mathcal{N}})}\left({\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}r^{\frac{1}{2}(2+\eta)}\right)
-{\mbox{N}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)\right.
-\nonumber \\ &-& \left. {\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)
-{\mbox{N}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}r^{\frac{1}{2}(2+\eta)}\right)\right)\;,
-\end{eqnarray} 
-$\alpha={\mathcal{N}}/(2+\eta)-1$, ${\mbox{J}}_{|\alpha|}(x)$ e
-${\mbox {N}}_{|\alpha|}(x)$ são funções de Bessel de primeira e
-segunda espécie, respectivamente, $k_{n}$ são soluções da equação característica
-\begin{equation}
-\label{k1}
-{\mbox{J}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}b^{\frac{1}{2}(2+\eta)}\right)
-{\mbox{N}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)-{\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\theta}a^{\frac{1}{2}(2+\eta)}\right)
-{\mbox{N}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}b^{\frac{1}{2}(2+\eta)}\right)=0\;,
-\end{equation}
-e ${\mathcal{N}}_{n}$$=$ $(\pi
-k_{n})^{2}/\left[\left({\mbox{J}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)
-/{\mbox{J}}_{|\alpha|}\left(\frac{2k_{n}}{2+\eta}b^{\frac{1}{2}(2+\eta)}\right)\right)^2-1\right]$.
-Tomando a inversa da transformada de Laplace da Eq.~(\ref{P2}), nós
-obtemos
-\begin{eqnarray}\label{toi2}
-\rho(r,t)
-&=&-\frac{1}{\Gamma(1-\gamma)}\int_{0}^{t}dt'\frac{1}{(t-t')^{\gamma}}
-\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}{\mathcal{G}}(r,r';t')\widetilde{\rho}(r')
-\nonumber\\
-&+&
-\int_{0}^{t}dt'\left[\left.\!{\mathcal{D}}b^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{b}(t-t')\frac{\partial}{\partial
-r'}{\mathcal{G}}(r,r';t')\right|_{r'=b} \right.
-\nonumber \\&-&\left.\left.{\mathcal{D}}a^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{a}(t-t')\frac{\partial}{\partial
-r'}{\mathcal{G}}(r,r';t')\right|_{r'=a}\right]
-\end{eqnarray}
-com
-\begin{eqnarray}
-\label{green}
-{\mathcal{G}}(r,r';t)=-\frac{t^{\gamma-1}}{2+\eta}\sum_{n=1}^{\infty}
-{\mathcal{N}}_{n}\Psi(r,k_{n}) \Psi_{n}(r',k_{n}){\mbox
-{E}}_{\gamma,\gamma}\left(-{\mathcal{D}}k_{n}^{2}t^{\gamma}\right)\;,
-\end{eqnarray}
-onde ${\mbox
-{E}}_{\alpha,\beta}\left(x\right)=\sum_{i=0}^{\infty}x^{i}/\Gamma(\beta+\alpha
-i)$ é a função generalizada de Mittag-Leffler \cite{livroC} (ver
-Fig.~(1)).
-
-A presença desta função na solução indica uma dispersão anômala da
-distribuição devido à presença de derivadas temporais fracionárias
-na Eq.~(\ref{pedrao1}), que pode ser verificada
-analisando-se o comportamento do segundo momento $\left(\langle
-r^{2}\rangle=\int_{a}^{b}dr r^{{\cal{N}}-1}
-\left(r^2\rho(r,t)\right)\right)$. Particularmente, para o caso
-caracterizado pelas condições de borda $\rho(a,t)=0$ e
-$\rho(b,t)=0$ satisfazendo a condição inicial
-$\rho(r,0)=1/r^{{\cal{N}}-1}\delta(r-\widetilde{r})$ e $\theta=0$,
-o segundo momento é dado por
-\begin{eqnarray}
-\label{secondmoment} \langle r^{2} \rangle &=& \sum_{n=1}^{\infty}
-\frac{{\mathcal{N}}_{n}}{\pi k_{n}^{2}}
-\left(b^{\frac{{\cal{N}}}{2}+1}\frac{{\mbox{J}}_{|\alpha|}\left(k_{n}a\right)}{{\mbox{J}}_{|\alpha|}\left(k_{n}b\right)}-a^{\frac{{\cal{N}}}{2}+1}\right)
-\Psi_{n}(\widetilde{r},k_{n}){\mbox{E}}_{\gamma}\left(-{\mathcal{D}}k_{n}^{2}t^{\gamma}\right)\nonumber
-\\ &+&\sum_{n=1}^{\infty}
-\frac{2{\cal{N}}{\mathcal{N}}_{n}}{\pi
-k_{n}^{4}}\left(a^{\frac{{\cal{N}}}{2}-1}-b^{\frac{{\cal{N}}}{2}-1}\frac{{\mbox{J}}_{|\alpha|}\left(k_{n}a\right)}
-{{\mbox{J}}_{|\alpha|}\left(k_{n}b\right)} \right)
-\Psi_{n}(\widetilde{r},k_{n}){\mbox{E}}_{\gamma}\left(-{\mathcal{D}}k_{n}^{2}t^{\gamma}\right)
-\end{eqnarray}
-(ver Fig.~(2)). Um resultado importante é obtido a partir de
-Eq.~(\ref{toi2}) ao se tomar o limite $b\rightarrow \infty$,
-compatível com a condição de contorno $\rho(\infty,t)=0$. Para este
-caso, a solução é dada por
-\begin{eqnarray}
-\label{toi3} \rho(r,t)
-&=&-\frac{1}{\Gamma(1-\gamma)}\int_{0}^{t}dt'\frac{1}{(t-t')^{\gamma}}
-\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}{\mathcal{G}}(r,r';t')\widetilde{\rho}(r')\nonumber\\
-&-&{\mathcal{D}}\int_{0}^{t}dt'
-\left.a^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{a}(t-t')\frac{\partial}{\partial
-r'}{\mathcal{G}}(r,r';t')\right|_{r'=a}
-\end{eqnarray}
-com a função de Green
-\begin{eqnarray}
-\label{green1}
-{\mathcal{G}}(r,r';t)=-\frac{2t^{\gamma-1}}{2+\eta}\int_{0}^{\infty}dk
-\frac{k\Psi(r,k)\Psi(r',k){\mbox
-{E}}_{\gamma,\gamma}\left(-k^{2}t^{\gamma}\right)}{{\mbox{J}}_{|\alpha|}^{2}
-\left(\frac{2k}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)+{\mbox{N}}_{|\alpha|}^{2}
-\left(\frac{2k}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)}\;.
-\end{eqnarray}
-
-Agora, analisemos a Eq.~(\ref{pedrao1}) para o coeficiente de difusão
-$\widetilde{{\mathcal{D}}}(r,t)={\mathcal{D}}(t)r^{-\eta}$, com
-${\mathcal{D}}(t)={\mathcal{D}}+\overline{{\mathcal{D}}}(t)$. Nós
-também incorporamos na Eq.~(\ref{pedrao1}) o termo de reação ou adsorção
-$\alpha(r,t)$, de forma a extender a solução a um contexto mais amplo
-para que se possa investigar, por exemplo,  adsorção de drogas
-\cite{DRUG}, desenvolvimento de tumores \cite{tumor} e fluxo de calor
-envolvendo produção de calor \cite{r24}. Aplicando o mesmo procedimento
-utilizado acima, a solução da Eq.~(\ref{pedrao1}) para este caso é dada
-por
-
-\begin{eqnarray}
-\label{toi333}
-\rho(r,t)&=&-\frac{1}{\Gamma(1-\gamma)}\int_{0}^{t}dt'\frac{1}{(t-t')^{\gamma}}
-\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}\widetilde{{\mathcal{G}}}(r,r';t')\widetilde{\rho}(r')\nonumber\\
-&-&\int_{0}^{t}dt'\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}\widetilde{\alpha}(r',t')\widetilde{{\mathcal{G}}}(r,r';t-t')\nonumber
-\\&+&
-\int_{0}^{t}dt'\left[\left.\!{\mathcal{D}}b^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{b}(t-t')\frac{\partial}{\partial
-r'}\widetilde{{\mathcal{G}}}(r,r';t')\right|_{r'=b} \right.\nonumber \\&-&
-\left.\left.{\mathcal{D}}a^{{\mathcal{N}}-1-\eta}\widetilde{\Phi}_{a}(t-t')\frac{\partial}{\partial
-r'}\widetilde{{\mathcal{G}}}(r,r';t')\right|_{r'=a}\right]
-\end{eqnarray}
-com a função de Green dada por
-\begin{eqnarray}
-\label{P3}
-\widetilde{{\mathcal{G}}}(r,r';t)={\mathcal{G}}(r,r';t)-\frac{1}{2+\eta}\sum_{n=1}^{\infty}
-{\mathcal{N}}_{n}\Psi(r,k_{n})\Psi(r',k_{n})\Theta(t,k_{n})
-\end{eqnarray}
-com
-\begin{eqnarray}
-\Theta(t,k_{n})&=&\sum_{m=1}^{\infty}\frac{(-k_{n}^2)^m}{m!}\int_{0}^{t}dt_{m}\overline{{\mathcal{D}}}(t-t_{m})\cdots\nonumber
-\int_{0}^{t_{3}}dt_{2}\overline{{\mathcal{D}}}(t_{3}-t_{2})
-\\ &\times&
-\int_{0}^{t_{2}}dt_{1}\overline{{\mathcal{D}}}(t_{2}-t_{1})t_{1}^{(m+1)\gamma-1}{\mbox
-{E}}^{(m)}_{\gamma,\gamma}\left(-k_{n}^{2}t_{1}^{\gamma}\right)
-\end{eqnarray}
-onde ${\mbox {E}}^{(m)}_{\alpha,\beta}\left(y\right)\equiv
-d^{m}{\mbox {E}}_{\alpha,\beta}\left(y\right)/dy^{m}$.
-Este resultado amplia aqueles encontrados em
-\cite{e1,e2,JML1} considerando o caso ${\mathcal{N}}$-dimensional,
-com coeficiente de difusão dependente do espaço e do tempo e tomando
-uma condição de contorno não homogênea. Dessa forma os resultados obtidos em  \cite{PA1,e3} foram também extendidos.
-
-Por meio dos resultados acima na ausência do termo de reação, podemos
-obter a probabilidade de sobrevivência ${\mathcal{S}}(t)$, que está relacionada à
-distribuição do tempo da primeira passagem, i.e., ${\mathcal{F}}(t)=-\partial
-{\mathcal{S}}(t)/\partial t$~\cite{fpt}. Após alguns cálculos, é possível
-mostrar que aquela fica dada por
-\begin{eqnarray}
-\label{S2}
-{\mathcal{S}}(t)&=&-\frac{a^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}}{\pi}\sum_{n=1}^{\infty}\frac{{\mathcal{N}}_{n}}{k_{n}^{2}}
-\left(1-\frac{b^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}{\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)}
-{a^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}{\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}b^{\frac{1}{2}(2+\eta)}\right)}\right)\nonumber
-\\ &\times&
-\left\{\int_{a}^{b}dr'r'^{{\mathcal{N}}-1}\overline{\rho}(r')\Psi(r,k_{n})\Upsilon(t,k_n)-\frac{2+\eta}{\pi^{2}}{\mathcal{D}}a^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}\right.\nonumber
-\\&\times&\left.
-\int_{0}^{t}d\overline{t}\;\Theta(t-\overline{t},k_{n})\left[\Phi_{a}(\overline{t})
--\frac{b^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}{\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}a^{\frac{1}{2}(2+\eta)}\right)}
-{a^{\frac{1}{2}\left({\mathcal{N}}-\eta\right)-1}{\mbox{J}}_{|\alpha|}
-\left(\frac{2k_{n}}{2+\eta}b^{\frac{1}{2}(2+\eta)}\right)}\Phi_{b}(\overline{t})
-\right]\right\}
-\end{eqnarray}
-com
-\begin{eqnarray}
-\Upsilon(t,k_n)&=&\sum_{m=1}^{\infty}\frac{(-k_{n}^2)^m}{m!}\int_{0}^{t}dt_{m}\overline{{\mathcal{D}}}(t-t_{m})\cdots\nonumber
-\int_{0}^{t_{3}}dt_{2}\overline{{\mathcal{D}}}(t_{3}-t_{2})
-\\ &\times&
-\int_{0}^{t_{2}}dt_{1}\overline{{\mathcal{D}}}(t_{2}-t_{1})t_{1}^{m\gamma}{\mbox
-{E}}^{(m)}_{\gamma}\left(-{\mathcal{D}}k_{n}^{2}t_{1}^{\gamma}\right)
-\end{eqnarray}
-(ver Fig.~(3)).
-
-Investigamos uma equação de difusão fracionária ${\mathcal{N}}$-dimensional considerando uma simetria radial. Também consideramos uma dependência espacial e temporal no coeficiente de difusão, ou seja, ${\mathcal{D}}(r,t)={\mathcal{D}}(t)r^{-\eta}$. A equação de difusão fracionária foi primeiramente trabalhada na ausência do termo de reação, com ${\mathcal{D}}(t)={\mathcal{D}}\delta(t)$ ao se considerarem condições
-de borda não-homogêneas dependentes do tempo. O resultado obtido para tal caso mostra que a distribuição apresenta dispersão anômala devido à presença da derivada fracionária e da dependência no tempo da condição de borda. Ele também extende os resultados encontrados em \cite{e1,e2,JML1} a um contexto mais amplo
-para o caso subdifusivo, isto é, $0<\gamma\leq 1$. Outras quantidades relacionadas
-a este processo difusivo, como a probabilidade de sobrevivência, também mudam. De fato, a Eq.(\ref{S2}) mostra que para tempos longos o limite assintótico é ${\mathcal{S}}(t)\sim t^{-\gamma}$ quando o sistema está sujeito a condições de
-borda homogêneas, com $\rho(a,t)=\rho(b,t)=0$. Este comportamento concorda com
-os resultados apresentados em \cite{PRL2007} para geometria confinada. Mais a frente, estudamos as mudanças produzidas pela incorporação de uma dependência temporal ao coeficiente de difusão, fazendo ${\mathcal{D}}(t)={\mathcal{D}}+\overline{{\mathcal{D}}}(t)$ e o termo de reação $\alpha(r,t)$ na solução. Esta dependência temporal na solução deve produzir
-diferentes regimes difusivos na solução e deve estar relacionada a equações de
-difusão fracionárias de ordem distribuída. Por fim, esperamos que os resultados
-encontrados aqui sejam úteis no estudo de sistemas onde a difusão anômala está
-presente e a superfície tem papel importante.
-
-\chapter{Discussão e Conclusão}
-
-${ }$
-
-Nosso estudo teve início com o estudo da equação de difusão num cilindro, para o caso estacionário, isto é, para $\frac{\partial C}{\partial t}=0$, dependendo apenas de $r,t$. Obtivemos então a solução para o caso em duas dimensões. No capítulo seguinte, obtivemos soluções para a equação de difusão com simetria esférica para duas condições de contorno distintas, primeiramente $C(a,t)=aC_{0}$ e então $C(a,t)=a\phi(t)$. Generalizamos, então, as situações anteriores deduzindo a 
-solução para o caso $\mathcal{N}$-dimensional, após o qual estudamos a equação de difusão fracionária numa região confinada sob simetria radial. Obtivemos soluções para dois casos, $\tilde{\mathcal{D}}(r,t)=\mathcal{D}\delta(t)r^{-\eta}$, com $\rho(r,t)|_{r=a}=\tilde{\Phi}_{a}(t)$, $\rho(r,t)|_{r=b}=\tilde{\Phi}_{b}(t)$ e $\rho(r,0)=\tilde{\rho}(r)$. No segundo caso, consideramos $\tilde{\mathcal{D}}(t)=(\mathcal{D}\delta(t)+\bar{\mathcal{D}}(t))r^{-\eta}$, no qual adicionamos o termo de reação $\tilde{\alpha}(r,t)$.
 
 %%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%
 \begin{thebibliography}{12}
@@ -2982,7 +2092,7 @@ A. Schot, M. K. Lenzi, L. R. Evangelista, L. C. Malacarne, R. S.
 Mendes and  E. K. Lenzi, Phys. Lett. A {\bf 366}, 346 (2007).
 
 %\bibitem{Green}
-%M. P. Morse and H. Feshbach, {\it Methods of Theoretical Physics} (McGraw–Hill, %New York, 1953).
+%M. P. Morse and H. Feshbach, {\it Methods of Theoretical Physics} (McGraw?Hill, %New York, 1953).
 
 \bibitem{Fox}
 A. M. Mathai and R. K. Saxena, {\it The H-function with
