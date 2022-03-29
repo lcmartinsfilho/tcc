@@ -94,26 +94,16 @@ de difusão que empregam derivadas fracionárias temporais, a equação
 de meios porosos (que é não linear) e a equação usual de difusão com
 coeficientes dependentes de variáveis de posição ou do tempo.  Por
 sua vez, a difusão anômala quando não possui o segundo momento
-finito é caracterizada pelas distribuições largas do tipo Lévy. Para
+finito é caracterizada pelas distribuições de Lévy. Para
 este caso, temos a equação de difusão com derivadas fracionárias na
-variável espacial cuja solução é dada em termos das distribuições de
+variável espacial, cuja solução é dada em termos das distribuições de
 Lévy. De um ponto de vista formal, a partir da discussão acima,
 vemos que a difusão anômala pode ser investigada por meio de
 diferentes tipos de equações diferenciais parciais. Assim, nesse
 trabalho investigaremos soluções (analíticas ou numéricas) para
-equações de difusão que estendem a equação de difusão por levarem em
+equações de difusão que estendem a equação de difusão usual por levarem em
 conta a presença de derivadas fracionárias na variável temporal e/ou
-espacial e a presença de termos não lineares. Também consideraremos
-a presença de forças externas e termos absorventes ou fontes atuando
-no sistema. Os resultados encontrados puderam ser aplicados em
-várias outras situações além das já citadas, por exemplo, na análise
-da distribuição de temperatura em hidrogênio cristalino sólido, na
-descrição de equilíbrio entre absorção e desabsorção mantida
-localmente num sólido permeável, para modelar uma difusão
-turbulenta, em modelos de lubrificação, no fluxo assimétrico de
-fluidos, na investigação da recuperação de petróleo pela inundação
-controlada de água em um reservatório de petróleo e no estudo do
-DNA.
+espacial e a presença de termos não lineares.
 
 %\end{abstract}
 
@@ -148,16 +138,16 @@ arredores. Fato análogo se verifica no caso de um recipiente
 contendo água em que é colocada uma pequena quantidade de tinta.
 Após um tempo suficientemente grande, toda a tinta terá se
 dissolvido pela água, distribuindo-se uniformemente.
-A difusão é um dos poucos fenômenos na natureza que é onipresente. O comportamento coletivo das partículas envolvidas é macroscopicamente regular, seguindo uma dinâmica determinística. A partir daí, podemos obter o comportamento para um conjunto de elementos (por exemplo, átomos, moléculas e animais). O primeiro estudo importante sobre o fenômeno da difusão se deve ao
+A difusão é fenômeno onipresente. O comportamento coletivo das partículas envolvidas é macroscopicamente regular, seguindo uma dinâmica determinística. A partir daí, podemos obter o comportamento para um conjunto de elementos (por exemplo, átomos, moléculas e animais). O primeiro estudo importante sobre o fenômeno da difusão se deve ao
 químico escocês Thomas Graham. Graham, além de ter sido o inventor
 da diálise, realizou experimentos que resultaram nas primeiras
 determinações do coeficiente de difusão. Contudo, foi com o alemão
-Adolf Fick que tivemos o surgimento da primeira equação da difusão
+Adolf Fick que tivemos o surgimento da primeira equação de difusão
 propriamente dita. Fick, embora tenha inicialmente visado estudar
 matemática e física, acabou por cursar medicina. Suas contribuições
 no campo da física restringem-se aos anos por volta de 1855, quando
 publicou trabalhos sobre difusão, estabelecendo a equação que hoje
-conhecemos por equação da difusão (primeira e segunda leis de Fick).
+conhecemos por equação de difusão (primeira e segunda leis de Fick).
 Baseado nos resultados obtidos por Graham, Fick identificou uma
 profunda analogia entre a difusão e a condução de calor (Joseph
 Fourier, 1822). Assim sendo, ele concluiu que o fluxo de matéria
@@ -176,7 +166,7 @@ de movimento browniano em homenagem ao seu descobridor. Em sua
 pesquisa, Einstein basicamente descreveu a segunda lei de Fick com a
 difusividade descrita microscopicamente.
 
-Desde esse período até o presente momento muitos modelos e situações físicas envolvendo processos difusivos têm sido investigados \cite{r1}. Entretanto, investigações recentes de várias situações presentes na natureza têm mostrado que muitos fenômenos difusivos (ou relacionados à difusão) podem possuir um comportamento difusivo diferente do observado usualmente, i.e., $\langle r^{2} \rangle$ não varia linearmente com o tempo. Tais processos difusivos são considerados anômalos e têm despertado muito interesse, ocorrendo em situações tais como o crescimento de superfícies \cite{cressup}, transporte de um fluido através de um meio poroso, na análise do histograma obtido a partir das batidas do coração de um indivíduo saudável \cite{coracao}, na difusão através de uma superfície líquida e nas flutuações de sistemas financeiros \cite{financeiros}.  Na maioria das situações em que difusão anômala está presente (por exemplo, nas mencionadas acima), podemos ter o segundo momento finito ou não. A difusão anômala com o segundo momento finito geralmente tem como característica $\langle r^{2} \rangle \sim t^{\alpha}$ ( $\alpha<1$ e  $\alpha>1$ correspondendo a sub- e superdifusão, respectivamente). Algumas equações representativas na descrição deste fenômeno são as equações de difusão que empregam derivadas fracionárias temporais \cite{i2},  a equação de meios porosos (que é não linear),  a equação usual de difusão com coeficientes dependentes de variáveis de posição ou temporais. Em particular, essas equações de difusão têm sido aplicadas em várias situações de interesse físico, tais como, na relaxação ao equilíbrio em sistemas com memória temporal longa (por exemplo, cadeias de polímeros e membranas) \cite{blumen}, na descrição de transporte anômalo em sistemas desordenados \cite{barkai}, para modelar processos dinâmicos não markovianos em proteínas \cite{plotkin}, transporte de substancias através de membranas \cite{Kosztoowicz}, lei de Richardson \cite{richardson} e a lei de Kolmogorov \cite{kolmogorov} (estas duas leis aplicam-se ao estudo de turbulência) e para modelar sistemas hidrológicos \cite{hidrologico}. Por sua vez, a difusão anômala do tipo Lévy, em contraste com a difusão anômala do tipo correlacionada, não tem o segundo momento finito, sendo caracterizada pelas distribuições relacionadas com as distribuições de Lévy \cite{schlesinger,tsallis}. Dentro deste contexto, temos a equação de difusão com derivadas fracionárias na variável espacial \cite{schlesinger,i2} cuja solução é dada em termos das distribuições de Lévy \cite{schlesinger,i2}, que  satisfazem  o teorema de  Levy-Gnedenko, i.e., uma generalização do teorema central do limite.
+Desde esse período até o presente momento, muitos modelos e situações físicas envolvendo processos difusivos têm sido investigados \cite{r1}. Entretanto, investigações recentes de várias situações presentes na natureza têm mostrado que muitos fenômenos difusivos (ou relacionados à difusão) podem possuir um comportamento difusivo diferente do observado usualmente, i.e., o segundo momento $\langle r^{2} \rangle$ não varia linearmente com o tempo. Tais processos difusivos são considerados anômalos e têm despertado muito interesse, ocorrendo em situações tais como o crescimento de superfícies \cite{cressup}, transporte de um fluido através de um meio poroso, na análise do histograma obtido a partir das batidas do coração de um indivíduo saudável \cite{coracao}, na difusão através de uma superfície líquida e nas flutuações de sistemas financeiros \cite{financeiros}.  Na maioria das situações em que difusão anômala está presente (por exemplo, nas mencionadas acima), podemos ter o segundo momento finito ou não. A difusão anômala com o segundo momento finito geralmente tem como característica $\langle r^{2} \rangle \sim t^{\alpha}$ ( $\alpha<1$ e  $\alpha>1$ correspondendo a sub- e superdifusão, respectivamente). Algumas equações representativas na descrição deste fenômeno são as equações de difusão que empregam derivadas fracionárias temporais \cite{i2},  a equação de meios porosos (que é não linear),  a equação usual de difusão com coeficientes dependentes de variáveis de posição ou temporais. Em particular, essas equações de difusão têm sido aplicadas em várias situações de interesse físico, tais como, na relaxação ao equilíbrio em sistemas com memória temporal longa (por exemplo, cadeias de polímeros e membranas) \cite{blumen}, na descrição de transporte anômalo em sistemas desordenados \cite{barkai}, para modelar processos dinâmicos não markovianos em proteínas \cite{plotkin}, transporte de substancias através de membranas \cite{Kosztoowicz}, lei de Richardson \cite{richardson} e a lei de Kolmogorov \cite{kolmogorov} (estas duas leis aplicam-se ao estudo de turbulência) e para modelar sistemas hidrológicos \cite{hidrologico}. Por sua vez, a difusão anômala do tipo Lévy, em contraste com a difusão anômala do tipo correlacionada, não tem o segundo momento finito, sendo caracterizada pelas distribuições de Lévy \cite{schlesinger,tsallis}. Dentro deste contexto, temos a equação de difusão com derivadas fracionárias na variável espacial \cite{schlesinger,i2} cuja solução é dada em termos das distribuições de Lévy \cite{schlesinger,i2}, que  satisfazem  o teorema de  Levy-Gnedenko, uma generalização do teorema central do limite.
 
 Cabe mencionar que as situações ressaltadas aqui poderiam ser analisadas por procedimentos alternativos como caminhadas aleatórias, equação mestra e equações generalizadas de Langevin. Entretanto, o emprego de equações diferenciais na descrição da difusão anômala nos proporciona um tratamento mais simples quando temos campos externos aplicados ao sistema. Devido a esse fato, vamos empregar em nosso trabalho essencialmente equações de difusão e quando se fizer necessário abordaremos a conexão entre estas equações e outros formalismos.
 
@@ -189,20 +179,20 @@ Cabe mencionar que as situações ressaltadas aqui poderiam ser analisadas por pro
 ${ }$
 
 
-Para obtermos a equação diferencial da difusão, primeiramente
+Para obtermos a equação diferencial de difusão, primeiramente
 devemos considerar que o fluxo de substância que atravessa uma
 unidade de área de uma seção transversal é proporcional ao gradiente
-de concentração, isto é
+de concentração, isto é,
 \begin{equation}
  F=-D\frac{\partial{C}}{\partial{x}},
 \end{equation}
 onde $F$ é a densidade de corrente (taxa de transferência por unidade
 de área da seção), $C$ a concentração da substância a se difundir, $x$ a
-coordenada espacial normal à seção e $D$, o coeficiente de difusão (o
+coordenada espacial normal à seção e $D$ o coeficiente de difusão (o
 fator de proporcionalidade $k$ citado por Fick). Esta relação é
 comumente conhecida como Primeira Lei de Fick e é válida para meios
 isotrópicos, isto é, meios em que a estrutura e propriedades
-difusivas são as mesmas nas vizinhanças de qualquer ponto em todas
+difusivas são as mesmas nas vizinhanças de qualquer ponto e em todas
 as direções. Num meio anisotrópico, nem sempre isso é verdade, uma
 vez que as propriedades difusivas dependem da direção em que são
 medidas.
@@ -210,7 +200,7 @@ medidas.
 Consideremos um elemento de volume na forma de um paralelepípedo com
 lados paralelos aos eixos coordenados, medindo $2dx$, $2dy$, $2dz$, e com
 centro posicionado em $P(x,y,z)$, onde a concentração é igual a $C$.
-Chamemos de ABCD e A'B'C'D' as faces perpendiculares ao eixo x, como
+Chamemos de ABCD e A'B'C'D' as faces perpendiculares ao eixo $x$, como
 mostra a figura \ref{caixa}:
 \begin{figure}[h]
 \begin{center}
@@ -220,12 +210,11 @@ mostra a figura \ref{caixa}:
 \label{caixa}
 \end{figure}
 Então, a taxa com que a substância penetra no elemento de volume
-pela face ABCD no plano x - dx é dada por
+pela face ABCD no plano $x - dx$ é dada por
 \begin{equation}
  4dydz\left(F_{x}-\frac{\partial{F_{x}}}{{\partial{x}}}dx\right),
 \end{equation}
-onde \begin{math} F_{x}
-\end{math} é a densidade de corrente correspondente ao plano que passa por P. A taxa com a
+onde $F_{x}$ é a densidade de corrente correspondente ao plano que passa por $P$. A taxa com a
 qual a substância sai pela face A'B'C'D' é dada por:
 \begin{equation}
 4dydz\left(F_{x}+\frac{\partial{F_{x}}}{{\partial{x}}}dx\right).
@@ -255,7 +244,7 @@ que deve haver conservação da quantidade total, isto é,
 \frac{\partial{C}}{\partial{t}}+\frac{\partial{F_{x}}}{\partial{x}}+\frac{\partial{F_{y}}}{\partial{y}}+\frac{\partial{F_{z}}}{\partial{z}}=0.
 \end{equation}
 Para o caso em que os coeficientes de difusão são constantes,
-podemos substitui-los pela relação estabelecida pela 1ª Lei de Fick,
+podemos substituí-los pela relação estabelecida pela 1ª Lei de Fick,
 produzindo
 \begin{equation}
 \frac{\partial{C}}{\partial{t}}-D\frac{\partial{^{2}C}}{\partial{x^{2}}}-D\frac{\partial{^{2}C}}{\partial{y^{2}}}-D\frac{\partial{^{2}C}}{\partial{z^{2}}}=0,
@@ -270,7 +259,7 @@ que se reduz a
  \label{eq0002}
 \end{equation}
 nos casos em que a difusão é unidimensional, ou seja, quando só
-ocorre paralelamente ao eixo x.
+ocorre paralelamente ao eixo $x$.
 
 \subsection{Soluções em uma dimensão}
 
@@ -303,7 +292,7 @@ o diâmetro do cano é pequeno, o caso citado pode ser tratado em
 função apenas de duas variáveis, $x$ e $t$, como um caso de difusão em
 uma dimensão, conforme a figura \ref{fig:teeest}.
 
-No problema proposto, consideramos as seguintes condições de contorno e valores iniciais, descritas por meio da função delta de Dirac.
+No problema proposto, consideramos as seguintes condições de contorno e valores iniciais, descritas por meio da função delta de Dirac:
 \begin{equation}
 C(x,0)=(M/A)\delta(x-x_{0}),
 \end{equation}
@@ -311,9 +300,9 @@ em que $A$ é a área da seção transversal do cano e $M$ a massa de substância a s
 \begin{equation}
  M=\int\limits_{-\infty}^{+\infty}C(x,t)Adx.
 \end{equation}
-A curva $C(x,t)$ é muito suave, isto é, possui segunda derivada em relação a $x$. Além disso, é absolutamente integrável. Por isso, deve possuir transformada de Fourier. Seja
+A curva $C(x,t)$ é muito suave, isto é, possui segunda derivada em relação a $x$. Além disso, é absolutamente integrável. Por isso, deve possuir transformada de Fourier dada por:
 \begin{equation}
-R(k,t)=\mathscr{F}\{C(x,t)\}=\frac{1}{\sqrt{2\pi}}\int\limits _{-\infty}^{+\infty}C(x,t)e^{ikx}dx
+R(k,t)=\mathscr{F}\{C(x,t)\}=\frac{1}{\sqrt{2\pi}}\int\limits _{-\infty}^{+\infty}C(x,t)e^{ikx}dx.
 \end{equation}
 Diferenciando ambos os lados da igualdade, temos
 \begin{equation}
@@ -370,7 +359,7 @@ Consideremos agora o caso de um cilindro que, diferentemente daquele descrito an
 \end{center}
 \end{figure}
 
-Neste caso, podemos considerar que o fluxo que existiria no sentido negativo do eixo x para antes da origem é refletido na borda e se soma ao fluxo positivo. Sendo a solução para um cilindro infinito simétrica em relação à origem, a distribuição para o cilindro semi-infinito pode ser obtida somando-se as duas soluções parciais para x \textgreater{} 0 e x \textless{} 0, como segue:
+Neste caso, podemos considerar que o fluxo que existiria no sentido negativo do eixo $x$ para antes da origem é refletido na borda e se soma ao fluxo positivo. Sendo a solução para um cilindro infinito simétrica em relação à origem, a distribuição para o cilindro semi-infinito pode ser obtida somando-se as duas soluções parciais para $x > 0$ e $x < 0$, como segue:
 \begin{equation}
 C=2\left[ \frac{M}{2\sqrt{Dt\pi}}exp(-x^{2}/4Dt) \right] =\frac{M}{\sqrt{Dt\pi}}exp(-x^{2}/4Dt)
 \end{equation}
@@ -379,7 +368,7 @@ Esta equação satisfaz as condições iniciais $\frac{\partial{C}}{\partial{x}}=0$ 
 
 ${ }$
 
-Consideremos agora o caso em que a substância está inicialmente confinada numa determinada região do espaço e não num único plano. Esse é o caso, por exemplo, de uma coluna longa de água que repousa sobre uma longa coluna de solução. Para resolver esse problema, consideremos a solução final é composta por um número infinito de linhas de fonte sobrepostas, cada linha correspondendo a uma solução para cada elemento de comprimento \begin{math}\delta\xi\end{math}, com força \begin{math}\delta\xi{}C_{0}\end{math}:
+Consideremos agora o caso em que a substância está inicialmente confinada numa determinada região do espaço e não num único plano. Esse é o caso, por exemplo, de uma coluna longa de água que repousa sobre uma longa coluna de solução, conforme ilustra a figura \ref{fig0001}. Para resolver esse problema, consideremos que a solução final é composta por um número infinito de linhas de fonte sobrepostas, cada linha correspondendo a uma solução para cada elemento de comprimento $\delta\xi$, com força $\delta\xi{}C_{0}$.
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=9.5cm,height=4.5cm]{pictures/figura3.eps}
@@ -390,21 +379,21 @@ Substituindo os dados na equação obtida para o cilindro infinito, podemos escrev
 \begin{equation}
 \frac{C_{0}\delta\xi}{2\sqrt{Dt\pi}}exp(-x^{2}/4Dt),
 \end{equation}
-que é a concentração num ponto P qualquer a uma distância \begin{math}\xi\end{math} do elemento. Neste caso, a concentração em x \textless{} 0 é sempre constante. Além disso, inicialmente temos C = 0 para todo x \textgreater{} 0.
-Somando as soluções para os sucessivos elementos \begin{math}\delta\xi\end{math} obtemos a solução completa:
+que é a concentração num ponto $P$ qualquer a uma distância $\xi$ do elemento. Neste caso, a concentração em $x < 0$ é sempre constante. Além disso, inicialmente temos $C = 0$ para todo $x > 0$.
+Somando as soluções para os sucessivos elementos $\delta\xi$ obtemos a solução completa:
 \begin{equation}
 C(x,t)=\frac{C_{0}}{2\sqrt{Dt\pi}}\int\limits _{x}^{\infty}{exp(-\xi^{2}/4Dt)d\xi},
 \end{equation}
-que pode ser simplificada se fizermos \begin{math}\frac{\xi}{2\sqrt{Dt}}=\alpha\end{math}. Note que a equação acima nos fornece a quantidade total de substância difundida entre x (que corresponde a uma distância \begin{math}\xi\end{math} do elemento de comprimento \begin{math}\delta\xi\end{math}) e \begin{math}+ \infty\end{math}, que é, na verdade, a quantidade total de substância que se difundiu até o ponto $P$ (ver área hachurada da figura \ref{fig0001}). Assim, ficamos com
+que pode ser simplificada se fizermos \begin{math}\frac{\xi}{2\sqrt{Dt}}=\alpha\end{math}. Note que a equação acima nos fornece a quantidade total de substância difundida entre $x$ (que corresponde a uma distância \begin{math}\xi\end{math} do elemento de comprimento \begin{math}\delta\xi\end{math}) e \begin{math}+ \infty\end{math}, que é, na verdade, a quantidade total de substância que se difundiu até o ponto $P$ (ver área hachurada da figura \ref{fig0001}). Assim, ficamos com
 \begin{equation}
-C(x,t)=C_{0}\int\limits _{x/2\sqrt{Dt}}^{\infty}{exp(-\alpha^{2})}d\alpha,
+C(x,t)=C_{0}\int\limits _{x/2\sqrt{Dt}}^{\infty}{\exp(-\alpha^{2})}d\alpha,
 \end{equation}
 que pode ser reescrita em termos das funções erro e erro complementar. A solução acima se torna então
 \begin{equation}
-C(x,t)=\frac{1}{2}C_{0}erfc \frac{x}{2\sqrt{Dt}}.
+C(x,t)=\frac{1}{2}C_{0}\mathrm{erfc} \frac{x}{2\sqrt{Dt}}.
 \end{equation}
 Esse caso pode ser utilizado para se estudar a difusão de uma substância inicialmente confinada num intervalo $- h \textless{} x \textless{} + h$. Neste caso, devemos modificar os intervalos de integração da solução completa, substituindo-os por $x + h$ e $x - h$, conduzindo a
-\begin{equation}C(x,t)=\frac{1}{2}C_{0} \left\{ \mathrm{erfc} \frac{h-x}{2\sqrt{Dt}}+erfc \frac{h+x}{2\sqrt{Dt}} \right\}.
+\begin{equation}C(x,t)=\frac{1}{2}C_{0} \left\{ \mathrm{erfc} \frac{h-x}{2\sqrt{Dt}}+\mathrm{erfc} \frac{h+x}{2\sqrt{Dt}} \right\}.
 \end{equation}
 \subsection{Sistemas Finitos}
 
@@ -439,7 +428,7 @@ Há vários casos em que as condições impostas sobre nosso problema envolvem duas 
 \begin{equation}
 C(x,t)=X(x)T(t),
 \end{equation}
-em que $X(x)$ é um função somente de $x$ e $T(t)$ somente de $t$. Substituindo o resultado anterior na equação da difusão
+em que $X(x)$ é uma função somente de $x$ e $T(t)$ somente de $t$. Substituindo o resultado anterior na equação da difusão
 \begin{equation}
  \frac{\partial{C}}{\partial{t}}=D\frac{\partial{^{2}C}}{\partial{x^{2}}},
 \end{equation}
@@ -533,11 +522,11 @@ que pode ser reescrita como
 \end{equation}
 que é a derivada segunda em relação a $x$ da transformada de Laplace da concentração. Integrando por partes a integral anterior, obtemos
 \begin{equation}
-\int\limits _{0}^{\infty}{Ce^{-st}dt}=\left( Ce^{-pt}dt \right| ^{\infty}_{0}+p\int\limits _{0}^{\infty}{Ce^{-st}dt}=p\bar C,
+\frac{\partial}{\partial t}\int\limits _{0}^{\infty}{Ce^{-st}dt}=\left Ce^{-pt}dt \right| ^{\infty}_{0}+s\int\limits _{0}^{\infty}{Ce^{-st}dt}=s\bar C,
 \end{equation}
 que nos permite reescrever a equação inicial em termos das transformadas obtidas. Ficamos então com
 \begin{equation}
-D\frac{\partial^{2}\bar C}{\partial x^{2}}=p\bar C.
+D\frac{\partial^{2}\bar C}{\partial x^{2}}=s\bar C.
 \end{equation}
 Basta agora aplicarmos as condições de contorno para obtermos \begin{math}\bar C\end{math}:
 \begin{equation}
@@ -545,11 +534,11 @@ Basta agora aplicarmos as condições de contorno para obtermos \begin{math}\bar C
 \end{equation}
 que é a transformada de Laplace da solução desejada. Note que a transformada reduziu a equação diferencial inicial a uma equação diferencial ordinária mais simples. A solução para a nova equação é
 \begin{equation}
-\bar C=\frac{C_{0}}{p}e^{-qx},
+\bar C=\frac{C_{0}}{s}e^{-qx},
 \end{equation}
-onde \begin{math}q^{2}=\frac{p}{D}\end{math}. Para chegarmos à solução da equação que tínhamos no início, uma tabela de transformadas é suficiente. Disso concluimos que a solução para a equação da difusão num meio semi-infinito é
+onde \begin{math}q^{2}=\frac{s}{D}\end{math}. Para chegarmos à solução da equação que tínhamos no início, uma tabela de transformadas é suficiente. Disso concluimos que a solução para a equação da difusão num meio semi-infinito é
 \begin{equation}
-C=C_{0}erfc\frac{x}{2\sqrt{Dt}},
+C=C_{0}\mathrm{erfc}\frac{x}{2\sqrt{Dt}},
 \end{equation}
 tal como se verificou anteriormente por método diferente.
 
@@ -564,7 +553,7 @@ tal como se verificou anteriormente por método diferente.
 \end{center}
 \end{figure}
 
-Pequenas partículas imersas em solução realizam um movimento aleatório conhecido popularmente como movimento browniano, pois fora descrito originalmente pelo botânico inglês Robert Brown, em 1828. Esse movimento errático que se deve a inúmeras colisões sofridas pela partícula com outras menores, permite uma descrição mais elegante do fenômeno da difusão, que será tratada com mais detalhes abaixo. As contínuas colisões com partículas menores como as esboçadas na \ref{fig0003} fazem com que a partícula maior execute um movimento de trajetória semelhante à mostrada na figura \ref{fig0004}. A curva extremamente irregular resultante deste processo quase não apresenta tangentes, isto é, não é diferenciável. Experimentos também demonstraram que o movimento nunca cessa, ficando mais intenso quando se reduz a viscosidade do meio ou o tamanho das partículas, ou também quando se aumenta a temperatura.
+Pequenas partículas imersas em solução realizam um movimento aleatório conhecido popularmente como movimento browniano, pois fora descrito originalmente pelo botânico inglês Robert Brown, em 1828. Esse movimento errático que se deve a inúmeras colisões sofridas pela partícula com outras menores, permite uma descrição mais elegante do fenômeno da difusão, que será tratada com mais detalhes abaixo. As contínuas colisões com partículas menores como as esboçadas na figura \ref{fig0003} fazem com que a partícula maior execute um movimento de trajetória semelhante à mostrada na figura \ref{fig0004}. A curva extremamente irregular resultante deste processo quase não apresenta tangentes, isto é, não é diferenciável. Experimentos também demonstraram que o movimento nunca cessa, ficando mais intenso quando se reduz a viscosidade do meio ou o tamanho das partículas, ou também quando se aumenta a temperatura.
 \begin{figure}[h]
 \begin{center}
     \includegraphics[width=6.024cm,height=6.912cm]{pictures/figura7.eps}
@@ -584,7 +573,7 @@ ${ }$
 \end{center}
 \end{figure}
 
-Para compreendermos o que vem a ser passeio aleatório, será útil conhecer um exemplo clássico de sua aplicação. Nesse, um bêbado caminha a partir de um poste ao longo de uma rua, conforme ilustra a \ref{figBebado}. Cada passo tem o mesmo comprimento $l$. Consideramos aqui que de tão bêbado, cada passo dado pelo homem independa do passo anterior. Assim, tudo o que podemos dizer é que a cada passo, há uma probabilidade $p$ que o homem ande para a direita e $q$ que ande para a esquerda, onde $q=1-p$. Note que $p$ não necessariamente deve ser igual a $q$, pois a rua pode estar inclinada, de tal forma que um passo rua abaixo seria mais provável que outro rua acima. Se escolhermos o poste como origem e a rua como o eixo das abcissas, a localização do bêbado se escreveria como $x=nl$, onde $n$ é um inteiro (positivo, negativo ou zero).
+Para compreendermos o que vem a ser passeio aleatório, será útil conhecer um exemplo clássico de sua aplicação. Nesse, um bêbado caminha a partir de um poste ao longo de uma rua, conforme ilustra a figura \ref{figBebado}. Cada passo tem o mesmo comprimento $l$. Consideramos aqui que de tão bêbado, cada passo dado pelo homem independa do passo anterior. Assim, tudo o que podemos dizer é que a cada passo, há uma probabilidade $p$ que o homem ande para a direita e $q$ que ande para a esquerda, onde $q=1-p$. Note que $p$ não necessariamente deve ser igual a $q$, pois a rua pode estar inclinada, de tal forma que um passo rua abaixo seria mais provável que outro rua acima. Se escolhermos o poste como origem e a rua como o eixo das abcissas, a localização do bêbado se escreveria como $x=nl$, onde $n$ é um inteiro (positivo, negativo ou zero).
 
 Desejamos descobrir qual a probabilidade do bêbado, após $N$ passos, estar a uma distância $x=ml$ da origem (poste). Ao analisarmos estatisticamente esse problema, consideramos um número muito grande de casos similares, onde um bêbado parte da origem e aleatoriamente dá cada passo, ou para a direita, ou para a esquerda. A distância do homem ao poste pode ser representada por um vetor, e é justamente esta ideia que torna bastante útil a situação idealizada nesse exemplo em vários ramos da física, como no magnetismo ou no estudo da difusão de substâncias.
 
@@ -656,7 +645,7 @@ Como \begin{math}v(t)=u(t)e^{\gamma t}\end{math}, da dedução anterior obtemos
 v(t)=v_{0}e^{-\gamma t}+e^{-\gamma t}\int\limits _{0}^{t}{e^{\gamma t'}dt'},
 \end{equation}
 em que $v_{0}$ é a velocidade inicial da partícula, sendo $v(t)$ válida para qualquer $\zeta (t)$.
-A média e a variância da velocidade podem ser calculados utilizando-se as propriedades do ruído. Como $\langle \zeta (t)\rangle =0$, a velocidade média pode ser escrita como
+A média e a variância da velocidade podem ser calculadas utilizando-se as propriedades do ruído. Como $\langle \zeta (t)\rangle =0$, a velocidade média pode ser escrita como
 \begin{equation}
 \langle v\rangle =v_{0}e^{-\gamma t},
 \end{equation}
@@ -810,8 +799,8 @@ v_{n+1}=av_{n}+\sqrt{\tau \Gamma}\xi_{n},
 em que $a=(1-\tau \gamma)$. As variáveis $\xi_{j}$ possuem as seguintes propriedades:
 \begin{eqnarray}
 \nonumber
-\langle \xi_{j} \rangle=0 \\
-\langle \xi_{j}\xi_{k} \rangle=\delta_{jk}
+\langle \xi_{j} \rangle=0, \\
+\langle \xi_{j}\xi_{k} \rangle=\delta_{jk}.
 \end{eqnarray}
 Calculando sucessivamente os valores de $v_{n+1}$, chegamos à seguinte relação
 \begin{eqnarray}
@@ -834,7 +823,7 @@ em que
 \begin{eqnarray}
 b_{n}=\tau\Gamma\sum\limits_{l=0}^{n-1}{a^{2l}}=\frac{1-a^{2n}}{1-a^{2}}\tau\Gamma.
 \end{eqnarray}
-Conhecida a função característica $g_{n}(k)$, para calcularmos a densidade de probabilidades da variável $v_{n}$ basta aplicar a antitransformada de Fourier à equação \ref{2}), isto é,
+Conhecida a função característica $g_{n}(k)$, para calcularmos a densidade de probabilidades da variável $v_{n}$ basta aplicar a antitransformada de Fourier à equação \ref{2}, isto é,
 \begin{eqnarray}
 P_{n}(v_{n})=\frac{1}{\sqrt{2\pi b_{n}}}\exp \left\{ -\frac{v_{n}^{2}}{2b_{n}} \right\}.
 \end{eqnarray}
@@ -902,7 +891,7 @@ e
 \begin{eqnarray}
 \langle \zeta_{i}(t) \zeta_{j}(t') \rangle  = \Gamma_{ij}\delta(t-t'),
 \end{eqnarray}
-em que $\Gamma_{11},\Gamma_{12},\Gamma_{22},...$ são constantes. A equação de Langevin descrita no início deste capítulo é uma equação estocástica em que o ruído é aditivo. Freqüentemente as equações de Langevin constituem um conjunto acoplado de equações. No caso mais simples, quando as $f_{i}$ são lineares, as equações de Langevin são dadas por
+em que $\Gamma_{11},\Gamma_{12},\Gamma_{22},...$ são constantes. A equação de Langevin descrita no início deste capítulo é uma equação estocástica em que o ruído é aditivo. Frequentemente as equações de Langevin constituem um conjunto acoplado de equações. No caso mais simples, quando as $f_{i}$ são lineares, as equações de Langevin são dadas por
 \begin{eqnarray}
 \frac{d}{dt}x_{i}=\sum\limits_{j=1}^{N}{A_{ij}x_{j}}+\zeta_{i},
 \end{eqnarray}
@@ -938,13 +927,6 @@ A solução da equação matricial que inicialmente apontamos se dá com o auxílio de
 x(t)=R(t)x_{0}+\int\limits_{0}^{t}{R(t-t')\zeta(t')dt'},
 \end{eqnarray}
 que pode ser facilmente verificada se levarmos em conta as propriedades já enunciadas e o fato de que $R(0)=I$ ($I$ é a matriz identidade).
-
-ou seja, as variáveis $\zeta(t)$ e $\zeta(t')$ são independentes se considerarmos $t \ne t'$. Quando a variável aleatória em questão possui tais propriedades, recebe o nome de ruído branco, já que a transformada de Fourier de
-$\langle \zeta(0)\zeta(t) \rangle$ escreve-se como
-\begin{eqnarray}
-\int\limits{e^{i\omega t}\langle \zeta(0)\zeta(t) \rangle dt}=\Gamma,
-\end{eqnarray}
-que independe da freqüência $\omega$.
 
 \subsection{Simulação do Movimento Aleatório}
 
@@ -1105,7 +1087,7 @@ em que $e^{t\mathcal{W}}$ é o operador definido por
 \begin{eqnarray}
 e^{t\mathcal{W}}=1+t\mathcal{W}+\frac{t^{2}}{2!}\mathcal{W}^{2}+\frac{t^{3}}{3!}\mathcal{W}^{3}+...
 \end{eqnarray}
-Diferenciando ambos os membros da equação \ref{5} com relação ao tempo e usando a definição anterior, podemos perceber que \ref{6} fica satisfeita.
+Diferenciando ambos os membros da equação \ref{5} com relação ao tempo e usando a definição anterior, podemos perceber que a equação \ref{6} fica satisfeita.
 Supomos agora que $\mathcal{W}$ possua um espectro discreto. Assim
 \begin{eqnarray}
 \label{7}
@@ -1421,14 +1403,14 @@ Laplace. Lembrando que a transformada de Mellin é definida como
 \rho(x,s')= \int_{0}^{\infty}dt \; t^{s'-1}\rho(x,t)\;\;\;\;\left(\rho(x,t)=\frac{1}{2\pi
 i}\int_L\rho(x,s')t^{-s'}ds'\right)\;.\label{eq2.12}
 \end{eqnarray}
-Assim, utilizando a relação (\ref{eq2.11}) na equação \ref{eq2.9}, obtemos
+Assim, utilizando a relação \ref{eq2.11} na equação \ref{eq2.9}, obtemos
 \begin{eqnarray}
 {\cal{G}}(x,s')= \frac{1}{\gamma |x|}
 \left(\frac{|x|}{\sqrt{{\cal{D}}}}\right)^{\frac{2}{\gamma}s'}
 \frac{\Gamma\left(1-\frac{2}{\gamma}s'\right)}{\Gamma\left(1-s'\right)}\;\;.
 \label{eq2.13}
 \end{eqnarray}
-A partir de (\ref{eq2.13}), após a inversão da transformada de Mellin, obtemos
+A partir da equação \ref{eq2.13}, após a inversão da transformada de Mellin, obtemos
 \begin{eqnarray}
 {\cal{G}}(x,t)= \frac{1}{\sqrt{4\pi {\cal{D}} t^{\gamma}}} {\mbox
 {\large{ H}}}_{1 \; 2}^{2 \; 0} \left
@@ -1442,7 +1424,7 @@ de inversão de Mellin
 \begin{eqnarray}
 {\cal{G}}(x,t)=\frac{1}{2\pi i}\int_{L}{\cal{G}}(x,s')t^{-s'}ds'\label{eq2.15},
 \end{eqnarray}
-e a forma integral das funções $\mbox{H}$ de Fox anteriormente representadas pela relação (\ref{eq2.10}). Com base
+e a forma integral das funções $\mbox{H}$ de Fox anteriormente representadas pela relação \ref{eq2.10}. Com base
 nesses resultados, concluímos que nossa solução é
 
 \begin{eqnarray}
@@ -1459,7 +1441,7 @@ A figura \ref{figure1cap2} ilustra o comportamento da equação \ref{eq2.14} para 
 \begin{figure}[h]
 \centering \DeclareGraphicsRule{ps}{eps}{}{*}
 \includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cm]{pictures/figure1cap2.ps}
-\caption{{\it Comportamento de $(4\pi {\cal{D}} t^{\gamma})^{1/2}{\cal{G}}(x,t)$ vs. $x/(4{\cal{D}}t^{\gamma})\label{figure1cap2}$,
+\caption{{ Comportamento de $(4\pi {\cal{D}} t^{\gamma})^{1/2}{\cal{G}}(x,t)$ vs. $x/(4{\cal{D}}t^{\gamma})\label{figure1cap2}$,
 para a equação \ref{eq2.14} para alguns valores t\'{\i}picos de $\gamma$ indicados no gráfico.}}
 \end{figure}}
 
@@ -1501,8 +1483,7 @@ Ent\~ao, podemos mostrar que
 {\cal{B}}_{n}(t)={\cal{B}}_{n}(0){\mbox{E}}_{\gamma}\left(-\frac{n^2\pi^2}{L^2}
 {\cal{D}}{t}^{\gamma}\right)\;.\label{eq2.21}
 \end{eqnarray}
-Agora, considerando uma condição inicial do tipo $\rho(x,0)=\tilde{\rho}(x)$ e utilizando o resultado acima em
-(\ref{eq2.17}) temos
+Agora, considerando uma condição inicial do tipo $\rho(x,0)=\tilde{\rho}(x)$ e utilizando o resultado acima na equação \ref{eq2.17}, temos
 \begin{eqnarray}
 \rho(x,t)&=&\int_{0}^{L}dx'\;{\cal{G}}(x,x',t) \tilde{\rho}(x')\nonumber,
 \end{eqnarray}
@@ -1535,7 +1516,7 @@ estão relacionadas. Esta função é definida como
 \left<x(t)x(0)\right>_{s}=\int_0^Ldx\int_0^Ldx'xx'\rho(x,t)\rho_s(x)\;,\label{eq2.24}
 \end{eqnarray}
 em que $\rho_s(x)$ é a solução para o regime estacionário. Considerando, por simplicidade, $\rho(x,0)=\delta(x-x')$
-como nossa condição inicial, obtemos $\rho_s(x)=1/L$.  Com este resultado e a solução (\ref{eq2.23}) encontramos,
+como nossa condição inicial, obtemos $\rho_s(x)=1/L$.  Com este resultado e a solução \ref{eq2.23}, encontramos
 \begin{eqnarray}
 \left<x(t)x(0)\right>_s=\frac{L^2}{4}+\frac{8L^4}{\pi^4}\sum_{n=0}^{\infty}\frac{1}{(2n+1)^4}{\mbox{E}}_{\gamma}\left[-\frac{(2n+1)^2}
 {L^2}{\cal{D}}t^{\gamma}\right]\;.\label{eq2.25}
@@ -1568,81 +1549,6 @@ espaço, que emergem da abordagem de caminhantes aleatórios, são alteradas, ou se
 anômala. Nesse caso em particular, a alteração ocorreu apenas na distribuição de tempos, já que a derivada
 fracionária foi aplicada na variável temporal. Mais à frente veremos a alteração causada na distribuição de saltos
 quando da aplicação de derivadas fracionárias na variável espacial.
-
-Vejamos agora o caso em que o coeficiente de difusão \'e dado por ${\cal{D}}(x,t)={\cal{D}}|x|^{-\theta}$. Cabe
-mencionar aqui que essa depend\^encia espacial no coeficiente de difus\~ao tem sido empregada na
-investiga\c{c}\~ao de, por exemplo, sistemas turbulentos e difus\~ao em fractais. Ainda considerando $F(x,t)=0$ na
-equação \ref{eq2.1} e utilizando transformadas integrais definidas anteriormente, podemos mostrar que
-\begin{eqnarray}
-\rho(x,t)=\frac{2+\theta}{2\Gamma\left({\frac{1}{2+\theta}}\right)}\!\!\left[\frac{1}{(2+\theta)^2{\cal{D}}t^{\gamma}}\right]^{\frac{1}{2+\theta}}
-{\mbox {\large{H}}}_{1 \; 2}^{2 \; 0} \left [\frac{|x|^{2+\theta}}{(2+\theta)^2{\cal{D}}t^{\gamma}} \left
-|_{\left(1-\frac{1}{2+\theta},1 \right) \; \left( 0,1\right)}^{\left(1-\frac{\gamma}{2+\theta},\gamma
-\right)}\right.\!\!\right].\label{eq2.28}
-\end{eqnarray}
-Vale lembrar que para $\gamma=1$ e $\theta=0$ recuperamos a solução gaussiana obtida para o caso usual. Se, além dessa
-dependência do coeficiente de difusão com o espaço, tivermos a presença de uma força externa do tipo linear, ou
-seja, $F(x)=-kx$, obteremos mediante separação de variáveis o resultado
-\begin{eqnarray}
-\rho(x,t)&=&\int_0^{\infty}d\xi \tilde{\rho}(\xi)\xi^{-\theta-1}{\cal{G}}(x,\xi,t)\nonumber\\
-{\cal{G}}(x,\xi,t)&=&\left[\frac{k}{(2+\theta){\cal{D}}}\right]^{-\frac{(1+\theta)}{(2+\theta)}}\sum_{n=0}^{\infty}
-e^{-\frac{k|x|^{2+\theta}}{(2+\theta){\cal{D}}}}{\mbox{L}}_n^
-{-\frac{(1+\theta)}{(2+\theta)}}\left[\frac{k|\xi|^{2+\theta}}{(2+\theta){\cal{D}}}\right]\times
-\nonumber\\
-&\times&
-{\mbox{L}}_n^{-\frac{(1+\theta)}{(2+\theta)}}\left[\frac{k|x|^{2+\theta}}{(2+\theta){\cal{D}}}\right]{\mbox{E}}_{\gamma}
-\left[-(2+\theta)nkt^{\gamma}\right] \times \nonumber\\
-&\times& \frac{\Gamma(1+n)}{\Gamma(1+n-a) }\;,\label{eq2.29}
-\end{eqnarray}
-com $\lambda_n=(2+\theta)nk$.
-
-Da discuss\~ao feita acima percebemos que s\~ao poucos os potenciais cuja presença na equa\c{c}\~ao de difus\~ao
-nos conduz a uma solução exata expressa em termos de fun\c{c}\~oes especiais conhecidas. Entretanto, na maioria
-das situa\c{c}\~oes somos obrigados a fazer aproxima\c{c}\~oes da situa\c{c}\~ao original devido à dificuldade de
-encontrarmos uma solu\c{c}\~ao em forma fechada. Nesse sentido, é in\-te\-res\-san\-te obter a equação integral
-relativa à equação \ref{eq2.1} que torna possível uma solução recursiva na forma de uma abordagem perturbativa que
-pode ser relevante na an\'alise do problema. Assim, vamos reescrever a equação \ref{eq2.1} como
-\begin{eqnarray}
-\frac{\partial^{\gamma}}{\partial t^{\gamma}}\rho(x,t)={\cal{D}}\frac{\partial^2 }{\partial x^2}\rho(x,t)
- -\alpha(x,t)\;,\label{eq2.30}
-\end{eqnarray}
-com
-\begin{eqnarray}
-\alpha(x,t)=\frac{\partial}{\partial x}\left[F(x,t)\rho(x,t)\right]\;.\label{eq2.31}
-\end{eqnarray}
-Empregando transformadas de Fourier e Laplace na equação \ref{eq2.30} obtemos
-\begin{eqnarray}
-\rho(k,s) = \frac{\rho(k,0)}{s+ {\cal{D}}s^{1-\gamma}k^2}-\frac{\alpha(k,s)}{s+ {\cal{D}}s^{1-\gamma}k^2} \; .
-\label{eq2.32}
-\end{eqnarray}
-A inversão dessas transformadas fornece
-\begin{eqnarray}
-\rho(x,t)=\rho^{(0)}(x,t)-\int_{0}^{t}dt'\int_{-\infty}^{\infty}dx' {\cal{G}}_{\gamma}(x-x',t-t')
-\alpha(x',t')\;\; . \label{eq2.33}
-\end{eqnarray}
-com
-\begin{eqnarray}
-{\cal{G}}_{\gamma}(x,t)= \frac{1}{\sqrt{4\pi {\cal{D}} t^{\gamma}}} {\mbox {\large{ H}}}_{1 \; 2}^{2 \; 0} \left
-[\frac{x^{2}}{4{\cal{D}}t^{\gamma}} \left |_{\left(\frac{1}{2},1 \right) \;\;\;\; \left( 0,1 \right) }^{
-\left(1-\frac{\gamma}{2},\gamma \right)}
-\right.\right]  \;\; . \label{eq2.34}% \right.
-\end{eqnarray}
-Substituindo $\alpha(x,t)$ na equa\c{c}\~ao (2.33) obtemos, via integração por partes,
-\begin{eqnarray}
-\rho(x,t)&=& \rho^{(0)}(x,t)\nonumber \\
-&+&\int_{0}^{t}dt'\int_{-\infty}^{\infty}dx' {\cal{G}}^{(2)}_{\gamma}(x-x',t-t')\;
-\left[F(x',t')\rho(x',t')\right]\;\;, \label{eq2.35}
-\end{eqnarray}
-em que
-\begin{eqnarray}
-{\cal{G}}^{(2)}_{\gamma}(x,t)&=& \frac{d }{dx}
-{\cal{G}}_{\gamma}(x,t)\nonumber \\
-&=&\frac{1}{\sqrt{\pi {\cal{D}} t^{\gamma}}} {\mbox {\large{ H}}}_{2 \; 3}^{2 \; 1} \left
-[\frac{x^{2}}{4{\cal{D}}t^{\gamma}} \left |_{\left(\frac{1}{2},1 \right) \;\;\;\; \left( 0,1 \right)\;\;\;\;
-\left(1,2 \right)}^{ \left(0,2 \right) \;\;\;\; \left(1-\frac{\gamma}{2},\gamma \right)} \right.\right]\;\;
-.\label{eq2.37}
-\end{eqnarray}
-A equação \ref{eq2.35} é a forma integral correspondente à equação \ref{eq2.1}
-e pode ser empregada no cálculo da influência de uma força externa aplicada ao sistema.
 
 \section{Equação de difusão: derivadas fracionárias no espaço}
 
@@ -1690,12 +1596,13 @@ propriedades das funções de Mittag-Leffler e de Fox pode-se mostrar que
 \Bigg|_{(1,1)\;\left(1,\frac{1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}^{\left(1,\frac{1}{\mu}\right)\;
 \left(1,\frac{\alpha+1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}\right].\;\label{eq2.40}
 \end{eqnarray}
-\begin{figure}[!b]
+\begin{figure}[H]
  \centering \DeclareGraphicsRule{ps}{eps}{}{*}
  \includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cmm]{pictures/figure3cap2.ps}
  \caption{{\it Comportamento de $({\cal{D}}t)^{\frac{1}{\mu}}L_{\mu}(x,t)$ vs.
 $x/({\cal{D}}t)^{\frac{1}{\mu}}$, para a equação \ref{eq2.40}) para alguns valores t\'{\i}picos de $\mu$ indicados nos gráficos.}\label{mittag}}
 \end{figure}
+
 Se, por outro lado, considerarmos ${\cal{D}}$ constante e $F(x)=-kx$ obtemos, empregando método semelhante ao do
 caso anterior, a solução
 \begin{eqnarray}
