@@ -1596,13 +1596,12 @@ propriedades das funções de Mittag-Leffler e de Fox pode-se mostrar que
 \Bigg|_{(1,1)\;\left(1,\frac{1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}^{\left(1,\frac{1}{\mu}\right)\;
 \left(1,\frac{\alpha+1}{\mu}\right)\;\left(1,\frac{1}{2}\right)}\right].\;\label{eq2.40}
 \end{eqnarray}
-\begin{figure}[H]
+\begin{figure}[h]
  \centering \DeclareGraphicsRule{ps}{eps}{}{*}
  \includegraphics*[width=10cm,height=10cm,trim=0cm 0cm 0cm 0cmm]{pictures/figure3cap2.ps}
- \caption{{\it Comportamento de $({\cal{D}}t)^{\frac{1}{\mu}}L_{\mu}(x,t)$ vs.
+ \caption{{Comportamento de $({\cal{D}}t)^{\frac{1}{\mu}}L_{\mu}(x,t)$ vs.
 $x/({\cal{D}}t)^{\frac{1}{\mu}}$, para a equação \ref{eq2.40}) para alguns valores t\'{\i}picos de $\mu$ indicados nos gráficos.}\label{mittag}}
 \end{figure}
-
 Se, por outro lado, considerarmos ${\cal{D}}$ constante e $F(x)=-kx$ obtemos, empregando método semelhante ao do
 caso anterior, a solução
 \begin{eqnarray}
@@ -1638,152 +1637,6 @@ Discutimos, nesse capítulo, as consequências do emprego de derivadas fracionária
 considerando também dependência espacial e temporal para o coeficiente de difusão, além da presença de uma força
 externa. Vimos que, quando aplicadas à variável espacial, a derivada fracionária nos conduz às distribuições de
 Lèvy, que apresentam comportamento superdifusivo.
-
-Recentemente, extensões da equação de difusão têm sido sucessivamente investigadas devido a grande variedade de aplicações existentes, em particular, a difusão anômala. Entre elas temos as equações de difusão fracionárias \cite{RHRMAB,i1,i2,varios2} que têm sido aplicadas a várias situações físicas tais como o transporte de uma substância de um recipiente a outro num solvente através de membranas finas \cite{Kosztoowicz}, no transporte em semicondutores desordenados \cite{semiconductor}, meios porosos \cite{porous}, no fluxo de fluidos \cite{Chukbar} e no estudo do desenvolvimento de tumores modelando a taxa de disseminação do câncer \cite{tumor}. Essa grande variedade de aplicações também motivou do estudo de vários aspectos formais das equações de difusão fracionárias na tentativa de compreender sua aplicação na descrição de situações que possuem um comportamento dinâmico diferente do usual. De fato, os autores de \cite{nnew2} mostraram como uma equação fracionária de Fokker-Planck pode ser derivada da equação mestra generalizada, a referência \cite{nnew4} estudou o comportamento da equação de difusão fracionária na origem, a referência \cite{nnew7} introduziu uma equação fracionária de Kramers consistente com as equações fracionárias de difusão, a presença de reação têm sido analisadas por diversos pesquisadores \cite{reaction1,reaction2,reaction11} e várias soluções têm sido obtidas para essas equações \cite{nnew3,nnew5,ne1,ne111,ne12,ne13,ne14,lenzi2003,lenzi2005,lenzi2006}. Nesse sentido, dedicamos essa seção ao estudo da seguinte equação de difusão
-\begin{eqnarray}
-\frac{\partial}{\partial t} \rho (x,t)&=& {\cal{D}}
-\frac{\partial^{2}}{\partial x^{2}} \rho(x,t)-
-\int_{0}^{t}d\overline{t} \int^{\infty}_{- \infty}
-\!\!d\overline{x}\;{\cal{K}}(x-\overline{x},t-\overline{t})\rho(\overline{x},\overline{t}),
-\label{10}
-\end{eqnarray}
-na qual a última parte da equação acima representa um termo não local atuando sobre no sistema que depende de ${\cal{K}}(x,t)$. Este termo pode ser relacionado a vários contextos em particular, com processos de reação \cite{SLW,Fonte} e com derivadas de ordem fracionárias \cite{livroC} dependendo da escolha de ${\cal{K}}(x,t)$ e é tal que, para ${\cal{K}}(x,t)=0$, a forma usual da equação de difusão na ausência de forças externas é recuperada. O comportamento da solução é governado pelos termos difusivo e não local que dependendo da escolha do último pode manifestar diferentes regimes difusivos. Dessa forma, um deles é dominado pelo comportamento gaussiano devido ao termo difusivo e o outro é dependente da escolha de ${\cal{K}}(x,t)$, conforme mencionamos anteriormente. Em particular, para ${\cal{K}}(x,t)\propto \delta(t) /|x|^{1+\mu}$ a solução é assintoticamente governada por uma lei de potência para tempos longos, que está relacionada com as distribuições de Lévy. Nesse sentido, devemos ressaltar que situações caracterizadas pelos dois regimes têm sido relatadas em vários contextos físicos, como em sistemas com interações de longo alcance \cite{doisregime} e difusão intracelular \cite{Caspi}. A equação (\ref{10}) ainda pode ser relacionada às equações fracionárias de ordem distribuída \cite{DISTRIBUTED}.
-
-Investigaremos agora soluções para a equação (\ref{10}) considerando algumas formas da função ${\cal{K}}(x,t)$ presentes no termo não local da mesma. Particularmente, analisaremos três casos:  $(i)$ ${\cal{K}}(x,t)\propto
-\delta(t)/|x|^{1+\mu}$ com $0<\mu<2$ $
-({\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu})$, $(ii)$
-${\cal{K}}(x,t)\propto \delta(t)\overline{{\cal{K}}}(x)$, $(iii)$
-${\cal{K}}(x,t)\propto t^{\gamma-1}/|x|^{1+\mu} $ com $0<\mu<2$
-$({\cal{K}}(k,s)=\widehat{{\cal{K}}}s^{-\gamma}|k|^{\mu})$ e após o estudo desses casos discutiremos o caso em que ${\cal{K}}(x,t)$ representa uma função arbitrária que possui transformada de Fourier e Laplace definidas. A primeira escolha para ${\cal{K}}(x,t)$ tem um comportamento de cauda longa e está relacionada com a derivada espacial de ordem fracionária do tipo Riesz-Weyl \cite{livroC}. A solução para esse caso apresenta dois regimes distintos, sendo que um deles, para tempos longos, pode ser relacionado às distribuições de Lévy. Essa característica poderá ser verificada ao analisarmos a função de Green no limite de tempos longos, como será demonstrado mais tarde. O segundo caso pode ser relevante na investigação da solução quando temos um termo não local com uma dependência arbitrária na parte espacial. A terceira escolha incorpora uma dependência temporal no termo não local (discutida no primeiro caso) que poderá ser relacionada com uma derivada temporal de ordem fracionária \cite{livroC} mediante uma escolha apropriada de $\gamma$.
-Começaremos nossa análise aplicando a transformada de Fourier na equação (\ref{10}) de maneira a obter a equação integro-diferencial
-\begin{eqnarray}
-\frac{d}{d t} \rho (k,t) = -{\cal{D}}k^{2} \rho(k,t)
--\int_{0}^{t}d\overline{t}
-{\cal{K}}(k,t-\overline{t})\rho(k,\overline{t}) \;.
-\label{0015556}
-\end{eqnarray}
-Essa equação integro-diferencial pode ser simplificada utilizando a transformada de Laplace. Assim, após aplicarmos a transformada de Laplace obtemos a equação algébrica
-\begin{eqnarray}
-s\rho (k,s)- \rho (k,0)= -{\cal{D}}k^{2} \rho(k,s)
--{\cal{K}}(k,s)\rho(k,s), \label{001555}
-\end{eqnarray}
-cuja solução é dada por $\rho (k,s)=\rho (k,0){\cal{G}}(k,s)$, com \begin{eqnarray}
-{\cal{G}}(k,s)=\frac{1}{s+{\cal{D}} k^{2} +{\cal{K}}(k,s)}
-\label{0015551a}
-\end{eqnarray}
-na qual $\rho (k,0)$ é a transformada de Fourier da condição inicial e ${\cal{G}}(k,s)$ é a função de Green da equação (\ref{10}) no espaço de Fourier-Laplace. Note que a equação (\ref{0015551a}) retorna ao caso usual, isto é, à função de Green para o caso livre, quando ${\cal{K}}(k,s)=0$. Substituindo a primeira escolha por ${\cal{K}}(x,t)$, que no espaço de Fourier-Laplace é dado por ${\cal{K}}(k,s)=\widetilde{{\cal{K}}}|k|^{\mu}$, obtemos
-\begin{eqnarray}
-\rho (k,s)= \frac{\rho (k,0)}{s+{\cal{D}} k^{2}
-+\widetilde{{\cal{K}}} |k|^{\mu}} \;.\label{001555a}
-\end{eqnarray}
-A equação (\ref{0015551a}) pode ser relacionada ao formalismo de caminhada aleatória \cite{i2} considerando-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e a função densidade de probabilidade de salto $\lambda(k)=1-\tau({\cal{D}} k^{2} +\widetilde{{\cal{K}}}
-|k|^{\mu})$, na qual $\tau$ é o tempo de espera característico. O resultado obtido para $\omega(s)$ e $\lambda(k)$ indica que a opção anterior para o termo não local muda somente a função densidade de probabilidade do salto. Em particular, esta escolha para ${\cal{K}}(x,t)$ manifesta na solução um comportamento de cauda longa quando consideramos o limite de tempos grandes. Aplicando a transformada inversa de Laplace, a equação (\ref{001555a}) fica dada por
-\begin{equation}
-\rho(k,t) = \rho(k,0) \exp \left(-{\cal{D}}k^{2}t-
-\widetilde{{\cal{K}}}|k|^{\mu}t \right). \label{00311}
-\end{equation}
-A transformada inversa de Fourier da equação equação (\ref{00311}) é
-\begin{eqnarray}
-\label{sol11}
-\rho(x,t)&=&\int_{-\infty}^{\infty}d\overline{x}\;{\cal{G}}(x-\overline{x},t)\rho(\overline{x},0) \nonumber
-\end{eqnarray}
-com
-\begin{eqnarray}
-{\cal{G}}(x,t)&=& \frac{1}{2|x|} \displaystyle\sum_{n=0}^{\infty}
-\frac{1}{n!} \left(- \frac{\widetilde{{\cal{K}}}
-t}{\left({\cal{D}}t\right)^{\frac{\mu}{2}}}\right)^{n} \nonumber
-{\mbox{H}}^{1,1}_{2,2} \left[\frac{|x|}{\sqrt{{\cal{D}}t}}
-\left|^{\left(1-\frac{n\mu}{2}, \frac{1}{2}\right), \left(1,
-\frac{1}{2} \right)}_{\left(1, 1\right), \left(1, \frac{1}{2}
-\right)}\right.\right] \nonumber
-\end{eqnarray}
-e $\left.{\mbox {H}}_{p \; q}^{m \; n} \left[ x
-\left|_{(b_{1},B_{1}), \cdots,
-(b_{q},B_{q})}^{(a_{1},A_{1}),\cdots ,(a_{p},A_{p})} \right]
-\right.\right.$ sendo a função ${\mbox {H}}$ de Fox \cite{Fox}.
-
-A presença dessa função na solução indica que o termo não local na equação (\ref{10}) produz uma dispersão anômala da solução. Nesse sentido, uma característica importante da solução encontrada acima é a presença de dois regimes, um deles é caracterizado pelo caso usual (Gaussiano) e o outro é dominado assintoticamente por uma lei de potência (do tipo Lévy). De fato, é possível verificar que para tempos pequenos
-\begin{equation}
-{\cal{G}}(x,t)\sim \frac{e^{-\frac{x^2}{4{\cal{D}}t}}}{\sqrt{4\pi
-{\cal{D}}t}},
-\end{equation}
-enquanto que para tempos longos
-\begin{equation}
-{\cal{G}}(x,t)\sim \frac{1}{\mu|x|}{\mbox{H}}^{1,1}_{2,2}
-\left[\frac{|x|}{\left({\cal{K}}t\right)^{\frac{1}{\mu}}}
-\left|^{\left(1, \frac{1}{\mu}\right), \left(1, \frac{1}{2}
-\right)}_{\left(1, 1\right), \left(1, \frac{1}{2}
-\right)}\right.\right].\label{eqngh}
-\end{equation}
-A equação (\ref{eqngh}) é essencialmente uma a distribuição do tipo Lévy comumente encontrada em situações de difusão anômala.
-Agora, conduziremos nossa discussão ao segundo caso, caracterizado por ${\cal{K}}(x,t)=\overline{{\cal{K}}}(x)\delta(t)$, com
-$\overline{{\cal{K}}}(x)$ arbitrário. Utilizando a equação (\ref{0015551a}), com ${\cal{K}}(k,s)=\overline{{\cal{K}}}(k)$ e aplicando a transformada inversa de Laplace, obtemos
-\begin{equation}
-\rho(k,t) = \rho(k,0) \exp \left(-{\cal{D}}k^{2}t  -
-\overline{{\cal{K}}}(k)t \right). \label{g1}
-\end{equation}
-Fazendo uso da transformada inversa de Fourier, juntamente com o teorema de convolução, na equação (\ref{g1}), obtemos como solução
-\begin{eqnarray}
-\rho(x,t)
-&=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0)
-{\cal{G}}(x-\overline{x},t) \nonumber \\
-{\cal{G}}(x,t)&=&\overline{{\cal{G}}}(x,t)+\sum_{n=1}^{\infty}\frac{(-t)^{n}}{n!}
-\int_{-\infty}^{\infty}dx_{n}\overline{{\cal{K}}}(x-x_{n})\cdots
-\nonumber
-\\ &\times&\int_{-\infty}^{\infty}dx_{1}\overline{{\cal{K}}}(x_{2}-x_{1})\overline{{\cal{G}}}(x_{1},t),
-\label{g2}
-\end{eqnarray}
-com $\rho(x,0)$ sendo a condição inicial e
-\begin{equation}
-\overline{{\cal{G}}}(x,t)=
-\frac{e^{-\frac{x^2}{4{\cal{D}}t}}}{\sqrt{4\pi{\cal{D}}t}}\;
-\label{usual1}
-\end{equation}
-é a função de Green usual obtida a partir da equação de difusão na ausência de forças e termos de reação. De forma análoga ao caso explorado acima, esse caso também pode ser relacionado ao formalismo de caminhada aleatória escolhendo-se a distribuição do tempo de espera $\omega(s)=1/(1+\tau s)$ e distribuição dos saltos $\lambda(k)=1-\tau({\cal{D}}k^2+{\cal{K}}(k))$.
-
-Dando prosseguimento em nossa análise, vamos incorporar uma dependência temporal em ${\cal{K}}(x,t)$, considerando  ${\cal{K}}(x,t) \propto
-t^{\gamma-1}/|x|^{1+\mu}$ (${\cal{K}}(k,s)=$ $\widehat{{\cal{K}}}$ $s^{-\gamma}|k|^{\mu}$) que nos leva a obter a partir da equação (\ref{001555a})
-\begin{eqnarray}
-\rho (k,s)= \frac{\rho (k,0)}{s+{\cal{D}} k^{2}
-+\widehat{{\cal{K}}} s^{-\gamma}|k|^{\mu}}\;. \label{001555av}
-\end{eqnarray}
-Note que a equação (\ref{001555av}) retorna ao caso anterior quando tomado $\gamma=0$ e ao caso usual quando $\widehat{{\cal{K}}}=0$. Por outro lado, essa dependência no termo não-local introduz um efeito memória semelhante ao que ocorre com as equações temporais fracionárias de difusão. Deste modo, a solução obtida para esse caso (assim como os casos previamente estudados) tem um caráter não-Markoviano. Para encontrar a solução, começamos aplicando a transformada inversa de Laplace. Seguindo o procedimento apresentado por \cite{Ta}, é possível mostrar que
-\begin{eqnarray}
-\rho(k,t)=\rho(k,0)\sum_{n=0}^{\infty}\frac{1}{n!}\left(-\widehat{{\cal{K}}}t^{1+\gamma}|k|^{\mu}\right)^{n}
-{\mbox{E}}_{1,1+n\gamma}^{(n)}\left(-{\cal{D}}k^2t\right),
-\label{g3}
-\end{eqnarray}
-em que ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ é a $n$-ésima derivada da função de Mittag-Leffler generalizada, isto é, ${\mbox {E}}^{(n)}_{\mu,\beta}(x)$ $\equiv$ $
-\frac{d^{n}}{dx^{n}}\;{\mbox {E}}_{\mu,\beta}(x)$ \cite{livroC}. A transformada inversa de Fourier da equação (\ref{g3}) é dada por
-\begin{eqnarray}
-\rho(x,t)&=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0){\cal{G}}(x-\overline{x},t)
-\nonumber
-\end{eqnarray}
-com
-\begin{eqnarray}
-{\cal{G}}(x,t)&=&\frac{1}{2|x|}
-\displaystyle\sum_{n=0}^{\infty} \frac{t^{n}}{n!} \left(
--\frac{\widehat{{\cal{K}}}t^{\gamma}}{\left({\cal{D}}t\right)^{\frac{\mu}{2}}}\right)^{n}
-{\mbox{H}}^{2,1}_{3,3} \left[\frac{|x|}{\sqrt{{\cal{D}}t}}
-\left|^{\left(1-\frac{n\mu}{2}, \frac{1}{2}\right),
-\left(1+\left(1+\gamma-\frac{\mu}{2}\right)n, \frac{1}{2}\right),
-\left(1, \frac{1}{2} \right)}_{\left(1, 1\right),
-\left(1-\left(1-\frac{\mu}{2}\right)n,\frac{1}{2}\right), \left(1,
-\frac{1}{2} \right)}\right.\right]. \nonumber
-\end{eqnarray}
-Nesse contexto, a solução geral que considera uma forma arbitrária para o termo não-local pode ser encontrada utilizando a transformada inversa de Laplace e o Teorema da Convolução correspondente. Assim sendo, podemos mostrar que
-\begin{eqnarray}
-\rho(x,t)
-&=&\int_{-\infty}^{\infty}d\overline{x}\rho(\overline{x},0)
-{\cal{G}}(x-\overline{x},t) \nonumber \\
-{\cal{G}}(x,t)&=&\overline{{\cal{G}}}(x,t)+\sum_{n=1}^{\infty}\frac{(-1)^n}{n!}
-\int_{-\infty}^{\infty}dx_{n}\int_{0}^{t}dt_{n}\overline{{\cal{K}}}(x-x_{n},t-t_{n})\cdots
-\nonumber \\
-&\times& \int_{-\infty}^{\infty}dx_{1}\int_{0}^{t_{2}}dt_{1}
-t_{1}^{n}\overline{{\cal{K}}}(x_{2}-x_{1},t_{2}-t_{1})\overline{{\cal{G}}}(x_{1},t_{1})
-\label{geral}
-\end{eqnarray}
-na qual $\rho(x,0)$ é a condição inicial e $\overline{{\cal{G}}}(x,t)$ é dada pela equação (\ref{usual1}). A equação (\ref{geral}) estende a equação (\ref{g2}) e pode ser usada para obter soluções aproximadas quando o termo não local permite ser considerado como uma perturbação na solução usual.
 
 \chapter{Conclusão}
 
